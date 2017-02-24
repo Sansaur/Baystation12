@@ -13,19 +13,16 @@
 "m" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHEAST)"; icon_state = "intact"; dir = 5},/turf/simulated/floor/tiled,/area/constructionsite)
 "n" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (EAST)"; icon_state = "intact"; dir = 4},/turf/simulated/floor/tiled,/area/constructionsite)
 "o" = (/obj/machinery/atmospherics/portables_connector{tag = "icon-map_connector (WEST)"; icon_state = "map_connector"; dir = 8},/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/tiled,/area/constructionsite)
-"p" = (/obj/structure/weightlifter,/turf/simulated/floor/tiled,/area/constructionsite)
-"q" = (/obj/structure/stacklifter,/turf/simulated/floor/tiled,/area/constructionsite)
-"r" = (/obj/structure/punching_bag,/turf/simulated/floor/tiled,/area/constructionsite)
-"s" = (/obj/effect/landmark/start,/turf/simulated/floor/tiled,/area/constructionsite)
-"t" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHEAST)"; icon_state = "intact"; dir = 6},/turf/simulated/floor/tiled,/area/constructionsite)
-"u" = (/obj/machinery/atmospherics/portables_connector{tag = "icon-map_connector (WEST)"; icon_state = "map_connector"; dir = 8},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled,/area/constructionsite)
-"v" = (/obj/machinery/light_switch{pixel_x = -25},/turf/simulated/floor/tiled,/area/constructionsite)
-"w" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{tag = "icon-map_scrubber_on (NORTH)"; icon_state = "map_scrubber_on"; dir = 1},/turf/simulated/floor/tiled,/area/constructionsite)
-"x" = (/obj/effect/landmark{name = "JoinLate"},/turf/simulated/floor/tiled,/area/constructionsite)
-"y" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/apc{dir = 8; name = "west bump"; pixel_x = -24},/turf/simulated/floor/tiled,/area/constructionsite)
-"z" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/constructionsite)
-"A" = (/obj/structure/cable,/obj/machinery/power/debug_items/infinite_generator,/turf/simulated/floor/tiled,/area/constructionsite)
-"B" = (/obj/machinery/light,/turf/simulated/floor/tiled,/area/constructionsite)
+"p" = (/obj/effect/landmark/start,/turf/simulated/floor/tiled,/area/constructionsite)
+"q" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHEAST)"; icon_state = "intact"; dir = 6},/turf/simulated/floor/tiled,/area/constructionsite)
+"r" = (/obj/machinery/atmospherics/portables_connector{tag = "icon-map_connector (WEST)"; icon_state = "map_connector"; dir = 8},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled,/area/constructionsite)
+"s" = (/obj/machinery/light_switch{pixel_x = -25},/turf/simulated/floor/tiled,/area/constructionsite)
+"t" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{tag = "icon-map_scrubber_on (NORTH)"; icon_state = "map_scrubber_on"; dir = 1},/turf/simulated/floor/tiled,/area/constructionsite)
+"u" = (/obj/effect/landmark{name = "JoinLate"},/turf/simulated/floor/tiled,/area/constructionsite)
+"v" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/apc{dir = 8; name = "west bump"; pixel_x = -24},/turf/simulated/floor/tiled,/area/constructionsite)
+"w" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/constructionsite)
+"x" = (/obj/structure/cable,/obj/machinery/power/debug_items/infinite_generator,/turf/simulated/floor/tiled,/area/constructionsite)
+"y" = (/obj/machinery/light,/turf/simulated/floor/tiled,/area/constructionsite)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -44,13 +41,13 @@ aaaaaaaaabceeecfffccccgbaaaaaaaa
 aaaaaaaaabheeeifcjcccckbaaaaaaaa
 aaaaaaaaabcccccccccclccbaaaaaaaa
 aaaaaaaaabccccccccccmnobaaaaaaaa
-aaaaaaaaabcpqrccsccccccbaaaaaaaa
-aaaaaaaaabcccccccccctnubaaaaaaaa
-aaaaaaaaabvcccccccccwccbaaaaaaaa
-aaaaaaaaabhcxxxccccccckbaaaaaaaa
-aaaaaaaaabycxxxccccccccbaaaaaaaa
-aaaaaaaaabzcxxxccccccccbaaaaaaaa
-aaaaaaaaabAccBcccccBcccbaaaaaaaa
+aaaaaaaaabccccccpccccccbaaaaaaaa
+aaaaaaaaabccccccccccqnrbaaaaaaaa
+aaaaaaaaabsccccccccctccbaaaaaaaa
+aaaaaaaaabhcuuuccccccckbaaaaaaaa
+aaaaaaaaabvcuuuccccccccbaaaaaaaa
+aaaaaaaaabwcuuuccccccccbaaaaaaaa
+aaaaaaaaabxccycccccycccbaaaaaaaa
 aaaaaaaaabbbbbbbbbbbbbbbaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
