@@ -900,9 +900,8 @@ About the new airlock wires panel:
 			..()
 		return
 
-	if(!welding_in_progress && !repairing && (istype(C, /obj/item/weapon/weldingtool) && !( src.operating > 0 ) && src.density))
+	if(!repairing && (istype(C, /obj/item/weapon/weldingtool) && !( src.operating > 0 ) && src.density))
 		var/obj/item/weapon/weldingtool/W = C
-		
 		if(W.remove_fuel(0,user))
 			src.welding_in_progress = 1
 			if(!src.welded)
@@ -920,8 +919,8 @@ About the new airlock wires panel:
 					to_chat(user, "The airlock can now be opened.")
 				playsound(src, 'sound/items/Welder.ogg', 100, 1)
 				src.update_icon()
-				src.welding_in_progress = null
-				return
+			src.welding_in_progress = null
+			return
 		else
 			return
 	else if(istype(C, /obj/item/weapon/screwdriver))
