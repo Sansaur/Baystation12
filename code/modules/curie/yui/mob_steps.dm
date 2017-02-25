@@ -11,7 +11,7 @@
     return 1
 
 proc/isWalking(mob/living/carbon/human/M) // Gotta be sneaky
-  if(M.m_intent == "walk" && istype(M))
+  if(istype(M) && M.m_intent == "walk")
     return 1
   return 0
 
