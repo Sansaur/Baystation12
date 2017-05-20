@@ -1,16 +1,21 @@
 
-/datum/map/curie
+/datum/map/dreyfus
 	name = "Dreyfus"
 	full_name = "SSNI Dreyfus"
 	path = "dreyfus"
 
-	lobby_icon = 'maps/dreyfus/dreyfus_lobby.dmi'
+	lobby_icon = 'maps/dreyfus/icons/lobby.dmi'
+
+	station_levels = list(1,2,3,4,5,6)
+	contact_levels = list(1,2,3,4,5,6)
+	player_levels = list(1,2,3,4,5,6)
+	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"6"=1)
 
 	station_name  = "SSNI Dreyfus"
 	station_short = "Dreyfus"
-	dock_name     = "Upsilon-4"
-	boss_name     = "Central Headquarter"
-	boss_short    = "CHQ"
+	dock_name     = "Charnay-4"
+	boss_name     = "Direction Centrale"
+	boss_short    = "DIRCEN"
 	company_name  = "NanoTrasen Industries & Co"
 	company_short = "NTI"
 
