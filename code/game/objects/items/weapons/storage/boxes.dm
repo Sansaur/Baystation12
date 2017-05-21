@@ -110,12 +110,6 @@
 	icon_state = "beaker"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker = 7)
 
-/obj/item/weapon/storage/box/injectors
-	name = "box of DNA injectors"
-	desc = "This box contains injectors it seems."
-	startswith = list(/obj/item/weapon/dnainjector/h2m = 6)
-
-
 /obj/item/weapon/storage/box/blanks
 	name = "box of blank shells"
 	desc = "It has a picture of a gun and several warning symbols on the front."
@@ -362,13 +356,15 @@
 /obj/item/weapon/storage/box/lights/tubes
 	name = "box of replacement tubes"
 	icon_state = "lighttube"
-	startswith = list(/obj/item/weapon/light/tube = 21)
+	startswith = list(/obj/item/weapon/light/tube = 17,
+					/obj/item/weapon/light/tube/large = 4)
 
 /obj/item/weapon/storage/box/lights/mixed
 	name = "box of replacement lights"
 	icon_state = "lightmixed"
-	startswith = list(/obj/item/weapon/light/tube = 14,
-					/obj/item/weapon/light/bulb = 7)
+	startswith = list(/obj/item/weapon/light/tube = 12,
+					/obj/item/weapon/light/tube/large = 4,
+					/obj/item/weapon/light/bulb = 5)
 
 /obj/item/weapon/storage/box/glowsticks
 	name = "box of mixed glowsticks"
@@ -427,3 +423,20 @@
 	name = "box of spare headsets"
 	desc = "A box full of headsets."
 	startswith = list(/obj/item/device/radio/headset = 7)
+
+//Spare Armbands
+
+/obj/item/weapon/storage/box/armband
+	name = "box of spare military police armbands"
+	desc = "A box full of security armbands. For use in emergencies when provisional security personnel are needed."
+	startswith = list(/obj/item/clothing/accessory/armband/mp = 5)
+
+/obj/item/weapon/storage/box/armband/engine
+	name = "box of spare engineering armbands"
+	desc = "A box full of engineering armbands. For use in emergencies when provisional engineering peronnel are needed."
+	startswith = list(/obj/item/clothing/accessory/armband/engine = 5)
+
+/obj/item/weapon/storage/box/armband/med
+	name = "box of spare medical armbands"
+	desc = "A box full of medical armbands. For use in emergencies when provisional medical personnel are needed."
+	startswith = list(/obj/item/clothing/accessory/armband/med = 5)
