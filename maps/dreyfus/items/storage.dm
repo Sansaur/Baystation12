@@ -7,6 +7,9 @@
 	name = "storage"
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
+/obj/item/weapon/storage/box/lights
+	icon = 'maps/dreyfus/icons/storage.dmi'
+
 /obj/structure/closet/crate
 	name = "crate"
 	desc = "A rectangular steel crate."
@@ -23,3 +26,18 @@
 	icon = 'maps/dreyfus/icons/storage.dmi'
 	icon_state = "densecrate"
 	density = 1
+
+/obj/structure/dispenser
+	icon = 'maps/dreyfus/icons/objects.dmi'
+
+/obj/structure/dispenser
+	icon = 'maps/dreyfus/icons/objects.dmi'
+
+/obj/structure/reagent_dispensers/watertank
+	icon = 'maps/dreyfus/icons/objects.dmi'
+
+/obj/structure/reagent_dispensers/fueltank
+	icon = 'maps/dreyfus/icons/objects.dmi'
+
+/obj/structure/reagent_dispensers/coolanttank
+	icon = 'maps/dreyfus/icons/objects.dmi'

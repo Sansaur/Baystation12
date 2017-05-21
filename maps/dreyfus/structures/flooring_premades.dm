@@ -313,3 +313,14 @@
 	..()
 	overlays += image("icon"='icons/misc/beach.dmi',"icon_state"="water5","layer"=MOB_LAYER+0.1)
 
+/turf/simulated/floor/grass
+	name = "grass patch"
+	icon = 'maps/dreyfus/icons/turf/flooring/grass.dmi'
+	icon_state = "grass0"
+	initial_flooring = /decl/flooring/grass
+
+/turf/simulated/floor/dirt
+	name = "dirt"
+	icon = 'maps/dreyfus/icons/turf/flooring/dirt.dmi'
+	icon_state = "dirt"
+

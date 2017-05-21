@@ -1059,3 +1059,6 @@
 /obj/effect/floor_decal/grass_edge/corner
 	name = "grass edge"
 	icon_state = "grass_edge_corner"
+
+/obj/effect/floor_decal/solarpanel
+	icon_state = "solarpanel"
