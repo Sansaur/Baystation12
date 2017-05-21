@@ -14,14 +14,13 @@ datum/pipeline
 
 	Destroy()
 		processing_objects -= src
-		if(network)
-			qdel(network)
+		qdel_null(network)
 
 		if(air && air.volume)
 			temporarily_store_air()
 			qdel(air)
 
-		..()
+		. = ..()
 
 	proc/process()//This use to be called called from the pipe networks
 
@@ -67,6 +66,8 @@ datum/pipeline
 
 				if(result.len>0)
 					for(var/obj/machinery/atmospherics/pipe/item in result)
+						if(item.in_stasis)
+							continue
 						if(!members.Find(item))
 							members += item
 							possible_expansions += item
@@ -101,6 +102,7 @@ datum/pipeline
 			for(var/obj/machinery/atmospherics/result in edge.pipeline_expansion())
 				if(!istype(result,/obj/machinery/atmospherics/pipe) && (result!=reference))
 					result.network_expand(new_network, edge)
+
 
 		return 1
 

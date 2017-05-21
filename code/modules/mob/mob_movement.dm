@@ -210,6 +210,11 @@
 
 	if(mob.transforming)	return//This is sota the goto stop mobs from moving var
 
+	if(Process_Grab())	return
+
+	if(!mob.canmove)
+		return
+
 	if(isliving(mob))
 		var/mob/living/L = mob
 		if(L.incorporeal_move)//Move though walls
@@ -232,10 +237,7 @@
 						b.zoom()
 				*/
 
-	if(Process_Grab())	return
 
-	if(!mob.canmove)
-		return
 
 	//if(istype(mob.loc, /turf/space) || (mob.flags & NOGRAV))
 	//	if(!mob.Allow_Spacemove(0))	return 0
@@ -282,16 +284,10 @@
 				move_delay += 7+config.walk_speed
 		move_delay += mob.movement_delay()
 
-		var/tickcomp = 0 //moved this out here so we can use it for vehicles
-		if(config.Tickcomp)
-			// move_delay -= 1.3 //~added to the tickcomp calculation below
-			tickcomp = ((1/(world.tick_lag))*1.3) - 1.3
-			move_delay = move_delay + tickcomp
-
 		if(istype(mob.buckled, /obj/vehicle))
 			//manually set move_delay for vehicles so we don't inherit any mob movement penalties
 			//specific vehicle move delays are set in code\modules\vehicles\vehicle.dm
-			move_delay = world.time + tickcomp
+			move_delay = world.time
 			//drunk driving
 			if(mob.confused && prob(20)) //vehicles tend to keep moving in the same direction
 				direct = turn(direct, pick(90, -90))
@@ -480,3 +476,27 @@
 	if(Check_Shoegrip())
 		return 0
 	return prob_slip
+
+#define DO_MOVE(this_dir) var/final_dir = turn(this_dir, -dir2angle(dir)); Move(get_step(mob, final_dir), final_dir);
+
+/client/verb/moveup()
+	set name = ".moveup"
+	set instant = 1
+	DO_MOVE(NORTH)
+
+/client/verb/movedown()
+	set name = ".movedown"
+	set instant = 1
+	DO_MOVE(SOUTH)
+
+/client/verb/moveright()
+	set name = ".moveright"
+	set instant = 1
+	DO_MOVE(EAST)
+
+/client/verb/moveleft()
+	set name = ".moveleft"
+	set instant = 1
+	DO_MOVE(WEST)
+
+#undef DO_MOVE
