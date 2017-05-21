@@ -9,6 +9,7 @@
 
 
 	#include "dreyfus_areas.dm"
+	#include "dreyfus_elevator.dm"
 
 	//CONTENT
 	#include "items/storage.dm"

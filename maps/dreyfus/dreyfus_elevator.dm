@@ -8,9 +8,9 @@
 	name = "Dreyfus turbolift map placeholder"
 	dir = EAST
 	areas_to_use = list(
-		/area/turbolift/dreyfus/engi,
-		/area/turbolift/dreyfus/cargo,
-		/area/turbolift/dreyfus/civil,
-		/area/turbolift/dreyfus/bureaux,
-		/area/turbolift/dreyfus/coupole
+		/area/turbolift/engi,
+		/area/turbolift/cargo,
+		/area/turbolift/civil,
+		/area/turbolift/bureaux,
+		/area/turbolift/coupole
 		)

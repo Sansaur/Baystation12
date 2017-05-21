@@ -13,11 +13,12 @@
 
 	station_name  = "SSNI Dreyfus"
 	station_short = "Dreyfus"
-	dock_name     = "Charnay-4"
+	dock_name     = "Avant-Poste Carthage" // sur Charnay-4
 	boss_name     = "Direction Centrale"
 	boss_short    = "DIRCEN"
 	company_name  = "NanoTrasen Industries & Co"
 	company_short = "NTI"
+	system_name = "Iota-Pavonis"
 
 	shuttle_docked_message = "La navette de roulement arrivée de %Dock_name% s'est amarée à la station. Départ dans %ETD%"
 	shuttle_leaving_dock = "La navette de roulement d'équipage s'est désamarée. Arrivé estimée dans %ETA%."

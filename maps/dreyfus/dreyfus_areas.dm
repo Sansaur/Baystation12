@@ -142,7 +142,7 @@
 	icon_state = "maint_engineering"
 
 /area/dreyfus/ingenierie/acces
-	name = "Accés Ingenierie"
+	name = "Acces Ingenierie"
 	icon_state = "engineering_foyer"
 
 /area/dreyfus/ingenierie/controle
@@ -169,33 +169,68 @@
 	name = "Salle de Detente Ingenierie"
 	icon_state = "engineering_break"
 
-//Turbolift
-/area/turbolift
-	name = "\improper Turbolift"
-	icon_state = "shuttle"
-	requires_power = 0
-	lighting_use_dynamic = 1
-	flags = AREA_RAD_SHIELDED
+//Faux pont
 
-/area/turbolift/start
-	name = "\improper Turbolift Start"
+/area/dreyfus/fauxpont/maintenance
+	name = "Maintenance Synthetique"
+	icon_state = "maint_eva"
 
-/area/turbolift/bridge
-	name = "\improper bridge"
-	base_turf = /turf/simulated/open
+/area/dreyfus/fauxpont/decheterie
+	name = "Traitement des Ordures"
+	icon_state = "disposal"
 
-/area/turbolift/firstdeck
-	name = "\improper first deck"
-	base_turf = /turf/simulated/open
+/area/dreyfus/fauxpont/drones
+	name = "Atelier Auxiliaire"
+	icon_state = "ai_cyborg"
 
-/area/turbolift/seconddeck
-	name = "\improper second deck"
-	base_turf = /turf/simulated/open
+/area/dreyfus/fauxpont/iasalon
+	name = "Acces IA"
+	icon_state = "ai_foyer"
 
-/area/turbolift/thirddeck
-	name = "\improper third deck"
-	base_turf = /turf/simulated/open
+/area/dreyfus/fauxpont/iacontrole
+	name = "Salle de Controle IA"
+	icon_state = "ai_upload"
 
-/area/turbolift/fourthdeck
-	name = "\improper fourth deck"
-	base_turf = /turf/simulated/floor/plating
+/area/dreyfus/fauxpont/iachambre
+	name = "Chambre IA"
+	icon_state = "ai_chamber"
+
+/area/dreyfus/fauxpont/iasalon
+	name = "Acces IA"
+	icon_state = "ai_foyer"
+
+/area/dreyfus/fauxpont/vestiaires
+	name = "Vestiaire Auxiliaire"
+	icon_state = "engineering"
+
+// Elevator areas.
+/area/turbolift/coupole
+	name = "ascenseur (coupole)"
+	lift_floor_label = "Pont Superieur"
+	lift_floor_name = "Coupole"
+	lift_announce_str = "En route vers la Coupole : Salle de Conference, Chapelle, Jardin."
+
+/area/turbolift/bureaux
+	name = "ascenseur (bureaux)"
+	lift_floor_label = "Pont 1"
+	lift_floor_name = "Pont Administratif"
+	lift_announce_str = "En route vers le Pont Administratif : Bureaux des Employes, du Directeur, du Marshall et Evacuation."
+
+/area/turbolift/civil
+	name = "ascenseur (residentiel)"
+	lift_floor_label = "Pont 2"
+	lift_floor_name = "Pont Residentiel"
+	lift_announce_str = "En route vers le Pont Residentiel : Cafetariat, Gymnase, Vestiaires, Clinique et Quartiers."
+
+/area/turbolift/cargo
+	name = "ascenseur (usine)"
+	lift_floor_label = "Pont 3"
+	lift_floor_name = "Pont Industriel"
+	lift_announce_str = "En route vers le Pont Industriel : Usine, Entrepots, Raffinerie et Recherche & Developpement."
+
+/area/turbolift/engi
+	name = "ascenseur (ingenierie)"
+	lift_floor_label = "Pont Inferieur"
+	lift_floor_name = "Pont Maintenance"
+	lift_announce_str = "En route vers le Pont Maintenance : Generateur, Systemes de Survie, Telecommunications."
+	base_turf = /turf/simulated/floor
