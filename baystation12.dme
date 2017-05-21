@@ -2298,6 +2298,7 @@
 #include "maps\dreyfus\dreyfus.dm"
 #include "maps\dreyfus\dreyfus_areas.dm"
 #include "maps\dreyfus\dreyfus_define.dm"
+#include "maps\dreyfus\dreyfus_elevator.dm"
 #include "maps\dreyfus\structures\machinery.dm"
 #include "maps\example\example_define.dm"
 #include "maps\exodus\exodus_define.dm"

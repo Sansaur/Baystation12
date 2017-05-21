@@ -168,3 +168,34 @@
 /area/dreyfus/ingenierie/detente
 	name = "Salle de Detente Ingenierie"
 	icon_state = "engineering_break"
+
+//Turbolift
+/area/turbolift
+	name = "\improper Turbolift"
+	icon_state = "shuttle"
+	requires_power = 0
+	lighting_use_dynamic = 1
+	flags = AREA_RAD_SHIELDED
+
+/area/turbolift/start
+	name = "\improper Turbolift Start"
+
+/area/turbolift/bridge
+	name = "\improper bridge"
+	base_turf = /turf/simulated/open
+
+/area/turbolift/firstdeck
+	name = "\improper first deck"
+	base_turf = /turf/simulated/open
+
+/area/turbolift/seconddeck
+	name = "\improper second deck"
+	base_turf = /turf/simulated/open
+
+/area/turbolift/thirddeck
+	name = "\improper third deck"
+	base_turf = /turf/simulated/open
+
+/area/turbolift/fourthdeck
+	name = "\improper fourth deck"
+	base_turf = /turf/simulated/floor/plating
