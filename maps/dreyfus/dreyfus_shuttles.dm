@@ -1,4 +1,4 @@
-/datum/shuttle/multi_shuttle/rescue
+datum/shuttle/multi_shuttle/rescue
 	name = "Rescue"
 	warmup_time = 0
 	origin = /area/shuttle/lavalette/start
@@ -8,11 +8,6 @@
 		"Proche de la Coupole" = /area/shuttle/lavalette/coupole,
 		"Au sas de Xenoarcheologie" = /area/shuttle/lavalette/xeno,
 		"Pres de l'acces Residentiel" = /area/shuttle/lavalette/residentiel,
-		)
-	docking_controller_tag = "rescue_shuttle"
-	destination_dock_targets = list(
-		"Response Team Base" = "rescue_base",
-		"Arrivals dock" = "rescue_shuttle_dock_airlock",
 		)
 	announcer = "CRV La Valette"
 
@@ -59,7 +54,7 @@
 		"Base Mercenaire" = "dock_merc",
 		"Dock Station" = "dock1",
 		)
-	announcer = "CRV La Valette"
+	announcer = "Chasseur Huon"
 
 /datum/shuttle/multi_shuttle/mercenary/New()
 	arrival_message = "Attention, [using_map.station_short], you have a large signature approaching the station - looks unarmed to surface scans. We're too far out to intercept - brace for visitors."
