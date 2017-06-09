@@ -33,7 +33,6 @@
 		"Stagiaire",
 		"Etudiant",
 		)
-	outfit_type = /decl/hierarchy/outfit/job/dreyfus/directeur
 	allowed_branches = list(
 		/datum/mil_branch/administration,
 		/datum/mil_branch/contractuel,
