@@ -39,6 +39,19 @@
 
 	#include "../shared/exodus_torch/_include.dm"
 
+	#include "../../code/modules/lobby_music/absconditus.dm"
+	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
+	#include "../../code/modules/lobby_music/endless_space.dm"
+	#include "../../code/modules/lobby_music/dilbert.dm"
+	#include "../../code/modules/lobby_music/space_oddity.dm"
+	#include "../../code/modules/lobby_music/hardcorner.dm"
+	#include "../../code/modules/lobby_music/spessbenzaie.dm"
+	#include "../../code/modules/lobby_music/moonsoon.dm"
+	#include "../../code/modules/lobby_music/bestfriends.dm"
+	#include "../../code/modules/lobby_music/soma.dm"
+	#include "../../code/modules/lobby_music/chasing_time.dm"
+	#include "../../code/modules/lobby_music/Torch.dm"
+
 
 	#define USING_MAP_DATUM /datum/map/dreyfus
 
