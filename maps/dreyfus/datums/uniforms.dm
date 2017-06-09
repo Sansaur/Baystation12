@@ -53,3 +53,4 @@
 	uniform = /obj/item/clothing/under/overalls
 	id_type = /obj/item/weapon/card/id/cargo/ouvrier
 	pda_type = /obj/item/device/pda/cargo
+	l_ear = /obj/item/device/radio/headset/headset_cargo
