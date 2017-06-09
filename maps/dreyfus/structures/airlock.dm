@@ -48,8 +48,8 @@
 
 /obj/machinery/door/airlock/centcom
 	name = "Airlock"
-	icon = 'maps/dreyfus/icons/doors/Doorele.dmi'
-	opacity = 0
+	icon = 'icons/obj/doors/Doorele.dmi'
+	opacity = 1
 
 /obj/machinery/door/airlock/vault
 	name = "Vault"

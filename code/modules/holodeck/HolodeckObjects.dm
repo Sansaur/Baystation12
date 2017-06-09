@@ -112,7 +112,7 @@
 /obj/structure/holostool
 	name = "stool"
 	desc = "Apply butt."
-	icon = 'icons/obj/furniture.dmi'
+	icon = 'maps/dreyfus/icons/furniture.dmi'
 	icon_state = "stool_padded_preview"
 	anchored = 1.0
 

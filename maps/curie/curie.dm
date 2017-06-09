@@ -15,20 +15,20 @@
 	#include "../shared/exodus_torch/loadout/loadout_shoes.dm"
 	#include "../shared/exodus_torch/loadout/loadout_suit.dm"
 
+	#include "../exodus/loadout/loadout_accessories.dm"
+	#include "../exodus/loadout/loadout_eyes.dm"
+	#include "../exodus/loadout/loadout_head.dm"
+	#include "../exodus/loadout/loadout_shoes.dm"
+	#include "../exodus/loadout/loadout_suit.dm"
+	#include "../exodus/loadout/loadout_uniform.dm"
+	#include "../exodus/loadout/loadout_xeno.dm"
+
 	#include "curie-1.dmm"
 	#include "curie-2.dmm"
 	#include "curie-3.dmm"
 	#include "curie-4.dmm"
 	#include "curie-5.dmm"
 	#include "curie-6.dmm"
-
-	#include "loadout/loadout_accessories.dm"
-	#include "loadout/loadout_eyes.dm"
-	#include "loadout/loadout_head.dm"
-	#include "loadout/loadout_shoes.dm"
-	#include "loadout/loadout_suit.dm"
-	#include "loadout/loadout_uniform.dm"
-	#include "loadout/loadout_xeno.dm"
 
 	#include "../../code/modules/lobby_music/absconditus.dm"
 	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
