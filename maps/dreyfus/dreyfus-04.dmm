@@ -612,7 +612,7 @@
 "lN" = (/obj/structure/table/shelf,/obj/item/clothing/suit/bio_suit/virology,/obj/item/clothing/head/bio_hood/virology,/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
 "lO" = (/obj/structure/table/rack,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
 "lP" = (/obj/structure/table/standard,/obj/random/soap,/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
-"lQ" = (/obj/structure/table/standard,/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -24; tag = "icon-alarm0 (NORTH)"},/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
+"lQ" = (/obj/structure/table/standard,/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -24; tag = "icon-alarm0 (NORTH)"},/obj/machinery/recharger,/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
 "lR" = (/obj/machinery/firealarm{dir = 8; icon_state = "fire0"; pixel_x = 24; tag = "icon-fire0 (WEST)"},/turf/simulated/floor/tiled/white,/area/dreyfus/residentiel/clinique/vestiaire)
 "lS" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/carpet/blue,/area/dreyfus/residentiel/clinique/traitement)
 "lT" = (/obj/structure/table/standard,/obj/item/weapon/paper_bin{pixel_x = -3; pixel_y = 6},/obj/item/clothing/accessory/stethoscope,/turf/simulated/floor/carpet/blue,/area/dreyfus/residentiel/clinique/traitement)
