@@ -36,7 +36,7 @@
 "aJ" = (/turf/simulated/wall,/area/dreyfus/ingenierie/moteur/atmos)
 "aK" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/turf/simulated/floor/plating,/area/dreyfus/ingenierie/moteur/acces)
 "aL" = (/turf/simulated/floor/plating,/area/dreyfus/ingenierie/moteur/acces)
-"aM" = (/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume{frequency = 1379; id = "engine_arlock_pump"},/turf/simulated/floor/plating,/area/dreyfus/ingenierie/moteur/controle)
+"aM" = (/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume{frequency = 1379; id = "engine_airlock_pump"},/turf/simulated/floor/plating,/area/dreyfus/ingenierie/moteur/controle)
 "aN" = (/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/plating,/area/dreyfus/ingenierie/moteur/controle)
 "aO" = (/turf/simulated/floor/reinforced,/area/dreyfus/ingenierie/moteur)
 "aP" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/turf/simulated/floor/reinforced,/area/dreyfus/ingenierie/moteur)
