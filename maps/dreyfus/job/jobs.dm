@@ -116,13 +116,13 @@
 			access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels, access_external_airlocks,
 			access_tox_storage, access_teleporter, access_sec_doors,
 			access_research, access_robotics, access_xenobiology, access_ai_upload, access_tech_storage,
-			access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network)
+			access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_rd)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_genetics, access_heads,
 			access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 			access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels, access_external_airlocks,
 			access_tox_storage, access_teleporter, access_sec_doors,
 			access_research, access_robotics, access_xenobiology, access_ai_upload, access_tech_storage,
-			access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network)
+			access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_rd)
 
 /datum/job/scientist
 	title = "Scientifique"
@@ -228,8 +228,8 @@
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
 	)
-	access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
+	access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
+	minimal_access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
 
 /datum/job/cargo_tech
 	selection_color = "#7c6a2e"
@@ -247,8 +247,8 @@
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
 	)
-	access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
+	access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
+	minimal_access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
 
 /datum/job/ouvrier
 	selection_color = "#7c6a2e"
