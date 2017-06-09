@@ -31,7 +31,7 @@
 "aE" = (/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/plating,/area/dreyfus/cargo/maintenance/tribord)
 "aF" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHWEST)"; icon_state = "techfloor_edges"; dir = 9},/obj/structure/ladder/up,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/maintenance/babord)
 "aG" = (/obj/structure/table/steel,/obj/random/tank,/obj/machinery/light/small{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/maintenance/babord)
-"aH" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/maintenance/babord)
+"aH" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/machinery/telecomms/relay/preset/industriel,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/maintenance/babord)
 "aI" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/dreyfus/cargo/maintenance/babord)
 "aJ" = (/obj/machinery/door/airlock/external{frequency = 1379; icon_state = "door_locked"; id_tag = "evamine_int"; locked = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/industrie/raffinerie)
 "aK" = (/obj/machinery/door/airlock/external{frequency = 1379; icon_state = "door_locked"; id_tag = "evamine_int"; locked = 1},/obj/machinery/atmospherics/pipe/simple/visible,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/cargo/industrie/raffinerie)

@@ -92,7 +92,7 @@
 "bN" = (/obj/structure/bed/chair{tag = "icon-chair_preview (NORTH)"; icon_state = "chair_preview"; dir = 1},/obj/machinery/firealarm{dir = 1; icon_state = "fire0"; pixel_y = -24; tag = "icon-fire0 (NORTH)"},/obj/machinery/atmospherics/unary/vent_pump/on{tag = "icon-map_vent_out (NORTH)"; icon_state = "map_vent_out"; dir = 1},/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iasalon)
 "bO" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (SOUTHEAST)"; icon_state = "techfloor_edges"; dir = 6},/obj/machinery/alarm{dir = 8; icon_state = "alarm0"; pixel_x = 22; pixel_y = 0; tag = "icon-alarm0 (WEST)"},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iasalon)
 "bP" = (/obj/structure/cable/green,/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/obj/machinery/power/sensor{name = "Powernet Sensor - Grille Synthetique"; name_tag = "Grille Synthetique"},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/maintenance)
-"bQ" = (/obj/machinery/constructable_frame/machine_frame,/turf/simulated/floor/plating,/area/dreyfus/fauxpont/maintenance)
+"bQ" = (/obj/machinery/telecomms/relay/preset/fauxpont,/turf/simulated/floor/plating,/area/dreyfus/fauxpont/maintenance)
 "bR" = (/obj/machinery/shield_diffuser,/obj/machinery/door/blast/regular{id = "dechets_evac_porte"},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/decheterie)
 "bS" = (/obj/machinery/mass_driver{dir = 8; icon_state = "mass_driver"; id = "dechets_evac"; tag = "icon-mass_driver (WEST)"},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/decheterie)
 "bT" = (/obj/structure/disposalpipe/trunk,/obj/structure/disposaloutlet{tag = "icon-outlet (WEST)"; icon_state = "outlet"; dir = 8},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/decheterie)

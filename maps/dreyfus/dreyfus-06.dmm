@@ -316,7 +316,7 @@
 "gd" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/coupole/maintenance)
 "ge" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/access_button/airlock_exterior{master_tag = "evapar_sas"; pixel_x = 22; pixel_y = 20; req_access = list(13)},/turf/simulated/floor/airless,/area/dreyfus/coupole/solaire/arriere/exterieur)
 "gf" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (SOUTHWEST)"; icon_state = "techfloor_edges"; dir = 10},/obj/item/frame/apc,/obj/item/stack/cable_coil,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/coupole/maintenance)
-"gg" = (/obj/effect/floor_decal/techfloor,/obj/machinery/light/small,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/coupole/maintenance)
+"gg" = (/obj/effect/floor_decal/techfloor,/obj/machinery/light/small,/obj/machinery/telecomms/relay/preset/coupole,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/coupole/maintenance)
 "gh" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (SOUTHEAST)"; icon_state = "techfloor_edges"; dir = 6},/obj/structure/closet,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/coupole/maintenance)
 "gi" = (/turf/space,/area/shuttle/merc/coupole)
 "gj" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/cable/yellow,/turf/simulated/floor/airless,/area/dreyfus/coupole/solaire/arriere/exterieur)
