@@ -10,7 +10,7 @@
 /obj/structure/bed
 	name = "bed"
 	desc = "This is used to lie in, sleep in or strap on."
-	icon = 'icons/obj/furniture.dmi'
+	icon = 'maps/dreyfus/icons/furniture.dmi'
 	icon_state = "bed"
 	anchored = 1
 	can_buckle = 1
@@ -45,7 +45,7 @@
 	// Base icon.
 	var/cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
-		var/image/I = image('icons/obj/furniture.dmi', base_icon)
+		var/image/I = image('maps/dreyfus/icons/furniture.dmi', base_icon)
 		if(material_alteration & MATERIAL_ALTERATION_COLOR)
 			I.color = material.icon_colour
 		stool_cache[cache_key] = I

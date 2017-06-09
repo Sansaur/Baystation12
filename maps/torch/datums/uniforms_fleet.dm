@@ -1,4 +1,4 @@
-/decl/hierarchy/mil_uniform/fleet/com //Can only be officers
+B/decl/hierarchy/mil_uniform/fleet/com //Can only be officers
 	name = "Fleet command"
 	departments = COM
 

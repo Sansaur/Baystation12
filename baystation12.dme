@@ -2320,7 +2320,6 @@
 #include "maps\curie\curie_define.dm"
 #include "maps\dreyfus\dreyfus.dm"
 #include "maps\dreyfus\dreyfus_define.dm"
-#include "maps\dreyfus\structures\machinery.dm"
 #include "maps\example\example_define.dm"
 #include "maps\exodus\exodus_define.dm"
 #include "maps\overmap_example\overmap_example_define.dm"
