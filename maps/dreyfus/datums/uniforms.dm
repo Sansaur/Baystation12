@@ -54,3 +54,13 @@
 	id_type = /obj/item/weapon/card/id/cargo/ouvrier
 	pda_type = /obj/item/device/pda/cargo
 	l_ear = /obj/item/device/radio/headset/headset_cargo
+
+/decl/hierarchy/outfit/job/science/superviseur
+	name = OUTFIT_JOB_NAME("Superviseur")
+	l_ear = /obj/item/device/radio/headset/heads/rd
+	r_ear = /obj/item/device/radio/headset/heads/cmo
+	uniform = /obj/item/clothing/under/rank/research_director
+	shoes = /obj/item/clothing/shoes/brown
+	l_hand = /obj/item/weapon/clipboard
+	id_type = /obj/item/weapon/card/id/science/head
+	pda_type = /obj/item/device/pda/heads/rd
