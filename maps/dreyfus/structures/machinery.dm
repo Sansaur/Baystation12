@@ -12,16 +12,16 @@
 
 /obj/machinery/telecomms/relay/preset/administration
 	id = "Relais Administration"
-	autolinkers = list("a_relay")
+	autolinkers = list("r_relay")
 
 /obj/machinery/telecomms/relay/preset/residentiel
 	id = "Relais Residentiel"
-	autolinkers = list("r_relay")
+	autolinkers = list("b_relay")
 
 /obj/machinery/telecomms/relay/preset/industriel
 	id = "Relais Industriel"
-	autolinkers = list("i_relay")
+	autolinkers = list("s_relay")
 
 /obj/machinery/telecomms/relay/preset/fauxpont
 	id = "Relais Synthetique"
-	autolinkers = list("s_relay")
+	autolinkers = list("d_relay")
