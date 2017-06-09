@@ -13,7 +13,7 @@
 						/datum/job/cargo_tech,
 						/datum/job/mining,
 						/datum/job/ouvrier,
-						/datum/job/cook,
+						/datum/job/chef,
 						/datum/job/chaplain,
 						/datum/job/janitor,
 						/datum/job/ai,
@@ -274,7 +274,7 @@
 	access = list(access_manufacturing, access_maint_tunnels)
 	minimal_access = list(access_manufacturing, access_maint_tunnels)
 
-/datum/job/cook
+/datum/job/chef
 	title = "Cuisinier"
 	supervisors = "les Directeurs"
 	minimal_player_age = 16
