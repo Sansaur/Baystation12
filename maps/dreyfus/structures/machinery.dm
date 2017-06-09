@@ -8,20 +8,20 @@
 
 /obj/machinery/telecomms/relay/preset/coupole
 	id = "Relais Coupole"
-	autolinkers = list("c_relay")
+	autolinkers = list("1_relay")
 
 /obj/machinery/telecomms/relay/preset/administration
 	id = "Relais Administration"
-	autolinkers = list("r_relay")
+	autolinkers = list("2_relay")
 
 /obj/machinery/telecomms/relay/preset/residentiel
 	id = "Relais Residentiel"
-	autolinkers = list("b_relay")
+	autolinkers = list("3_relay")
 
 /obj/machinery/telecomms/relay/preset/industriel
 	id = "Relais Industriel"
-	autolinkers = list("s_relay")
+	autolinkers = list("4_relay")
 
 /obj/machinery/telecomms/relay/preset/fauxpont
 	id = "Relais Synthetique"
-	autolinkers = list("d_relay")
+	autolinkers = list("5_relay")
