@@ -272,8 +272,8 @@
 		/datum/mil_branch/ouvrier
 	)
 	announced = 1
-	access = list(access_manufacturing, access_maint_tunnels)
-	minimal_access = list(access_manufacturing, access_maint_tunnels)
+	access = list(access_cargo, access_maint_tunnels)
+	minimal_access = list(access_cargo, access_maint_tunnels)
 
 /datum/job/chef
 	title = "Cuisinier"
