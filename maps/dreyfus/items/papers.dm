@@ -1,6 +1,6 @@
 /obj/item/weapon/paper/objectifs_dreyfus
 	name = "Objectifs de productions"
-	info = "Objectifs du service envoyés par les actionnaires :<br><br>"
+	info = "Objectifs du service envoyÃ©s par les actionnaires :<br><br>"
 	icon_state = "paper_words"
 
 /obj/item/weapon/paper/objectifs_dreyfus/New()
@@ -14,14 +14,14 @@
 	"<bold>multitools</bold>",
 	"<bold>scanners rayons-T (T-ray scanners)</bold>",
 	"<bold>outils de soudure (welding tools)</bold>",
-	"<bold>carte-mères de sas (airlock electronics)</bold>",
+	"<bold>carte-mÃ¨res de sas (airlock electronics)</bold>",
 	"<bold>seringues (syringes)</bold>",
-	"<bold>béchers (glass beakers)</bold>",
+	"<bold>bÃ©chers (glass beakers)</bold>",
 	"<bold>minuteurs (timers)</bold>",
-	"<bold>néons (light tubs)</bold>",
+	"<bold>nÃ©ons (light tubs)</bold>",
 	"<bold>ampoules (light bulbs)</bold>",
-	"<bold>caméras en kit (camera assemblies)</bold>",
-	"<bold>écrans d'ordinateur (console screens)</bold>" )
+	"<bold>camÃ©ras en kit (camera assemblies)</bold>",
+	"<bold>Ã©crans d'ordinateur (console screens)</bold>" )
 
 	var/amount_objectives_high
 	var/proba_objectives_high = rand(100)
@@ -44,7 +44,7 @@
 	for(var/i = 1; i <= amount_objectives_high, i++)
 		if(products.len < 1) break
 		var/S = pick(products)
-		info += "Il y'a une forte demande pour des [S]<br>"
+		info += "Il y'a une forte demande de [S]<br>"
 		products.Remove(S)
 
 	info+="<br>"
@@ -52,8 +52,8 @@
 	for(var/i = 1; i <= amount_objectives_low, i++)
 		if(products.len < 1) break
 		var/S = pick(products)
-		info += "Il y'a une faible demande pour des [S]<br>"
+		info += "Il y'a une faible demande de [S]<br>"
 		products.Remove(S)
 
 
-	info+="<br>Il est impératif que les objectifs de productions soit respectés.<br><br>-Direction Centrale"
+	info+="<br>Il est impÃ©ratif que les objectifs de productions soit respectÃ©s.<br><br>-Direction Centrale"
