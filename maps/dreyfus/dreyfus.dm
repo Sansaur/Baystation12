@@ -24,6 +24,7 @@
 	#include "datums/uniforms.dm"
 	#include "items/storage.dm"
 	#include "items/cards_ids.dm"
+	#include "items/papers.dm"
 	#include "structures/airlock.dm"
 	#include "structures/closet.dm"
 	#include "structures/curtains.dm"
