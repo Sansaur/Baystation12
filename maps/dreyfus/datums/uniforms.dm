@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/job/dreyfus/directeur
-	name = OUTFIT_JOB_NAME("Director ejecutivo")
+	name = OUTFIT_JOB_NAME("Director Ejecutivo")
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
@@ -11,7 +11,7 @@
 	gloves = /obj/item/clothing/gloves/white
 
 /decl/hierarchy/outfit/job/dreyfus/adjoint
-	name = OUTFIT_JOB_NAME("Director adjunto")
+	name = OUTFIT_JOB_NAME("Director Adjunto")
 	l_ear = /obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
@@ -21,7 +21,7 @@
 	pda_type = /obj/item/device/pda/heads/hop
 
 /decl/hierarchy/outfit/job/dreyfus/employe
-	name = OUTFIT_JOB_NAME("Empleado administrativo")
+	name = OUTFIT_JOB_NAME("Empleado Administrativo")
 	l_ear = /obj/item/device/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	shoes = /obj/item/clothing/shoes/black

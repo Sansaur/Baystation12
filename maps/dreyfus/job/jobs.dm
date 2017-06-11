@@ -40,13 +40,13 @@
 	)
 
 /datum/job/captain
-	title = "Director general"
+	title = "Director General"
 	supervisors = "NanoTrasen y los Accionistas"
 	minimal_player_age = 41
 	economic_modifier = 15
 	ideal_character_age = 65
 	alt_titles = list(
-		"Director ejecutivo",
+		"Director Ejecutivo",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/directeur
 	allowed_branches = list(
@@ -54,7 +54,7 @@
 	)
 
 /datum/job/hop
-	title = "Director adjunto"
+	title = "Director Adjunto"
 	supervisors = "El director general"
 	minimal_player_age = 31
 	economic_modifier = 12
@@ -71,7 +71,7 @@
 	)
 
 /datum/job/employe
-	title = "Empleado administrativo"
+	title = "Empleado Administrativo"
 	supervisors = "los directores"
 	minimal_player_age = 21
 	economic_modifier = 8
@@ -104,7 +104,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list(
-		"Director especializado"
+		"Director Especializado"
 		)
 	allowed_branches = list(
 		/datum/mil_branch/administration,
@@ -153,7 +153,7 @@
 	alt_titles = list(
 		"Cirujano",
 		"Enfermero",
-		"Biólogo",
+		"Biologo",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
@@ -168,7 +168,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list(
-		"Responsable de la seguridad",
+		"Responsable de Seguridad",
 		"Mercenario",
 		)
 	allowed_branches = list(
@@ -185,8 +185,8 @@
 	total_positions = 1
 	spawn_positions = 2
 	alt_titles = list(
-		"Director de producción",
-		"Coordinador de producción",
+		"Director de Produccion",
+		"Coordinador de Produccion",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/administration,
@@ -203,8 +203,8 @@
 	total_positions = 3
 	spawn_positions = 3
 	alt_titles = list(
-		"Mecánico",
-		"Técnico de maquinaria",
+		"Mecanico",
+		"Técnico de Maquinaria",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/inge/inge
 	allowed_branches = list(
@@ -225,7 +225,7 @@
 	spawn_positions = 2
 	alt_titles = list(
 		"Refinador",
-		"Técnico de minería",
+		"Técnico de Minería",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
@@ -235,7 +235,7 @@
 
 /datum/job/cargo_tech
 	selection_color = "#7c6a2e"
-	title = "Técnico de cargamento"
+	title = "Técnico de Cargamento"
 	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
@@ -244,7 +244,7 @@
 	spawn_positions = 2
 	alt_titles = list(
 		"Cargador",
-		"Operador de carga",
+		"Operador de Carga",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
@@ -293,7 +293,7 @@
 	)
 
 /datum/job/chaplain
-	title = "Capellán"
+	title = "Capellan"
 	supervisors = "los directores"
 	minimal_player_age = 21
 	economic_modifier = 6
@@ -301,7 +301,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list(
-		"Psicólogo",
+		"Psicologo",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
@@ -316,7 +316,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list(
-		"Técnico de sanitización",
+		"Técnico de sanitizacion",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier

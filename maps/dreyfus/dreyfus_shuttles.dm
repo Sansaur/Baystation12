@@ -5,7 +5,7 @@ datum/shuttle/multi_shuttle/rescue
 	interim = /area/shuttle/lavalette/transit
 	start_location = "Espacio de Patrulla" /////////???????????????? -Sansaur
 	destinations = list(
-		"Aproximarse a la cúpula" = /area/shuttle/lavalette/coupole,
+		"Aproximarse a la cupula" = /area/shuttle/lavalette/coupole,
 		"Exclusa de xenoarqueología" = /area/shuttle/lavalette/xeno,
 		"Acceso a residencial" = /area/shuttle/lavalette/residentiel,
 		)
@@ -44,25 +44,25 @@ datum/shuttle/multi_shuttle/rescue
 	interim = /area/shuttle/merc/transit
 	start_location = "Base Mercenaria"
 	destinations = list(
-		"Puerto de la estación" = /area/shuttle/merc/station,
-		"Aproximarse a la cúpula" = /area/shuttle/merc/coupole,
+		"Puerto de la estacion" = /area/shuttle/merc/station,
+		"Aproximarse a la cupula" = /area/shuttle/merc/coupole,
 		"Esclusa de minería" = /area/shuttle/merc/minage,
 		"Acceso residencial" = /area/shuttle/merc/residentiel,
 		)
 	docking_controller_tag = "ship_merc"
 	destination_dock_targets = list(
 		"Base mercenaria" = "dock_merc",
-		"Puerto de la estación" = "dock1",
+		"Puerto de la estacion" = "dock1",
 		)
 	announcer = "Cazador Huon"
 
 /datum/shuttle/multi_shuttle/mercenary/New()
-	arrival_message = "Atención, [using_map.station_short], hemos detectado una señal de una nave aproximándose a la estación, los escaneos revelan que va desarmada, preparaos para recibir visita."
-	departure_message = "Vuestros visitantes se marchan del sistema, [using_map.station_short], están quemando combustible del caro como si no fuera nada, hasta nunca, visitantes."
+	arrival_message = "Atencion, [using_map.station_short], hemos detectado una señal de una nave aproximandose a la estacion, los escaneos revelan que va desarmada, preparaos para recibir visita."
+	departure_message = "Vuestros visitantes se marchan del sistema, [using_map.station_short], estan quemando combustible del caro como si no fuera nada, hasta nunca, visitantes."
 	..()
 
 /datum/shuttle/ferry/escape_pod/escape_pod_one
-	name = "Vaina de escape nº1"
+	name = "Capusla de escape nº1"
 	location = 0
 	warmup_time = 0
 	area_station = /area/shuttle/escape_pod1/station

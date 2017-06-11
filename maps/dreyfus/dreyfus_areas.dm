@@ -19,11 +19,11 @@
 //Coupole
 
 /area/dreyfus/coupole/corridor
-	name = "Cúpula - Pasillo"
+	name = "Cupula - Pasillo"
 	icon_state = "hallC1"
 
 /area/dreyfus/coupole/maintenance/
-	name = "Cúpula - Mantenimiento"
+	name = "Cupula - Mantenimiento"
 	icon_state = "maintcentral"
 	flags = AREA_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
@@ -34,7 +34,7 @@
 	icon_state = "chapel"
 
 /area/dreyfus/coupole/aumonier
-	name = "Oficina del capellán"
+	name = "Oficina del capellan"
 	icon_state = "chapeloffice"
 
 /area/dreyfus/coupole/jardin
@@ -74,7 +74,7 @@
 //Pont administratif
 
 /area/dreyfus/administration/corridor
-	name = "Administración - Pasillo"
+	name = "Administracion - Pasillo"
 	icon_state = "hallC1"
 
 /area/dreyfus/administration/maintenance
@@ -84,19 +84,19 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/dreyfus/administration/maintenance/avant
-	name = "Administración - Mantenimiento posterior"
+	name = "Administracion - Mantenimiento posterior"
 	icon_state = "fmaint"
 
 /area/dreyfus/administration/maintenance/arriere
-	name = "Administración - Mantenimiento anterior"
+	name = "Administracion - Mantenimiento anterior"
 	icon_state = "amaint"
 
 /area/dreyfus/administration/toilettes
-	name = "Baños de la administración"
+	name = "Baños de la administracion"
 	icon_state = "toilet"
 
 /area/dreyfus/administration/sec/reception
-	name = "Recepción de seguridad"
+	name = "Recepcion de seguridad"
 	icon_state = "security"
 
 /area/dreyfus/administration/sec/vestiaires
@@ -104,7 +104,7 @@
 	icon_state = "brig"
 
 /area/dreyfus/administration/sec/cellule
-	name = "Celda de detención"
+	name = "Celda de detencion"
 	icon_state = "sec_prison"
 
 /area/dreyfus/administration/sec/armurerie
@@ -186,22 +186,22 @@
 	sound_env = TUNNEL_ENCLOSED
 
 /area/dreyfus/residentiel/quartiers/chambre1
-	name = "Cámara 1"
+	name = "Camara 1"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_SOFTFLOOR
 
 /area/dreyfus/residentiel/quartiers/chambre2
-	name = "Cámara 2"
+	name = "Camara 2"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_SOFTFLOOR
 
 /area/dreyfus/residentiel/quartiers/chambre3
-	name = "Cámara 3"
+	name = "Camara 3"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_SOFTFLOOR
 
 /area/dreyfus/residentiel/clinique/reception
-	name = "Recepción de la clínica"
+	name = "Recepcion de la clínica"
 	icon_state = "medbay3"
 	sound_env = SMALL_SOFTFLOOR
 
@@ -284,7 +284,7 @@
 	icon_state = "auxstorage"
 
 /area/dreyfus/cargo/industrie/production
-	name = "Taller de producción"
+	name = "Taller de produccion"
 	icon_state = "mining_production"
 
 /area/dreyfus/cargo/industrie/raffinerie
@@ -304,15 +304,15 @@
 	icon_state = "hallC1"
 
 /area/dreyfus/cargo/recherche/robotique
-	name = "Taller de robótica"
+	name = "Taller de robotica"
 	icon_state = "robotics"
 
 /area/dreyfus/cargo/recherche/developpement
-	name = "Laboratorio de investigación y desarrollo"
+	name = "Laboratorio de investigacion y desarrollo"
 	icon_state = "research"
 
 /area/dreyfus/cargo/recherche/salon
-	name = "Sala de investigación"
+	name = "Sala de investigacion"
 	icon_state = "research"
 
 /area/dreyfus/cargo/recherche/bureau_rd
@@ -391,10 +391,10 @@
 	name = "Ingeniería - Sala de descanso"
 	icon_state = "engineering_break"
 
-// Falso puente (Faux pont) - Pero lo vamos a llamar "Sótano"
+// Falso puente (Faux pont) - Pero lo vamos a llamar "Sotano"
 
 /area/dreyfus/fauxpont/maintenance
-	name = "Sótano - Mantenimiento de Sintéticos"
+	name = "Sotano - Mantenimiento de Sintéticos"
 	icon_state = "maint_eva"
 	flags = AREA_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
@@ -402,29 +402,29 @@
 
 
 /area/dreyfus/fauxpont/decheterie
-	name = "Sótano - Tratamiento de residuos"
+	name = "Sotano - Tratamiento de residuos"
 	icon_state = "disposal"
 
 /area/dreyfus/fauxpont/drones
-	name = "Sótano - Taller auxiliar"
+	name = "Sotano - Taller auxiliar"
 	icon_state = "ai_cyborg"
 
 /area/dreyfus/fauxpont/iasalon // <---
-	name = "Sótano - Acceso a IA"
+	name = "Sotano - Acceso a IA"
 	icon_state = "ai_foyer"
 
 /area/dreyfus/fauxpont/iacontrole
-	name = "Sótano - Sala de control IA"
+	name = "Sotano - Sala de control IA"
 	icon_state = "ai_upload"
 
 /area/dreyfus/fauxpont/iachambre
-	name = "Sótano - Cámara de la IA"
+	name = "Sotano - Camara de la IA"
 	icon_state = "ai_chamber"
 
-// ESTO ESTÁ REPETIDO!!! // THIS APPEARS TWICE!! - Sansaur
+// ESTO ESTa REPETIDO!!! // THIS APPEARS TWICE!! - Sansaur
 
 /area/dreyfus/fauxpont/iasalon // <---
-	name = "Acceso "
+	name = "Acceso a IA"
 	icon_state = "ai_foyer"
 
 /area/dreyfus/fauxpont/vestiaires //????
@@ -433,16 +433,16 @@
 
 // Areas del ascensor
 /area/turbolift/coupole
-	name = "Ascensor (Cúpula)"
+	name = "Ascensor (Cupula)"
 	lift_floor_label = "Sector A"
-	lift_floor_name = "pula"
-	lift_announce_str = "Bienvenidos al sector A, Cúpula : Sala de conferencias, Capilla y Jardin."
+	lift_floor_name = "Cupula"
+	lift_announce_str = "Bienvenidos al sector A, Cupula : Sala de conferencias, Capilla y Jardin."
 
 /area/turbolift/bureaux
 	name = "Ascensor (Oficinas)"
 	lift_floor_label = "Sector B"
-	lift_floor_name = "Administración"
-	lift_announce_str = "Bienvenidos al sector B, Administración : Oficinas de empleados, de Director, de Marshall y Evacuación."
+	lift_floor_name = "Administracion"
+	lift_announce_str = "Bienvenidos al sector B, Administracion : Oficinas de empleados, de Director, de Marshall y Evacuacion."
 
 /area/turbolift/civil
 	name = "Ascensor (Residencial)"
@@ -451,10 +451,10 @@
 	lift_announce_str = "Bienvenidos al sector C, Zona Residencial : Cafetería, Gimnasio, Taquillas, Clínica y Dormitorios."
 
 /area/turbolift/cargo
-	name = "Ascensor (Fábrica)"
+	name = "Ascensor (Fabrica)"
 	lift_floor_label = "Sector D"
 	lift_floor_name = "Zona Industrial"
-	lift_announce_str = "Bienvenidos al sector D, Zona Industral : Fábrica, Almacenes, Refinaría e Investigación y Desarrollo."
+	lift_announce_str = "Bienvenidos al sector D, Zona Industral : Fabrica, Almacenes, Refinaría e Investigacion y Desarrollo."
 
 /area/turbolift/engi
 	name = "Ascensor (Ingeniería)"
@@ -523,7 +523,7 @@ area/shuttle/merc/
 	icon_state = "shuttlered"
 
 /area/shuttle/escape_pod1
-	name = "\improper Vaina de escape nº1"
+	name = "\improper Capusla de escape nº1"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod1/station

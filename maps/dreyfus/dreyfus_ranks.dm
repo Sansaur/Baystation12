@@ -26,7 +26,7 @@
 	assistant_job = "Aprendiz"
 
 /datum/mil_branch/administration
-	name = "Administración"
+	name = "Administracion"
 	name_short = "ADMIN"
 	email_domain = "intranet.nano"
 
