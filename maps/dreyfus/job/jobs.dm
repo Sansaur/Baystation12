@@ -125,7 +125,7 @@
 			access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_rd, access_research, access_medical, access_morgue, access_medical_equip)
 
 /datum/job/scientist
-	title = "Científico"
+	title = "Cientifico"
 	supervisors = "el supervisor"
 	minimal_player_age = 19
 	economic_modifier = 8
@@ -133,16 +133,16 @@
 	total_positions = 3
 	spawn_positions = 3
 	alt_titles = list(
-		"Físico",
+		"Fisico",
 		"Robotista",
-		"Químico",
+		"Quimico",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
 	)
 
 /datum/job/doctor
-	title = "Médico"
+	title = "Medico"
 	selection_color = "#633d63"
 	supervisors = "el supervisor"
 	minimal_player_age = 19
@@ -204,7 +204,7 @@
 	spawn_positions = 3
 	alt_titles = list(
 		"Mecanico",
-		"Técnico de Maquinaria",
+		"Tecnico de Maquinaria",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/inge/inge
 	allowed_branches = list(
@@ -225,7 +225,7 @@
 	spawn_positions = 2
 	alt_titles = list(
 		"Refinador",
-		"Técnico de Minería",
+		"Tecnico de Mineria",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
@@ -235,7 +235,7 @@
 
 /datum/job/cargo_tech
 	selection_color = "#7c6a2e"
-	title = "Técnico de Cargamento"
+	title = "Tecnico de Cargamento"
 	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
