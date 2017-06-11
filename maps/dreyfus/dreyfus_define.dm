@@ -1,7 +1,7 @@
 
 /datum/map/dreyfus
 	name = "Dreyfus"
-	full_name = "SSNI Dreyfus"
+	full_name = "ESIN Dreyfus"
 	path = "dreyfus"
 	flags = MAP_HAS_BRANCH
 
@@ -16,28 +16,28 @@
 	allowed_spawns = list("Arrivals Shuttle", "Cryogenic Storage")
 	default_spawn = "Arrivals Shuttle"
 
-	station_name  = "SSNI Dreyfus"
+	station_name  = "ESIN Dreyfus"
 	station_short = "Dreyfus"
-	dock_name     = "Relais NTTM1-54" // sur Charnay-4
-	boss_name     = "Direction Centrale"
-	boss_short    = "DIRCEN"
-	company_name  = "NanoTrasen Industries"
+	dock_name     = "Relé NTTM1-54" // sur Charnay-4
+	boss_name     = "Dirección central"
+	boss_short    = "CENTDIR"
+	company_name  = "Industrias NanoTrasen"
 	company_short = "NTi"
 	system_name = "Iota-Pavonis"
 
 	id_hud_icons = 'maps/dreyfus/icons/assignment_hud.dmi'
 
 
-	map_admin_faxes = list("Nanotrasen Industries Direction Centrale")
+	map_admin_faxes = list("Buzón de entrada de Industrias NanoTrasen")
 
-	shuttle_docked_message = "La navette de roulement arrivée du %Dock_name% s'est amarée à la station. Départ dans %ETD%"
-	shuttle_leaving_dock = "La navette de roulement d'équipage s'est désamarée. Arrivé estimée dans %ETA%."
-	shuttle_called_message = "Un roulement d'équipage vers %Dock_name% viens d'être planifié. Une navette de transfert a été appelée. Elle arrivera dans approximativement %ETA%"
-	shuttle_recall_message = "Le roulement de l'équipage a été annulé."
-	emergency_shuttle_docked_message = "La navette d'évacuation s'est amarrée à la station. Vous êtes prié d'évacuer d'ici %ETD%."
-	emergency_shuttle_leaving_dock = "La navette d'évacuation s'est désamarée. Arrivé estimée dans %ETA%."
-	emergency_shuttle_called_message = "La navette d'évacuation a été appelée. Elle arrivera dans approximativement %ETA%"
-	emergency_shuttle_recall_message = "La navette d'évacuation a été rappelée. Le coût de cette manoevre sera déduit directement de vos salaires."
+	shuttle_docked_message = "La lanzadera ha llegado al puerto %Dock_name% y se encuentra amarrada a la estación. Salida programada en: %ETD%"
+	shuttle_leaving_dock = "La lanzadera ha despegado. Llegada estimada en: %ETA%."
+	shuttle_called_message = "La lanzadera ha sido llamada y se aproxima al puerto %Dock_name% . Llegará aproximadamente en: %ETA%"
+	shuttle_recall_message = "Se ha anulado la llegada de la lanzadera."
+	emergency_shuttle_docked_message = "La lanzadera de evacuación se ha amarrado a la estación. Tiempo restante para la evacuación: %ETD%."
+	emergency_shuttle_leaving_dock = "La lanzadera de evacuación ha abandonado la estación. Llegada aproximada a: %ETA%."
+	emergency_shuttle_called_message = "Se ha llamado a la lanzadera de evacuación. Llegada aproximada en: %ETA%"
+	emergency_shuttle_recall_message = "La llegada de la lanzadera de evacuación ha sido cancelada. El coste de las maniobras de regreso será deducido directamente de vuestros salarios."
 
 	evac_controller_type = /datum/evacuation_controller/shuttle
 
