@@ -1,27 +1,27 @@
 /obj/item/weapon/paper/objectifs_dreyfus
-	name = "Objectifs de productions"
-	info = "Objectifs du service envoyés par les actionnaires :<br><br>"
+	name = "Requerimientos de producción"
+	info = "Requirimientos de producción emitidos por los accionistas :<br><br>"
 	icon_state = "paper_words"
 
 /obj/item/weapon/paper/objectifs_dreyfus/New()
 	..()
 	var/list/products = list(
-	"<bold>sceaux (buckets)</bold>",
-	"<bold>lampes torches (flashlights)</bold>",
-	"<bold>extincteurs (extinguishers)</bold>",
-	"<bold>jarres (jars)</bold>",
-	"<bold>pieds de biche (crowbars)</bold>",
-	"<bold>multitools</bold>",
-	"<bold>scanners rayons-T (T-ray scanners)</bold>",
-	"<bold>outils de soudure (welding tools)</bold>",
-	"<bold>carte-mères de sas (airlock electronics)</bold>",
-	"<bold>seringues (syringes)</bold>",
-	"<bold>béchers (glass beakers)</bold>",
-	"<bold>minuteurs (timers)</bold>",
-	"<bold>néons (light tubs)</bold>",
-	"<bold>ampoules (light bulbs)</bold>",
-	"<bold>caméras en kit (camera assemblies)</bold>",
-	"<bold>écrans d'ordinateur (console screens)</bold>" )
+	"<bold>cubetas (buckets)</bold>",
+	"<bold>linternas (flashlights)</bold>",
+	"<bold>extintores (extinguishers)</bold>",
+	"<bold>jarras (jars)</bold>",
+	"<bold>palancas (crowbars)</bold>",
+	"<bold>multi-herramientas (multitools)</bold>",
+	"<bold>escáneres de rayos-T (T-ray scanners)</bold>",
+	"<bold>herramientas de soldadura (welding tools)</bold>",
+	"<bold>circuitos de compuertas (airlock electronics)</bold>",
+	"<bold>jeringas (syringes)</bold>",
+	"<bold>vasos de precipitado (glass beakers)</bold>",
+	"<bold>temporizadores (timers)</bold>",
+	"<bold>tubos fluorescente (light tubs)</bold>",
+	"<bold>bombillas (light bulbs)</bold>",
+	"<bold>piezas de ensamblaje de cámaras (camera assemblies)</bold>",
+	"<bold>pantallas de consola (console screens)</bold>" )
 
 	var/amount_objectives_high
 	var/proba_objectives_high = rand(100)
@@ -44,7 +44,7 @@
 	for(var/i = 1; i <= amount_objectives_high, i++)
 		if(products.len < 1) break
 		var/S = pick(products)
-		info += "Il y'a une forte demande de [S]<br>"
+		info += "Existe una fuerte demanda de [S]<br>"
 		products.Remove(S)
 
 	info+="<br>"
@@ -52,8 +52,8 @@
 	for(var/i = 1; i <= amount_objectives_low, i++)
 		if(products.len < 1) break
 		var/S = pick(products)
-		info += "Il y'a une faible demande de [S]<br>"
+		info += "Sigue existiendo poca demanda de [S]<br>"
 		products.Remove(S)
 
 
-	info+="<br>Il est impératif que les objectifs de productions soit respectés.<br><br>-Direction Centrale"
+	info+="<br>Es imprescindible que se cumplan los requerimientos de producción.<br><br>-Dirección Central"
