@@ -328,7 +328,7 @@
 	icon_state = "anomaly"
 
 /area/dreyfus/cargo/industrie/raffinerie/avantposte
-	name = "Avant-Poste"
+	name = "Puesto de Avanzada"
 	icon_state = "mining"
 
 /area/dreyfus/cargo/maintenance
@@ -338,7 +338,7 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/dreyfus/cargo/industrie/raffinerie/avantposte/solar
-	name = "Panneaux Arriere"
+	name = "Paneles Traseros"
 	icon_state = "panelsA"
 	flags = AREA_EXTERNAL
 	requires_power = 1
