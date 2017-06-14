@@ -156,6 +156,7 @@
 		"Cirujano",
 		"Enfermero",
 		"Biologo",
+		"Medico Pasante",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
@@ -189,6 +190,7 @@
 	alt_titles = list(
 		"Director de Produccion",
 		"Coordinador de Produccion",
+		"Capataz",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/administration,
@@ -207,6 +209,7 @@
 	alt_titles = list(
 		"Mecanico",
 		"Tecnico de Maquinaria",
+		"Tecnico de Mantenimiento",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/inge/inge
 	allowed_branches = list(
@@ -228,6 +231,7 @@
 	alt_titles = list(
 		"Refinador",
 		"Tecnico de Mineria",
+		"Tecnico de Taladro",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
@@ -247,6 +251,7 @@
 	alt_titles = list(
 		"Cargador",
 		"Operador de Carga",
+		"Mozo de Almacen",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier
