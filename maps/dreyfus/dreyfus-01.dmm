@@ -54,7 +54,7 @@
 "bb" = (/obj/structure/table/steel_reinforced,/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHWEST)"; icon_state = "techfloor_edges"; dir = 9},/obj/item/weapon/circuitboard/aicore,/obj/item/device/flashlight,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iacontrole)
 "bc" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTH)"; icon_state = "techfloor_edges"; dir = 1},/obj/structure/table/steel_reinforced,/obj/item/weapon/gun/projectile/sec,/obj/item/clothing/mask/gas,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iacontrole)
 "bd" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iacontrole)
-"be" = (/obj/effect/wingrille_spawn/reinforced,/obj/structure/sign/warning/high_voltage{name = "\improper ATTENTION : GRILLE ELECTRIFIE"},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/iacontrole)
+"be" = (/obj/effect/wingrille_spawn/reinforced,/obj/structure/sign/warning/high_voltage{name = "\improper ATENCION: REJA ELECTRIFICADA"},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/iacontrole)
 "bf" = (/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iasalon)
 "bg" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iasalon)
 "bh" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iasalon)
@@ -108,7 +108,7 @@
 "cd" = (/obj/structure/disposalpipe/segment,/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor/plating,/area/dreyfus/fauxpont/decheterie)
 "ce" = (/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor/plating,/area/dreyfus/fauxpont/decheterie)
 "cf" = (/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/drones)
-"cg" = (/obj/structure/sign/warning/moving_parts{name = "\improper ATTENTION : PIÉCES MOBILES"},/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/drones)
+"cg" = (/obj/structure/sign/warning/moving_parts{name = "\improper ATENCION: PIEZAS MOVILES"},/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/drones)
 "ch" = (/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/vestiaires)
 "ci" = (/obj/machinery/vending/assist,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
 "cj" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/vestiaires)
@@ -125,7 +125,7 @@
 "cu" = (/obj/machinery/constructable_frame/machine_frame,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
 "cv" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
 "cw" = (/obj/structure/table/steel_reinforced,/obj/item/device/pda,/obj/item/weapon/screwdriver,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
-"cx" = (/obj/structure/sign/warning/nosmoking_2{name = "\improper INTERDICTION DE FUMER"},/turf/simulated/wall,/area/dreyfus/fauxpont/vestiaires)
+"cx" = (/obj/structure/sign/warning/nosmoking_2{name = "\improper PROHIBIDO FUMAR"},/turf/simulated/wall,/area/dreyfus/fauxpont/vestiaires)
 "cy" = (/obj/structure/ladder/up,/turf/simulated/floor/plating,/area/dreyfus/fauxpont/maintenance)
 "cz" = (/obj/machinery/conveyor{id = "dechets"},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/decheterie)
 "cA" = (/obj/structure/disposalpipe/segment{tag = "icon-pipe-c (EAST)"; icon_state = "pipe-c"; dir = 4},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{tag = "icon-intact-scrubbers (NORTHEAST)"; icon_state = "intact-scrubbers"; dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{tag = "icon-intact-supply (SOUTHEAST)"; icon_state = "intact-supply"; dir = 6},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/decheterie)
@@ -144,7 +144,7 @@
 "cN" = (/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/turf/simulated/floor/plating,/area/dreyfus/fauxpont/maintenance)
 "cO" = (/obj/machinery/light{tag = "icon-tube1 (WEST)"; icon_state = "tube1"; dir = 8},/obj/machinery/conveyor{id = "dechets"},/obj/item/weapon/storage/bag/trash,/obj/item/weapon/storage/bag/trash,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/decheterie)
 "cP" = (/obj/structure/disposalpipe/segment,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/unary/vent_pump/on{tag = "icon-map_vent_out (NORTH)"; icon_state = "map_vent_out"; dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/decheterie)
-"cQ" = (/obj/structure/sign/warning/nosmoking_2{name = "\improper INTERDICTION DE FUMER"},/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/decheterie)
+"cQ" = (/obj/structure/sign/warning/nosmoking_2{name = "\improper PROHIBIDO FUMAR"},/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/decheterie)
 "cR" = (/obj/machinery/cryopod/robot,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
 "cS" = (/obj/effect/floor_decal/techfloor/hole/right,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/unary/vent_pump/on{tag = "icon-map_vent_out (NORTH)"; icon_state = "map_vent_out"; dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
 "cT" = (/obj/effect/floor_decal/techfloor/hole,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
@@ -436,4 +436,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
