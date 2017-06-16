@@ -120,7 +120,7 @@
 "cp" = (/obj/machinery/computer/drone_control,/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTH)"; icon_state = "techfloor_edges"; dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
 "cq" = (/obj/machinery/drone_fabricator/dreyfus,/obj/machinery/light{tag = "icon-tube1 (NORTH)"; icon_state = "tube1"; dir = 1},/turf/simulated/floor/bluegrid,/area/dreyfus/fauxpont/drones)
 "cr" = (/turf/simulated/floor/bluegrid,/area/dreyfus/fauxpont/drones)
-"cs" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/machinery/alarm{pixel_y = 24},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
+"cs" = (/obj/effect/floor_decal/techfloor{tag = "icon-techfloor_edges (NORTHEAST)"; icon_state = "techfloor_edges"; dir = 5},/obj/machinery/alarm{pixel_y = 24},/obj/item/device/radio/beacon,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/drones)
 "ct" = (/turf/simulated/wall,/area/dreyfus/fauxpont/vestiaires)
 "cu" = (/obj/machinery/constructable_frame/machine_frame,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
 "cv" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/vestiaires)
@@ -178,8 +178,8 @@
 "dv" = (/obj/machinery/light/small{tag = "icon-bulb1 (EAST)"; icon_state = "bulb1"; dir = 4},/turf/simulated/floor/tiled/techfloor,/area/dreyfus/ingenierie/maintenance)
 "dw" = (/turf/simulated/floor/plating,/area/dreyfus/ingenierie/maintenance)
 "dx" = (/obj/structure/stairs/south,/turf/simulated/floor/plating,/area/dreyfus/ingenierie/maintenance)
-"dz" = (/obj/structure/lattice,/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)
 "dy" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)
+"dz" = (/obj/structure/lattice,/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
