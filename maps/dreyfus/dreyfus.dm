@@ -29,6 +29,7 @@
 	#include "structures/blast_door.dm"
 	#include "structures/closet.dm"
 	#include "structures/curtains.dm"
+	#include "structures/door_assembly.dm"
 	#include "structures/flooring.dm"
 	#include "structures/flooring_decals.dm"
 	#include "structures/flooring_premades.dm"
