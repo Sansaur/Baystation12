@@ -41,3 +41,9 @@
 	base_name = "Maintenance Hatch"
 	airlock_type = "/maintenance_common"
 	glass = -1
+
+/obj/structure/door_assembly/door_assembly_maint_int
+	base_icon_state = "maiint"
+	base_name = "Maintenance Hatch"
+	airlock_type = "/maintenance_interior"
+	glass = -1
