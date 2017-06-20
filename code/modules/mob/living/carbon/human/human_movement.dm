@@ -31,8 +31,17 @@
 		for(var/slot = slot_first to slot_last)
 			var/obj/item/I = get_equipped_item(slot)
 			if(I)
-				tally += I.slowdown_general
-				tally += I.slowdown_per_slot[slot]
+				// Añadiendo resistencia a la ralentización por especie - Sansaur - 18/06/2017  / species.item_slowdown_resistance
+				// Obviamente, si no ralentiza, no se divide :3
+				if(I.slowdown_general < 0)
+					tally += I.slowdown_general
+				else
+					tally += I.slowdown_general / species.item_slowdown_resistance
+
+				if(I.slowdown_per_slot[slot]  < 0)
+					tally += I.slowdown_per_slot[slot]
+				else
+					tally += I.slowdown_per_slot[slot] / species.clothing_slowdown_resistance
 
 		for(var/organ_name in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
 			var/obj/item/organ/external/E = get_organ(organ_name)
