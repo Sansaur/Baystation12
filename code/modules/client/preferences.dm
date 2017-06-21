@@ -50,9 +50,7 @@ datum/preferences
 	var/species_preview                 //Used for the species selection window.
 	var/list/alternate_languages = list() //Secondary language(s)
 	var/list/language_prefixes = list() //Kanguage prefix keys
-	var/list/gear						//Left in for Legacy reasons, will no longer save.
-	var/list/gear_list = list()			//Custom/fluff item loadouts.
-	var/gear_slot = 1					//The current gear save slot
+	var/list/gear						//Custom/fluff item loadout.
 
 		//Some faction information.
 	var/home_system = "Unset"           //System of birth.

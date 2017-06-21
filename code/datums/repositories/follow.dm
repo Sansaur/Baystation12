@@ -108,7 +108,7 @@
 	return name
 
 /datum/follow_holder/proc/show_entry()
-	return !!followed_instance
+	return TRUE
 
 /datum/follow_holder/proc/get_suffix()
 	var/extra_suffix = followed_instance.follow_suffix()
