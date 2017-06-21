@@ -11,8 +11,13 @@
 
 /datum/species
 	// Esto son divisores
-	var/clothing_slowdown_resistance = 1	// La ralentización causada por lo que se lleve equipado se divide por esto para que se reduzca
-	var/item_slowdown_resistance = 1		// La ralentización causada por objetos no equipados (en las manos o en slot especiales)
+	// 0 = No tiene resistencia a la ralentización
+	// 1 = Resistencia a la ralentización increíble	(100% de lo ralentizado se quita)
+	// 2 = Resistencia a la ralentización Unathi	(50% de lo ralentizado se quita)
+	// 3 = Resistencia a la ralentización normalita	(33% de lo ralentizado se quita)
+	// No se puede poner una a un número y la otra a 0. O las dos con un número, o las dos en 0
+	var/clothing_slowdown_resistance = 0	// La ralentización causada por lo que se lleve equipado se divide por esto para que se reduzca
+	var/item_slowdown_resistance = 0		// La ralentización causada por objetos no equipados (en las manos o en slot especiales)
 
 /datum/species/unathi
 	clothing_slowdown_resistance = 2		// Los unathi se ralentizan la mitad por la ropa
@@ -21,77 +26,43 @@
 /*
 
 En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la función importante ahí
+ACTUALLY eso es MUY MUERTE porque entonces se podría hacer el include del human_movement y NO DE ESTO.
 
+RECUERDEN, SI SE HACE PR QUE CAMBIE HUMAN_MOVEMENT VA A HABER MUERTECITA
+
+*/
+
+// Vale, lo que vamos a hacer aquí es lo siguiente:
+// 0) Si tanto la resistencia a la ropa como a los objetos es 0, no hace falta.
+// 1) Repasamos de nuevo todos los objetos del inventario
+// 2) Sumamos toda la ralentización que dan, divimos esta por la resistencia a la ralentización de la especie
+// 3) La dividimos
 /mob/living/carbon/human/movement_delay()
-	var/tally = ..()
-
-	if(species.slowdown)
-		tally += species.slowdown
-
-	if (istype(loc, /turf/space)) return -1 // It's hard to be slowed down in space by... anything
-
-	if(embedded_flag || (stomach_contents && stomach_contents.len))
-		handle_embedded_and_stomach_objects() //Moving with objects stuck in you can cause bad times.
-
-	if(CE_SPEEDBOOST in chem_effects)
-		return -1
-
-	var/health_deficiency = (maxHealth - health)
-	if(health_deficiency >= 40) tally += (health_deficiency / 25)
-
-	if(can_feel_pain())
-		if(getHalLoss() >= 10) tally += (getHalLoss() / 10) //halloss shouldn't slow you down if you can't even feel it
-
-	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
-		for(var/organ_name in list(BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM))
-			var/obj/item/organ/external/E = get_organ(organ_name)
-			if(!E || E.is_stump())
-				tally += 4
-			else if(E.splinted)
-				tally += 0.5
-			else if(E.status & ORGAN_BROKEN)
-				tally += 1.5
+	if(!species.item_slowdown_resistance && !species.clothing_slowdown_resistance)
+		return ..()
 	else
+		var/tally = ..()
+		var/resistir_ropa	= 0
+		var/resistir_objetos = 0
+
 		for(var/slot = slot_first to slot_last)
 			var/obj/item/I = get_equipped_item(slot)
 			if(I)
-				// Añadiendo resistencia a la ralentización por especie - Sansaur - 18/06/2017  / species.item_slowdown_resistance
-				// Obviamente, si no ralentiza, no se divide :3
 				if(I.slowdown_general < 0)
-					tally += I.slowdown_general
+					// Nada
 				else
-					tally += I.slowdown_general / species.item_slowdown_resistance
+					if(species.item_slowdown_resistance)
+						resistir_objetos += I.slowdown_general / species.item_slowdown_resistance
 
 				if(I.slowdown_per_slot[slot]  < 0)
-					tally += I.slowdown_per_slot[slot]
+					// Nada
 				else
-					tally += I.slowdown_per_slot[slot] / species.clothing_slowdown_resistance
+					if(species.clothing_slowdown_resistance)
+						resistir_ropa += I.slowdown_per_slot[slot] / species.clothing_slowdown_resistance
+		// Debugging
+		//to_chat(src, "Ralentiazacion original [tally], resistiendo ropa: [resistir_ropa], resistiendo objetos: [resistir_objetos], final: [(tally-resistir_objetos-resistir_ropa)]")
+		return (tally-resistir_objetos-resistir_ropa)
 
-		for(var/organ_name in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
-			var/obj/item/organ/external/E = get_organ(organ_name)
-			if(!E || E.is_stump())
-				tally += 4
-			else if(E.splinted)
-				tally += 0.5
-			else if(E.status & ORGAN_BROKEN)
-				tally += 1.5
-
-	if(shock_stage >= 10) tally += 3
-
-	if(aiming && aiming.aiming_at) tally += 5 // Iron sights make you slower, it's a well-known fact.
-
-	if(FAT in src.mutations)
-		tally += 1.5
-	if (bodytemperature < 283.222)
-		tally += (283.222 - bodytemperature) / 10 * 1.75
-
-	tally += max(2 * stance_damage, 0) //damaged/missing feet or legs is slow
-
-	if(mRun in mutations)
-		tally = 0
-	return (tally+config.human_delay)
-
-*/
 
 // ATAQUE DE LA COLA (También añado el verbo de romper grabs aquí)
 
@@ -101,10 +72,11 @@ En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la fu
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/aggressive_break_grab
 		)
+
 /datum/unarmed_attack/tail_swipe
 	attack_verb = list("tail swipes")	// Empty hand hurt intent verb.
 	attack_noun = list("tail")
-	damage = 2						// Extra empty hand attack damage.
+	damage = 1						// 1 puntito de daño extra.
 	attack_sound = "punch"
 	miss_sound = 'sound/weapons/punchmiss.ogg'
 	shredding = 0 // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
@@ -117,7 +89,7 @@ En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la fu
 	// Si le faltan ambos pies, no podrán hacer tailswipe
 	// Es el mismo condicionante que poder dar patadas
 /datum/unarmed_attack/tail_swipe/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
-	if(!(zone in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_GROIN, BP_CHEST)))
+	if(!(zone in list(BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)))
 		return 0
 
 	var/obj/item/organ/external/E = user.organs_by_name[BP_L_FOOT]
@@ -131,17 +103,18 @@ En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la fu
 	return 0
 
 /datum/unarmed_attack/tail_swipe/apply_effects(var/mob/living/carbon/human/user,var/mob/living/carbon/human/target,var/armour,var/attack_damage,var/zone)
-	// If (zone == BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT)
 	// Hace lo mismo que un ataque normal, pero después de hacerlo, comprueba si el otro no está en el suelo
 	// Si no está en el suelo, comprueba si estamos apuntando a las piernas
-	// Si estamos apuntando a las piernas, habrá una chance de tirarle al suelo de sorpresa
+	// Si estamos apuntando a las piernas, habrá una chance de tirarle al suelo de sorpresa <- ELIMINADO
 	// Si no está apuntando a las piernas, se comprueba si está apuntando a la parte baja del cuerpo o al pecho
 	// Si estamos apuntando a esas zonas, le empujamos una casilla hacia atrás (Un "Move")
 	// Si el Move no fue correcto (Encontró pared o cosa densa) entonces el objetivo recibe daño adicional porque fue "lanzado contra una cosa densa"
 	..()
 
-	// Giramos después de que se compruebe que se pudo hacer el ataque
-	user.spin(2,1)	// Es una tailswipe, ¿Porqué no girar? :D
+	user.spin(4,1)	// Es una tailswipe, ¿Porqué no girar? :D
+
+	if(target == user) //No te puedes hacer tailswipes a ti mismo
+		return
 
 	if(target.stat || target.resting) // Si está inconsciente/muerto, si está tirado en el suelo
 		return
@@ -152,20 +125,34 @@ En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la fu
 		return
 
 	switch(zone)
-		if(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT)
-			user.visible_message("<span class='danger'>[user] managed to tail swipe [target]'s means to stability!</span>")
-			target.Weaken(1)
+		if(BP_L_LEG, BP_R_LEG)
+			if(prob(10))
+				user.visible_message("<span class='danger'>[user] managed to tail swipe [target]'s means to stability!</span>")
+				target.spin(2,1)
+				// ¿En serio no hay una proc para esto? xD - Sansaur
+				// Mira, por ahora, esto es demasiado peligroso
+				//target.m_intent = "walk"
+				//target.hud_used.move_intent.icon_state = "walking"
+
 		if(BP_CHEST, BP_GROIN)
-			user.visible_message("<span class='danger'>[user] managed to tail swipe [target] backwards!</span>")
-			// Tratamos de mover al objetivo una casilla hacia atrás.
-			if(target.Move(get_step(target, user.dir)))
-				// Pues se movió, no hay otra
-				return
-			else
-				// Si no se puede, es que chocó contra algo!
-				var/turf/T = get_step(target, user.dir)
-				user.visible_message("<span class='danger'>[user] smacked [target] into [T]!</span>")
-				target.adjustBruteLoss(attack_damage/2)	// Daño extra por empujar a alguien a la pared.
+			var/obj/item/clothing/suit/TRAJE = target.wear_suit
+			if(TRAJE)
+				// Si es un traje GRANDE y tiene una armadura MELEE superior a 30 es que es algo que se supone que tiene que proteger y eso impediría que le empujen.
+				if(TRAJE.w_class >= 4 && TRAJE.armor["melee"] > 30)
+					return
+
+			if(prob(30))
+				user.visible_message("<span class='danger'>[user] struck [target] with enough force to send'em backwards!</span>")
+				// Tratamos de mover al objetivo una casilla hacia atrás.
+				if(target.Move(get_step(target, user.dir)))
+					// Pues se movió, no hay otra
+					return
+				else
+					// Si no se puede, es que chocó contra algo!
+					// En un futuro se puede mejorar el tema para que haya efectos adicionales al empujar a alguien contra una pared u objeto
+					// var/turf/T = get_step(target, user.dir)
+					user.visible_message("<span class='danger'>[user] smacked [target] into something solid!</span>")
+					target.adjustBruteLoss(attack_damage/2)	// Daño extra por empujar a alguien a la pared.
 
 
 // AGARRES PARA LOS UNATHI
@@ -193,9 +180,9 @@ En vez de ponerlo aquí, voy a cambiar el archivo human_movement.dm Y poner la fu
 		return
 
 	last_special = world.time + (tiempo_CD SECONDS)
-	adjustHalLoss(10)	// 20 es demasiado trolete
+	adjustHalLoss(15)	// 20 es demasiado trolete y 10 es demasiado poco
 //	playsound(src.loc, 'sound/voice/lizard.ogg', 50, 1) Pondremos un sonido que no sea este, por favor~
-	src.spin(4,1)	// Un giro de poca duración muy rápido
+	src.spin(8,1)	// Un giro de larga duración muy rápido
 	src.visible_message("<span class='danger'>[src] thrashes wildly around, breaking any grabs upon him!</span>")
 	to_chat(src, "<span class=warning>Such aggressive movements have exhausted you.</span>")
 	// Hay que añadir lo de los "pinned" pero es que tras hacer pruebas, parece que no funca del todo bien
