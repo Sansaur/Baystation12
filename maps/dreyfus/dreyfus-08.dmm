@@ -606,7 +606,7 @@
 "lH" = (/turf/simulated/floor/shuttle/red,/turf/simulated/shuttle/wall{dir = 4; icon_state = "diagonalWall3"},/area/syndicate_mothership/ninja)
 "lI" = (/turf/simulated/floor/shuttle/red,/area/syndicate_mothership/ninja)
 "lJ" = (/turf/simulated/floor/shuttle/red,/turf/simulated/shuttle/wall{icon_state = "diagonalWall3"},/area/syndicate_mothership/ninja)
-"lK" = (/obj/item/clothing/under/resomi,/turf/simulated/floor/shuttle/red,/area/syndicate_mothership/ninja)
+"lK" = (/turf/simulated/floor/shuttle/red,/area/syndicate_mothership/ninja)
 "lL" = (/obj/structure/bed/chair{dir = 1},/obj/effect/landmark{name = "ninjastart"},/turf/simulated/floor/shuttle/red,/area/syndicate_mothership/ninja)
 "lM" = (/obj/effect/landmark{name = "ninjastart"},/turf/simulated/floor/shuttle/red,/area/syndicate_mothership/ninja)
 "lN" = (/obj/machinery/computer/teleporter,/turf/simulated/floor/plating,/area/syndicate_mothership/ninja)
