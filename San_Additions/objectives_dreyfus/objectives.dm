@@ -93,6 +93,31 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 	generate_paper()
 	increase_min_max_quota()
 
+/datum/dreyfus_objectives/proc/new_Objective_NoExtraQuota()
+	randomize_required_quota()
+	reset_sellable_items()
+	randomize_need()
+	generate_paper()
+
+/datum/dreyfus_objectives/proc/new_Objective_Admin_NoQuota()
+	message_admins("An admin has created a new Quota objective without completion")
+	var/datum/announcement/crew_announcement = new()
+	crew_announcement.title = "Actualizacion de Produccion de ultima hora"
+	crew_announcement.announcer = "Oficiales de Industrias NanoTrasen"
+	crew_announcement.sound = 'sound/misc/notice2.ogg'
+	crew_announcement.Announce("Debido a circunstancias inesperadas, hemos tenido que desviar los requisitos de produccion, contactad con el Director General para mas informacion")
+	new_Objective_NoExtraQuota()
+
+/datum/dreyfus_objectives/proc/new_Objective_Admin_Quota()
+	message_admins("An admin has created a new Quota objective, completing the current one")
+	var/datum/announcement/crew_announcement = new()
+	crew_announcement.title = "Actualizacion de Produccion de ultima hora"
+	crew_announcement.announcer = "Oficiales de Industrias NanoTrasen"
+	crew_announcement.sound = 'sound/misc/notice2.ogg'
+	crew_announcement.Announce("Debido a una fluctuacion inesperada en la bolsa de inversores, hemos enviado toda la produccion recibida hasta el momento, cuota cumplida, contactad con el Director General para mas informacion sobre vuestra siguiente asignacion")
+	times_quota_reached++
+	new_Objective()
+
 /datum/dreyfus_objectives/proc/increase_min_max_quota()
 	// Can probably put a config option for "how much" will the quota advance
 	min_quota = min_quota * 1.7	//Increments by 70%

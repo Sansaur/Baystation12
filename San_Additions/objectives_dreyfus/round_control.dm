@@ -13,7 +13,6 @@
 	// AÑADIR AL FINAL DE LA RONDA - Sansaur
 /datum/controller/gameticker/declare_completion()
 	..()
-
 	to_world("<br><br><H3> The station needed to complete [DreyfusQuotas.times_quota_needed] quotas for a profitable work day!</H3>")
 	to_world("<br><H3> The station completed [DreyfusQuotas.times_quota_reached] quotas!</H3>")
 	if(DreyfusQuotas.times_quota_needed > DreyfusQuotas.times_quota_reached)
