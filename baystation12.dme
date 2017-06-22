@@ -2386,5 +2386,12 @@
 #include "maps\~mapsystem\maps_areas.dm"
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
+#include "San_Additions\objectives_dreyfus\debugging.dm"
+#include "San_Additions\objectives_dreyfus\objectives.dm"
+#include "San_Additions\objectives_dreyfus\round_control.dm"
+#include "San_Additions\objectives_dreyfus\supplyshuttle_add.dm"
+#include "San_Additions\Parallax\define.dm"
+#include "San_Additions\Parallax\parallax.dm"
+#include "San_Additions\Parallax\parallax_archivos_secundarios.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
