@@ -4,7 +4,8 @@
 		/mob/living/carbon/human/proc/frontflip
 		)
 
-
+/mob/living/carbon/human
+	var/is_jumping = 0 // For the FrontFlip
 
 /mob/living/carbon/human/proc/frontflip()
 	set category = "Abilities"
@@ -12,9 +13,12 @@
 	set desc = "Jump baby jump!."
 
 	var/nutrition_limit = 150
-	var/Tiempo_CD = 3
+	var/Tiempo_CD = 4
 	var/casillas_a_avanzar = 3
 	var/stuntime = 3	// Cuanto tiempo aturdido
+
+	if(is_jumping)
+		return
 
 	// Special cooldown
 	if(last_special > world.time)
@@ -26,11 +30,19 @@
 		return
 
 	// No podemos saltar sin un sitio donde poner los pies correctamente
+	// O si llevan magboots o zapatos que no le dejen levantar el pie del suelo
 	if(!src.check_solid_ground())
+		to_chat(src, "<span class='warning'> You cannot jump here!.</span>")
 		return
+	if(istype(src.shoes, /obj/item/clothing/shoes/magboots))
+		var/obj/item/clothing/shoes/magboots/AAA = src.shoes
+		if(AAA.magpulse)
+			to_chat(src, "<span class='warning'> You cannot jump while wearing activated magboots!.</span>")
+			return
 
 	// No podemos saltar si estamos gordos
 	if(FAT in src.mutations)
+		to_chat(src, "<span class='warning'> You're too fat for that!.</span>")
 		return
 
 	// Incapacitated / Buckled
@@ -78,7 +90,14 @@
 	// Maniobra evasiva con forma de molinillo
 
 //	src.spin(2,0.6)
-	animate_spin(src, "L", 1.3) // Flip de Goonstation
+	if(src.dir == 4)
+		animate_spin(src, "R", 1.3) // Flip de Goonstation
+	else
+		animate_spin(src, "L", 1.3) // Flip de Goonstation
+
+	is_jumping = 1	// Begin the jump, before each return it'll reset to 0
+	playsound(src.loc, 'sound/weapons/towelwipe.ogg', 50, 1)
+	var/storey = src.pixel_y
 
 	var/turf/Casilla = src.loc
 	for(var/i=0, i<casillas_a_avanzar, i++)
@@ -90,6 +109,8 @@
 			last_special = world.time + (Tiempo_CD SECONDS)
 			src.do_attack_animation(Casilla)
 			adjustHalLoss(4 + Tiempo_CD)
+			is_jumping = 0
+			src.pixel_y = storey
 			return
 		else
 			// Y no voy a poner a los robots porque está divertido que haya algo que los trolee xd
@@ -104,8 +125,6 @@
 							to_chat(Bloqueador, "<span class='warning'> you stop [src] with your shield as it tries to jump over you!.</span>")
 							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 							src.Weaken(stuntime) 	// Si te paran con el escudo, te aturden
-							last_special = world.time + (Tiempo_CD SECONDS)
-							adjustHalLoss(4 + Tiempo_CD)
 							return
 						else
 							to_chat(src, "<span class='warning'> [Bloqueador] stops you with his body!.</span>")
@@ -113,10 +132,13 @@
 							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 							src.apply_damage(stuntime, BRUTE) 			// Si te paran con su cuerpo, ambos recibís daño.
 							Bloqueador.apply_damage(stuntime, BRUTE)
-							last_special = world.time + (Tiempo_CD SECONDS)
-							src.do_attack_animation(Bloqueador)
-							adjustHalLoss(4 + Tiempo_CD)
 							return
+
+						src.do_attack_animation(Bloqueador)
+						last_special = world.time + (Tiempo_CD SECONDS)
+						adjustHalLoss(4 + Tiempo_CD)
+						is_jumping = 0
+						src.pixel_y = storey
 
 				if(istype(Bloqueando, /mob/living/silicon/robot))
 					var/mob/living/silicon/robot/Robot = Bloqueando
@@ -125,11 +147,13 @@
 						to_chat(Robot, "<span class='warning'> you stop [src] as it tries to jump over you!.</span>")
 						playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 						src.apply_damage(stuntime, BRUTE)
-						Robot.apply_damage(stuntime, BRUTE)
+//						Robot.apply_damage(stuntime, BRUTE)
 						src.Weaken(1)
 						last_special = world.time + (Tiempo_CD SECONDS)
 						src.do_attack_animation(Robot)
 						adjustHalLoss(4 + Tiempo_CD)
+						is_jumping = 0
+						src.pixel_y = storey
 						return
 
 
@@ -141,6 +165,8 @@
 					src.do_attack_animation(OBJETO)
 					last_special = world.time + (Tiempo_CD SECONDS)
 					adjustHalLoss(4 + Tiempo_CD)
+					is_jumping = 0
+					src.pixel_y = storey
 					return
 
 				if(i==(casillas_a_avanzar-1)) // cosas especiales que pueden ocurrir en la tercera casilla
@@ -149,15 +175,22 @@
 						to_chat(src, "<span class='warning'> You fall directly into [MYDISPOSAL]!.</span>")
 						MYDISPOSAL.FallInto(src)
 						adjustHalLoss(4 + Tiempo_CD)
+						is_jumping = 0
+						src.pixel_y = storey
 						return
 
-		if(i!=(casillas_a_avanzar-1))
-			dejar_rastro(Casilla)
-
+//		if(i!=(casillas_a_avanzar-1))
+//			dejar_rastro(Casilla)
+		if(i > casillas_a_avanzar / 2)
+			src.pixel_y -= 4
+		else
+			src.pixel_y += 4
 		src.forceMove(Casilla)
-		sleep(0.5)
+		// A sleep of 1.4 is to be used with the pixel_y movement
+		// A sleep of 0.5-0.3 is to be used with dejar_rastro(Casilla)
+		sleep(1.4)
 
-	playsound(src.loc, 'sound/weapons/towelwipe.ogg', 50, 1)
+
 	if(Tiempo_CD > 4)
 		// Mucho  daño por saltar con armadura pesada
 		adjustHalLoss(12 + Tiempo_CD)
@@ -167,6 +200,8 @@
 		adjustHalLoss(4 + Tiempo_CD)
 		to_chat(src, "<span class='info'> you frontflip towards [Casilla]!.</span>")
 	last_special = world.time + (Tiempo_CD SECONDS)
+	is_jumping = 0
+	src.pixel_y = storey
 
 // ¡Una nueva proc para los disposals para que el Tajaran pueda saltar adentro!
 // Básicamente es lo mismo que tirar a alguien adentro, pero instantáneo.
