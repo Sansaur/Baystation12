@@ -484,6 +484,9 @@
 	requires_power = 0
 	dynamic_lighting = 0
 
+/area/syndicate_mothership/ninja
+	name = "\improper Ninja Base"
+
 area/shuttle/lavalette/
 	name = "Corbeta La Veleta"
 
