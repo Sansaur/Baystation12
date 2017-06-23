@@ -123,6 +123,10 @@
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
 /atom/movable/Move(newloc, direct)
+	// Adding a new Check to play the sound or not, DANGEROUS - Sansaur
+	// This will be used to check if the Location after the step() is different, if it is, play the step sound
+	var/atom/Location = src.loc
+	//
 	if (direct & (direct - 1))
 		if (direct & 1)
 			if (direct & 4)
@@ -167,7 +171,9 @@
 		src.m_flag = 1
 		if ((A != src.loc && A && A.z == src.z))
 			src.last_move = get_dir(A, src.loc)
-		playFootstep(src)
+		// Adding this check
+		if(Location != src.loc)
+			playFootstep(src)	// Aquí está la adición del frenchy
 	return
 
 /client/proc/Move_object(direct)

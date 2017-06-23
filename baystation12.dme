@@ -2390,5 +2390,9 @@
 #include "San_Additions\Adiciones_Unathi_San.dm"
 #include "San_Additions\FrontFlip.dm"
 #include "San_Additions\Tajaran_Necesidad_Dormir.dm"
+#include "San_Additions\cure_steps.dm"
+#include "San_Additions\Parallax\define.dm"
+#include "San_Additions\Parallax\parallax.dm"
+#include "San_Additions\Parallax\parallax_archivos_secundarios.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
