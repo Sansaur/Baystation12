@@ -125,20 +125,19 @@
 							to_chat(Bloqueador, "<span class='warning'> you stop [src] with your shield as it tries to jump over you!.</span>")
 							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 							src.Weaken(stuntime) 	// Si te paran con el escudo, te aturden
-							return
 						else
 							to_chat(src, "<span class='warning'> [Bloqueador] stops you with his body!.</span>")
 							to_chat(Bloqueador, "<span class='warning'> you stop [src] as it tries to jump over you!.</span>")
 							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 							src.apply_damage(stuntime, BRUTE) 			// Si te paran con su cuerpo, ambos recibís daño.
 							Bloqueador.apply_damage(stuntime, BRUTE)
-							return
 
 						src.do_attack_animation(Bloqueador)
 						last_special = world.time + (Tiempo_CD SECONDS)
 						adjustHalLoss(4 + Tiempo_CD)
 						is_jumping = 0
 						src.pixel_y = storey
+						return
 
 				if(istype(Bloqueando, /mob/living/silicon/robot))
 					var/mob/living/silicon/robot/Robot = Bloqueando
@@ -182,13 +181,13 @@
 //		if(i!=(casillas_a_avanzar-1))
 //			dejar_rastro(Casilla)
 		if(i > casillas_a_avanzar / 2)
-			src.pixel_y -= 4
+			src.pixel_y -= 7
 		else
-			src.pixel_y += 4
+			src.pixel_y += 7
 		src.forceMove(Casilla)
-		// A sleep of 1.4 is to be used with the pixel_y movement
+		// A sleep of 1.5 is to be used with the pixel_y movement
 		// A sleep of 0.5-0.3 is to be used with dejar_rastro(Casilla)
-		sleep(1.4)
+		sleep(1.5)
 
 
 	if(Tiempo_CD > 4)
