@@ -72,6 +72,14 @@
 		/obj/structure/morgue,
 		/obj/structure/reagent_dispensers/water_cooler
 	)
+
+	// OH MY GOD
+	// Si ponemos esto del Spin, el FrontFlip se transforma en una
+	// Maniobra evasiva con forma de molinillo
+
+//	src.spin(2,0.6)
+	animate_spin(src, "L", 1.3) // Flip de Goonstation
+
 	var/turf/Casilla = src.loc
 	for(var/i=0, i<casillas_a_avanzar, i++)
 		Casilla = get_step(Casilla, src.dir)
@@ -80,32 +88,48 @@
 			to_chat(src, "<span class='warning'> You crash into [Casilla]!.</span>")
 			src.Weaken(stuntime)
 			last_special = world.time + (Tiempo_CD SECONDS)
-			src.do_attack_animation(OBJETO)
-			adjustHalLoss(5)
+			src.do_attack_animation(Casilla)
+			adjustHalLoss(4 + Tiempo_CD)
 			return
 		else
 			// Y no voy a poner a los robots porque está divertido que haya algo que los trolee xd
 
-			for(var/mob/living/carbon/human/Bloqueador in Casilla)
-				if(Bloqueador.a_intent != I_HELP)	// Si pasa por un humano que no le quiera dejar pasar (Siguiendo las normas de Bumps en movimiento) le bloqueará
-					//playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
-					if(istype(Bloqueador.get_active_hand(), /obj/item/weapon/shield))
-						to_chat(src, "<span class='warning'> [Bloqueador] stops you with his shield!.</span>")
-						to_chat(Bloqueador, "<span class='warning'> you stop [src] with your shield as it tries to jump over you!.</span>")
+			for(var/mob/Bloqueando in Casilla)
+				if(istype(Bloqueando, /mob/living/carbon/human))
+					var/mob/living/carbon/human/Bloqueador = Bloqueando
+					if(Bloqueador.a_intent != I_HELP)	// Si pasa por un humano que no le quiera dejar pasar (Siguiendo las normas de Bumps en movimiento) le bloqueará
+						//playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
+						if(istype(Bloqueador.get_active_hand(), /obj/item/weapon/shield))
+							to_chat(src, "<span class='warning'> [Bloqueador] stops you with his shield!.</span>")
+							to_chat(Bloqueador, "<span class='warning'> you stop [src] with your shield as it tries to jump over you!.</span>")
+							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
+							src.Weaken(stuntime) 	// Si te paran con el escudo, te aturden
+							last_special = world.time + (Tiempo_CD SECONDS)
+							adjustHalLoss(4 + Tiempo_CD)
+							return
+						else
+							to_chat(src, "<span class='warning'> [Bloqueador] stops you with his body!.</span>")
+							to_chat(Bloqueador, "<span class='warning'> you stop [src] as it tries to jump over you!.</span>")
+							playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
+							src.apply_damage(stuntime, BRUTE) 			// Si te paran con su cuerpo, ambos recibís daño.
+							Bloqueador.apply_damage(stuntime, BRUTE)
+							last_special = world.time + (Tiempo_CD SECONDS)
+							src.do_attack_animation(Bloqueador)
+							adjustHalLoss(4 + Tiempo_CD)
+							return
+
+				if(istype(Bloqueando, /mob/living/silicon/robot))
+					var/mob/living/silicon/robot/Robot = Bloqueando
+					if(Robot.a_intent != I_HELP)	// Si el robot está en Harm, se chocan y el robot recibe algo de daño, pero el Tajaran se aturde tambien.
+						to_chat(src, "<span class='warning'> [Robot] stops you with his robotic body!.</span>")
+						to_chat(Robot, "<span class='warning'> you stop [src] as it tries to jump over you!.</span>")
 						playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
-						src.Weaken(stuntime) 	// Si te paran con el escudo, te aturden
+						src.apply_damage(stuntime, BRUTE)
+						Robot.apply_damage(stuntime, BRUTE)
+						src.Weaken(1)
 						last_special = world.time + (Tiempo_CD SECONDS)
-						adjustHalLoss(5)
-						return
-					else
-						to_chat(src, "<span class='warning'> [Bloqueador] stops you with his body!.</span>")
-						to_chat(Bloqueador, "<span class='warning'> you stop [src] as it tries to jump over you!.</span>")
-						playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
-						src.apply_damage(stuntime, BRUTE) 			// Si te paran con su cuerpo, ambos recibís daño.
-						Bloqueador.apply_damage(stuntime, BRUTE)
-						last_special = world.time + (Tiempo_CD SECONDS)
-						src.do_attack_animation(Bloqueador)
-						adjustHalLoss(5)
+						src.do_attack_animation(Robot)
+						adjustHalLoss(4 + Tiempo_CD)
 						return
 
 
@@ -116,7 +140,7 @@
 					src.Weaken(stuntime)
 					src.do_attack_animation(OBJETO)
 					last_special = world.time + (Tiempo_CD SECONDS)
-					adjustHalLoss(5)
+					adjustHalLoss(4 + Tiempo_CD)
 					return
 
 				if(i==(casillas_a_avanzar-1)) // cosas especiales que pueden ocurrir en la tercera casilla
@@ -124,26 +148,25 @@
 						var/obj/machinery/disposal/MYDISPOSAL = OBJETO
 						to_chat(src, "<span class='warning'> You fall directly into [MYDISPOSAL]!.</span>")
 						MYDISPOSAL.FallInto(src)
-						adjustHalLoss(5)
+						adjustHalLoss(4 + Tiempo_CD)
 						return
 
-		dejar_rastro(Casilla)
+		if(i!=(casillas_a_avanzar-1))
+			dejar_rastro(Casilla)
+
 		src.forceMove(Casilla)
-		sleep(1)
+		sleep(0.5)
 
 	playsound(src.loc, 'sound/weapons/towelwipe.ogg', 50, 1)
 	if(Tiempo_CD > 4)
 		// Mucho  daño por saltar con armadura pesada
-		adjustHalLoss(15)
-		to_chat(src, "<span class='info'> [src] hardly frontflips towards [Casilla]!.</span>")
+		adjustHalLoss(12 + Tiempo_CD)
+		to_chat(src, "<span class='warning'> you hardly frontflips towards [Casilla], your legs hurt!.</span>")
 	else
 		// Muy poco daño por saltar sin armadura pesada y que no te bloqueen
-		adjustHalLoss(3)
-		to_chat(src, "<span class='info'> [src] frontflips towards [Casilla]!.</span>")
+		adjustHalLoss(4 + Tiempo_CD)
+		to_chat(src, "<span class='info'> you frontflip towards [Casilla]!.</span>")
 	last_special = world.time + (Tiempo_CD SECONDS)
-	src.spin(2,0.6)	// Un giro de poca duración muy rápido
-	animate_spin(src, "L", 1.3) // Flip de Goonstation
-
 
 // ¡Una nueva proc para los disposals para que el Tajaran pueda saltar adentro!
 // Básicamente es lo mismo que tirar a alguien adentro, pero instantáneo.
@@ -186,7 +209,4 @@
 /mob/proc/dejar_rastro(var/turf/T)
 	if(!T)
 		return
-
-//	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
-//	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 	anim(T,src,'rastro.dmi',,"rastro",,dir)
