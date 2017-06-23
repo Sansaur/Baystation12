@@ -10,19 +10,20 @@ var/stepsList = list(
   /turf/simulated/floor/wood = WOOD_FOOTSTEP_SOUNDS,
 )
 
+// Let's not mix Lists with Not Lists
+
 var/itemStepsList[] = list(
-  /obj/structure/lattice = GRATE_FOOTSTEP_SOUNDS,
-  list(
-  /obj/effect/decal/cleanable/blood,
-  /obj/effect/decal/cleanable/fruit_smudge,
-  /obj/effect/decal/cleanable/egg_smudge,
-  /obj/effect/decal/cleanable/greenglow,
-  /obj/effect/decal/cleanable/liquid_fuel,
-  /obj/effect/decal/cleanable/mucus,
-  /obj/effect/decal/cleanable/tomato_smudge,
-  /obj/effect/decal/cleanable/pie_smudge,
-  /obj/effect/decal/cleanable/vomit) = MUD_FOOTSTEP_SOUNDS,
-  /obj/structure/grille = FENCE_FOOTSTEP_SOUNDS
+  /obj/structure/lattice 					= GRATE_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/blood 		= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/fruit_smudge 	= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/egg_smudge 	= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/greenglow 	= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/liquid_fuel 	= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/mucus 		= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/tomato_smudge = MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/pie_smudge 	= MUD_FOOTSTEP_SOUNDS,
+  /obj/effect/decal/cleanable/vomit 		= MUD_FOOTSTEP_SOUNDS,
+  /obj/structure/grille 					= FENCE_FOOTSTEP_SOUNDS
 )
 
 

@@ -2386,6 +2386,7 @@
 #include "maps\~mapsystem\maps_areas.dm"
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
+#include "San_Additions\cure_steps.dm"
 #include "San_Additions\Parallax\define.dm"
 #include "San_Additions\Parallax\parallax.dm"
 #include "San_Additions\Parallax\parallax_archivos_secundarios.dm"
