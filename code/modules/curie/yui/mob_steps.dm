@@ -14,7 +14,7 @@ proc/isWalking(mob/living/carbon/human/M) // Gotta be sneaky
   if(istype(M) && M.m_intent == "walk")
     return 1
   return 0
-
+/*
 /proc/getFootStepSound(T as turf, M as mob)
   if(!T) // Check if its a turf at all (sanity check)
     return
@@ -46,3 +46,4 @@ proc/isWalking(mob/living/carbon/human/M) // Gotta be sneaky
       var/stepSound = getFootStepSound(curTurf, A)
       if(stepSound)
         playsound(curTurf, "sound/footsteps/" + stepSound, footstepVol, footstepVarReq, footstepRange, 0, 0, footstepFreq)
+*/
