@@ -88,7 +88,8 @@
 	// OH MY GOD
 	// Si ponemos esto del Spin, el FrontFlip se transforma en una
 	// Maniobra evasiva con forma de molinillo
-
+	// Para poner el giro de Goonstation se descomenta aquí
+	// Para quitarlo, se comenta, obvs
 //	src.spin(2,0.6)
 	if(src.dir == 4)
 		animate_spin(src, "R", 1.3) // Flip de Goonstation
