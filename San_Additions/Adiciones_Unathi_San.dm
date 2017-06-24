@@ -181,7 +181,7 @@ RECUERDEN, SI SE HACE PR QUE CAMBIE HUMAN_MOVEMENT VA A HABER MUERTECITA
 
 	last_special = world.time + (tiempo_CD SECONDS)
 	adjustHalLoss(15)	// 20 es demasiado trolete y 10 es demasiado poco
-//	playsound(src.loc, 'sound/voice/lizard.ogg', 50, 1) Pondremos un sonido que no sea este, por favor~
+	playsound(src.loc, 'lizardshort.ogg', 50, 1)
 	src.spin(8,1)	// Un giro de larga duración muy rápido
 	src.visible_message("<span class='danger'>[src] thrashes wildly around, breaking any grabs upon him!</span>")
 	to_chat(src, "<span class=warning>Such aggressive movements have exhausted you.</span>")
