@@ -2,7 +2,7 @@
 	if(istype(M, /mob/living/carbon) || istype(M, /mob/living/silicon))
 		for(var/B in FOOTSTEP_BLACKLISTED_MOBS) // Blacklist for things that should have footsteps but shouldn't
 			if(istype(M, B))
-			return 0
+				return 0
 		return 1
 
 	if(istype(M, /mob/living/carbon)) // Check if something that should have footsteps
