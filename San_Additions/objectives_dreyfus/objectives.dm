@@ -71,7 +71,7 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 		new_Objective()
 
 /datum/dreyfus_objectives/proc/RewardCargo_AndDirector(var/datum/controller/supply/Controlador)
-	var/puntos_a_regalar = required_quota / 4 // 400 se hace 100 || 200 se hace 50 || The more quotas that have passed, the higher the reward
+	var/puntos_a_regalar = required_quota / 3 // The more quotas that have passed, the higher the reward
 	Controlador.add_points_from_source(puntos_a_regalar, "manifest")	// Pongo manifest porque como que da igual, aunque no me quiero arriesgar a que haya una lista o algo
 
 	//create an entry in the account transaction log for when it was created
