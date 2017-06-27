@@ -5,10 +5,11 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 
 /datum/dreyfus_objectives
 	var/list/InvestorPhrases = list(
-									"Los inversores agradecen mucho su trabajo subiendo los numeros del reporte, se ha enviado puntos de cargo adicionales y se ha depositado dinero extra a la cuenta de la estación <br>",
-									"¡Seguid asi! Hemos recibido nuevas inversiones por parte de unos contactos en el sistema de Nyx... Tambien hemos enviado puntos de cargo y un dinerito extra a la cuenta de la estacion <br>",
-									"¡Los inversores piden y piden! ¡Que no baje la produccion! Hemos enviado puntos de cargo y dinero adicional a la cuenta de la estacion <br>"
+									"Los inversores agradecen mucho su trabajo subiendo los numeros del reporte, se ha enviado puntos de cargo adicionales y se ha depositado dinero extra a la cuenta de la estación",
+									"¡Seguid asi! Hemos recibido nuevas inversiones por parte de unos contactos en el sistema de Nyx... Tambien hemos enviado puntos de cargo y una inversion extra a la cuenta de la estacion",
+									"¡Los inversores piden y piden! ¡Que no baje la produccion! Hemos enviado puntos de cargo y dinero adicional a la cuenta de la estacion"
 								)
+
 	var/list/sellable_items = 	list(
 									/obj/item/weapon/reagent_containers/glass/bucket,
 									/obj/item/device/flashlight,
@@ -51,16 +52,24 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 	var/total_quota_points = 0
 
 	if(ItemToSell.type in high_need)
-		total_quota_points += rand(min_high, max_high)
+		if(istype(ItemToSell, /obj/item/stack))
+			var/obj/item/stack/S = ItemToSell
+			total_quota_points += S.amount
+		else
+			total_quota_points += rand(min_high, max_high)
 
 	else if(ItemToSell.type in low_need)
-		total_quota_points += rand(min_low, max_low)
+		if(istype(ItemToSell, /obj/item/stack))
+			var/obj/item/stack/S = ItemToSell
+			total_quota_points += S.amount
+		else
+			total_quota_points += rand(min_low, max_low)
 
 	current_quota += total_quota_points
 
 /datum/dreyfus_objectives/proc/CheckQuotaReached(var/datum/controller/supply/Controlador)
 	if(current_quota > required_quota)
-		message_admins("DEBUG: Se ha cumplido una cuota de Dreyfus")
+//		message_admins("DEBUG: Se ha cumplido una cuota de Dreyfus")
 		var/datum/announcement/crew_announcement = new()
 		crew_announcement.title = "Avances con la produccion"
 		crew_announcement.announcer = "Oficiales de Industrias NanoTrasen"
@@ -71,8 +80,8 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 		new_Objective()
 
 /datum/dreyfus_objectives/proc/RewardCargo_AndDirector(var/datum/controller/supply/Controlador)
-	var/puntos_a_regalar = required_quota / 3 // The more quotas that have passed, the higher the reward
-	Controlador.add_points_from_source(puntos_a_regalar, "manifest")	// Pongo manifest porque como que da igual, aunque no me quiero arriesgar a que haya una lista o algo
+	var/puntos_a_regalar = required_quota / 5 // The more quotas that have passed, the higher the reward
+	Controlador.add_points_from_source(puntos_a_regalar, "manifest")	// manifest because who the fuck reads that shit anyways xd, maybe we can put this
 
 	//create an entry in the account transaction log for when it was created
 	var/addingthis = rand(1000,2000)
@@ -85,6 +94,11 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 
 
 // QUOTA OBJECTIVES
+
+/datum/dreyfus_objectives/proc/setQuotaToReach(var/number)
+	message_admins("The current Dreyfus Quota objective has been set to [number]")
+	required_quota = number
+	return 1
 
 /datum/dreyfus_objectives/proc/new_Objective()
 	randomize_required_quota()
@@ -154,7 +168,7 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 	if(low_need.len)
 		low_need.Cut()
 
-	items_on_high_need = 2
+	items_on_high_need = 3	// Minimum of 3, maximum of 8
 
 	var/proba_objectives_high = rand(100)
 	if(proba_objectives_high > 30)
@@ -201,8 +215,7 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 		textito += "<b>[Holiwi]</b><br>"
 		qdel(Holiwi)
 
-	// Damos una pista de como de jodida va a ser la shift
-	// Se pueden hacer listas más adelante.
+	// We give a clue of how hard will the shift be
 	textito += "<hr>"
 	if(DreyfusQuotas.times_quota_needed == 1)
 		textito += "<u>No tiene pinta de que vaya a haber mucha demanda este turno</u>"
@@ -215,8 +228,8 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 	NuevoPapel.icon_state = "paper_words"
 	NuevoPapel.info = textito
 
-	// Ponemos el papel en una máquina de Fax que esté en el área del capitán.
-	// Si no hay faxes en el área del capitán, simplemente aparece en el suelo >:C
+	// The paper spawns in a faxmachine that has to be in the captain's room
+	// If there's no fax machine it'll spawn on the floor
 
 	var/movio_papel = 0
 	var/area/dreyfus/administration/bureaux/executif/AreaCapitan = locate()

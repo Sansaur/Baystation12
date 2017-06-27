@@ -13,11 +13,11 @@
 					if((OB.type in DreyfusQuotas.high_need) || (OB.type in DreyfusQuotas.low_need))
 						DreyfusQuotas.AddQuotaPointsPerItem(OB)
 						DreyfusQuotas.CheckQuotaReached(src)
-						qdel(OB)	// Uno se podría arriesgar a quitar este qdel :^)
+						qdel(OB)	// Risky qdel
 
 			if((Objeto.type in DreyfusQuotas.high_need) || (Objeto.type in DreyfusQuotas.low_need))
 				DreyfusQuotas.AddQuotaPointsPerItem(Objeto)
 				DreyfusQuotas.CheckQuotaReached(src)
-				qdel(Objeto)	// Uno se podría arriesgar a quitar este qdel :^)
+				qdel(Objeto)	// Risky qdel
 
 		..()

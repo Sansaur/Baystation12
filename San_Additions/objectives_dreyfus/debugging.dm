@@ -1,10 +1,11 @@
 /*
 I cannot put this in the debug verbs list!
-
+Fuck it, I did anyways - Sansaur
+*/
 /datum/admins/proc/DreyfusObjectiveDebug()
 	if(DreyfusQuotas)
 		var/datum/browser/BROWSER = new(usr, "DreyfusDebug", 0, 440, 560)
-		BROWSER.add_content("Quota required - current objective: [DreyfusQuotas.required_quota]")
+		BROWSER.add_content("Quota required - current objective: <a href='?src=\ref[src];ChangeRequiredObjective=1'>[DreyfusQuotas.required_quota]</a>")
 		BROWSER.add_content("<br>")
 		BROWSER.add_content("Quota advanced - current objective: [DreyfusQuotas.current_quota]")
 		BROWSER.add_content("<br>")
@@ -12,8 +13,8 @@ I cannot put this in the debug verbs list!
 		BROWSER.add_content("<br>")
 		BROWSER.add_content("Times needed to reach the quota: [DreyfusQuotas.times_quota_needed] <a href='?src=\ref[src];addQuota=1'>+</a><a href='?src=\ref[src];removeQuota=1'>-</a>")
 		BROWSER.add_content("<br>")
-		BROWSER.add_content("<a href='?src=\ref[src];DreyfusObjectiveVariables=1'>Variables</a>")
-		BROWSER.add_content("<br>")
+//		BROWSER.add_content("<a href='?src=\ref[src];DreyfusObjectiveVariables=1'>Variables</a>")
+//		BROWSER.add_content("<br>")
 		BROWSER.add_content("<a href='?src=\ref[src];NewObjective=1'>New objective (Complete current quota)</a>")
 		BROWSER.add_content("<br>")
 		BROWSER.add_content("<a href='?src=\ref[src];NewObjectiveNoQuota=1'>New objective (Resetting quota)</a>")
@@ -46,7 +47,7 @@ I cannot put this in the debug verbs list!
 		DreyfusQuotas.times_quota_needed++
 
 	else if(href_list["removeQuota"])
-		message_admins("Added one quota to the station objectives")
+		message_admins("Removed one quota to the station objectives")
 		DreyfusQuotas.times_quota_needed--
 
 	else if(href_list["NewObjective"])
@@ -55,6 +56,10 @@ I cannot put this in the debug verbs list!
 	else if(href_list["NewObjectiveNoQuota"])
 		DreyfusQuotas.new_Objective_Admin_NoQuota()
 
+	else if(href_list["ChangeRequiredObjective"])
+		var/numer = input("New required objetive", "New", 300) as num
+		DreyfusQuotas.setQuotaToReach(numer)
+
 /client/proc/DreyfusObjectivesDebug() // -- The VERB
 	set category = "Debug"
 	set name = "Dreyfus Objectives Debug"
@@ -62,12 +67,11 @@ I cannot put this in the debug verbs list!
 
 	if(holder)
 		holder.DreyfusObjectiveDebug()
-		holder.client.debug_variables(DreyfusQuotas)
+//		usr.client.debug_variables(DreyfusQuotas) // Uncomment this to see variables
 	return
 
-	*/
 
-
+/*
 // This will need improvement
 /obj/item/weapon/stupid_debug_thingie_dreyfus
 	name = "ADMIN ONLY ITEM"
@@ -147,3 +151,5 @@ I cannot put this in the debug verbs list!
 			DreyfusQuotas.new_Objective_Admin_NoQuota()
 
 	updateDialog()
+
+	*/

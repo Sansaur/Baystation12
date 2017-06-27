@@ -2,15 +2,15 @@
 //hook/startup/proc/initialize_dreyfus_objectives() Los Hook de Startup no son para esto
 
 /datum/controller/gameticker/setup()
-	// Después de que se inicie la partida, se generan los objetivos de la estación Dreyfus
+	// After the game is setup, we begin the setup of the DreyfusObjectives
 	..()
-	DreyfusQuotas.times_quota_needed += rand(0,3)	// Entre 1-4 veces que se necesita cumplir la cuota (1 = Fácil, 2 = Normal, de 3 para arriba será jodido)
+	DreyfusQuotas.times_quota_needed += rand(0,3)	// 0-3 times added to the quota times needed to get greentext
 	DreyfusQuotas.new_Objective()
 
 	// OBLIGATORIO poner un return 1 al final de los hooks de inicialización
 	return 1
 
-	// AÑADIR AL FINAL DE LA RONDA - Sansaur
+	// Adding at the end of the round - Sansaur
 /datum/controller/gameticker/declare_completion()
 	..()
 	to_world("<br><br><H3> The station needed to complete [DreyfusQuotas.times_quota_needed] quotas for a profitable work day!</H3>")
