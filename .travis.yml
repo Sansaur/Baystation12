@@ -11,6 +11,8 @@ env:
   matrix:
     - TEST=CODE
     - TEST=WEB
+    - TEST=MAP MAP_PATH=curie
+    - TEST=MAP MAP_PATH=dreyfus
     - TEST=MAP MAP_PATH=example
     - TEST=MAP MAP_PATH=exodus
     - TEST=MAP MAP_PATH=torch
