@@ -1,75 +1,85 @@
 /*
-	Test 1: Trying to put fullscreen overlays in the direction the mob is not looking (Maybe?)
-	Test 2: Check dir, if looking to the right, cannot see mobs on an X superior to player, if left cannot see X inferior to player, same for vertical
+	The idea is to make a "rectangle" behind the person.
+	In this rectangle masks are applied
 */
+
+/mob/living
+	var/image/BLACKOVERLAY
+
+/mob/living/Life()
+	..()
+	Tell_Me_Dir_MOBS()
+
+/mob/living/Move()
+	..()
+	Tell_Me_Dir_MOBS()
+
+/mob/living/forceMove()
+	..()
+	Tell_Me_Dir_MOBS()
+
+/mob/living/face_atom(var/atom/A)
+	..(A)
+	Tell_Me_Dir_MOBS()
+
+/mob/living/facedir(var/ndir)
+	..(ndir)
+	Tell_Me_Dir_MOBS()
 
 /mob/living/proc/Tell_Me_Dir_MOBS()
 	if(dir == SOUTH)
 		for(var/mob/living/VISIBLE in oview())
-			if(VISIBLE.y <= src.y && !(VISIBLE.y < src.y - 7))
-				to_chat(src, "you can see [VISIBLE] the mob")
+			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
+				VISIBLE.HideMask(client)
+			else
+				VISIBLE.ShowMask(client)
 
 	if(dir == NORTH)
 		for(var/mob/living/VISIBLE in oview())
-			if(VISIBLE.y >= src.y && !(VISIBLE.y > src.y + 7))
-				to_chat(src, "you can see [VISIBLE] the mob")
+			if(VISIBLE.y >= (src.y-1) && !(VISIBLE.y > src.y + src.client.view))
+				VISIBLE.HideMask(client)
+			else
+				VISIBLE.ShowMask(client)
 
 	if(dir == EAST)
 		for(var/mob/living/VISIBLE in oview())
-			if(VISIBLE.x >= src.x && !(VISIBLE.x > src.x + 7))
-				to_chat(src, "you can see [VISIBLE] the mob")
+			if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
+				VISIBLE.HideMask(client)
+			else
+				VISIBLE.ShowMask(client)
 
 	if(dir == WEST)
 		for(var/mob/living/VISIBLE in oview())
-			if(VISIBLE.x <= src.x && !(VISIBLE.x < src.x - 7))
-				to_chat(src, "you can see [VISIBLE] the mob")
+			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
+				VISIBLE.HideMask(client)
+			else
+				VISIBLE.ShowMask(client)
 
-/mob/living/proc/Tell_Me_Dir_TURFS()
-	if(dir == SOUTH)
-		for(var/turf/VISIBLE in oview())
-			if(VISIBLE.y <= src.y && !(VISIBLE.y < src.y - 7))
-				//to_chat(src, "you can see [VISIBLE] the mob")
 
-	if(dir == NORTH)
-		for(var/turf/VISIBLE in oview())
-			if(VISIBLE.y >= src.y && !(VISIBLE.y > src.y + 7))
-				//to_chat(src, "you can see [VISIBLE] the mob")
-
-	if(dir == EAST)
-		for(var/turf/VISIBLE in oview())
-			if(VISIBLE.x >= src.x && !(VISIBLE.x > src.x + 7))
-				//to_chat(src, "you can see [VISIBLE] the mob")
-
-	if(dir == WEST)
-		for(var/turf/VISIBLE in oview())
-			if(VISIBLE.x <= src.x && !(VISIBLE.x < src.x - 7))
-				//to_chat(src, "you can see [VISIBLE] the mob")
-
-	// The idea to generate this is via
-	// 			5
-	// 		2	2
-	// 1 	1	1
-	//		3	3
-	//			4
-
-	/*
-
-	THIS IS ABSOLUTELY OUT OF THE QUESTION
-
-/mob
+/mob/living
 	var/obj/fov_test/fov_test
 
-/mob/Move()
+/mob/living/Move()
 	. = ..()
 	if(fov_test)
 		fov_test.update()
 
-/mob/forceMove()
+/mob/living/forceMove()
 	. = ..()
 	if(fov_test)
 		fov_test.update()
 
-/mob/Login()
+/mob/living/face_atom(var/atom/A)
+	..(A)
+	if(fov_test)
+		fov_test.update()
+
+/mob/living/facedir(var/ndir)
+	..(ndir)
+	if(fov_test)
+		fov_test.update()
+
+/mob/living/Login()
 	..()
 	if(!fov_test)
 		fov_test = new(src)
@@ -82,13 +92,13 @@
 	plane = FULLSCREEN_PLANE
 	invisibility = 101	// Revertir a 101 tras testeos - Sansaur
 	anchored = 1
-	var/mob/owner
+	var/mob/living/owner
 	var/image/image
 
-	New(mob/M)
+	New(mob/living/M)
 		owner = M
 		owner.fov_test = src
-		image = image('Testing.dmi', src, "test")
+		image = image('Testing.dmi', src, "overlay")
 		image.invisibility = 0
 		update()
 
@@ -100,12 +110,11 @@
 
 		// Este es el correcto.
 	proc/debug_2()
-		image = image('Testing.dmi', src, "test")
+		image = image('Testing.dmi', src, "overlay")
 		owner << image
 		// Este es el correcto.
 
 
-	*/
 
 
 
@@ -144,3 +153,96 @@
 	set_see_invisible(initial(see_invisible))
 
 	*/
+
+
+/*
+	CODE MADE BY F0lak
+	http://www.byond.com/forum/?post=1845070
+
+*/
+
+atom/movable
+    var
+        mask/mask
+
+    proc/HideMask(client/c) // Hides the mask image, making the object visible to a certain client
+
+        // debug info to make testing and bug fixing easier if we screw up implementation
+        if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].HideMask()")
+
+        c.RemoveMask(mask.mask_image)
+
+    proc/ShowMask(client/c) // Create a mask if it doesn't exist, making the object invisible to a certain client
+
+        // debug info to make testing and bug fixing easier if we screw up implementation
+        if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].ShowMask()")
+
+        // recycle the image for multiple clients
+        if(!mask)
+            mask = new/mask(src, c)
+
+        c.AddMask(mask.mask_image)
+
+image/mask
+
+mask
+
+    var/image/mask/mask_image  // a unique path to make synching client.images easier
+
+    New(atom/movable/am, client/c)
+
+        // debug info to make testing and bug fixing easier if we screw up implementation
+        if(!istype(c, /client)) CRASH("Invalid client([c]) in new /mask([am], [c])")
+
+        // create a new mask image, this lets us 'cover up' or 'hide' each object individually
+        mask_image = new(icon = null, loc = am)
+        mask_image.override = 1
+
+
+client
+    var masks[]
+
+    New()
+        ..()
+        masks = new
+
+    // Various client procs to handle the masks
+
+    proc/SyncMasks()  // Synchs the masks list with images list and cleans up un-needed masks
+        images.Remove(masks)
+        for(var/image/mask/i in images)
+            images.Remove(i)
+        images.Add(masks)
+
+
+    proc/AddMask(image/i)  // Adds a mask to masks list and synchs images
+        if(!(i in masks))
+            masks.Add(i)
+            SyncMasks()
+
+    proc/RemoveMask(image/i)  // Removes a mask to masks list and synchs images
+        if(masks.Remove(i))
+            SyncMasks()
+
+    proc/ClearMasks()  // Clears all masks from the client and synchs
+        masks = list()
+        SyncMasks()
+
+
+/*
+mob
+    verb
+        // Some verbs to test implementation
+        Mask_Item(atom/movable/m in view())
+
+            m.ShowMask(client)
+
+
+        Unmask(atom/movable/m in view())
+
+            m.HideMask(client)
+
+        ClearMasks()
+
+            client.ClearMasks()
+*/
