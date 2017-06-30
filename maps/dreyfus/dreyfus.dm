@@ -36,6 +36,7 @@
 	#include "items/storage.dm"
 	#include "items/cards_ids.dm"
 	#include "items/papers.dm"
+	#include "items/tools.dm"
 	#include "structures/airlock.dm"
 	#include "structures/blast_door.dm"
 	#include "structures/closet.dm"
