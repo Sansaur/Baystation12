@@ -17,10 +17,8 @@
 	name = "open space"
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
-	plane = SPACE_PLANE
 	density = 0
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
-
 	var/turf/below
 
 /turf/simulated/open/post_change()
