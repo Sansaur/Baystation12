@@ -1,22 +1,36 @@
 /*
 	The idea is to make a "rectangle" behind the person.
 	In this rectangle masks are applied
+
+	Possible changes:
+
+	- Make Cyborgs able to see behind their backs
+	- Make the field of view be a cone behind you.
+
+	BUGS:
+
+	- If you have no client (Mob is being ghosted) and then someone moves behind you, if the ghost returns to the mob, he'll be able to see what's behind.
+
 */
+
+var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
+													/mob/living/deity,
+													/mob/living/bot)
 
 /mob/living
 	var/image/BLACKOVERLAY
 
-/mob/living/Life()
-	..()
-	Tell_Me_Dir_MOBS()
-
 /mob/living/Move()
 	..()
 	Tell_Me_Dir_MOBS()
+	for(var/mob/living/VISIBLE in oview())
+		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/forceMove()
 	..()
 	Tell_Me_Dir_MOBS()
+	for(var/mob/living/VISIBLE in oview())
+		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/face_atom(var/atom/A)
 	..(A)
@@ -27,6 +41,17 @@
 	Tell_Me_Dir_MOBS()
 
 /mob/living/proc/Tell_Me_Dir_MOBS()
+	// Having a client is REQUIRED for this to work
+	if(!src.client)
+		return
+	if(is_type_in_list(src, living_types_can_see_behind))
+		return
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/CHECK = src
+		if(CHECK.species)
+			if(istype(CHECK.species, /datum/species/xenos))
+				return
+
 	if(dir == SOUTH)
 		for(var/mob/living/VISIBLE in oview())
 			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
@@ -81,6 +106,16 @@
 
 /mob/living/Login()
 	..()
+	// Adding the overlay
+	if(is_type_in_list(src, living_types_can_see_behind))
+		return
+
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/CHECK = src
+		if(CHECK.species)
+			if(istype(CHECK.species, /datum/species/xenos))
+				return
+
 	if(!fov_test)
 		fov_test = new(src)
 	src << fov_test.image
@@ -98,7 +133,7 @@
 	New(mob/living/M)
 		owner = M
 		owner.fov_test = src
-		image = image('Testing.dmi', src, "overlay")
+		image = image('Testing.dmi', src, "overlay2")
 		image.invisibility = 0
 		update()
 
@@ -110,7 +145,7 @@
 
 		// Este es el correcto.
 	proc/debug_2()
-		image = image('Testing.dmi', src, "overlay")
+		image = image('Testing.dmi', src, "overlay2")
 		owner << image
 		// Este es el correcto.
 
@@ -162,41 +197,43 @@
 */
 
 atom/movable
-    var
-        mask/mask
+	var/mask/mask
 
-    proc/HideMask(client/c) // Hides the mask image, making the object visible to a certain client
+	proc/HideMask(client/c) // Hides the mask image, making the object visible to a certain client
+		if(!c || !mask)
+			return
+		// debug info to make testing and bug fixing easier if we screw up implementation
+		if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].HideMask()")
+
+		c.RemoveMask(mask.mask_image)
+
+	proc/ShowMask(client/c) // Create a mask if it doesn't exist, making the object invisible to a certain client
+		if(!c)
+			return
 
         // debug info to make testing and bug fixing easier if we screw up implementation
-        if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].HideMask()")
-
-        c.RemoveMask(mask.mask_image)
-
-    proc/ShowMask(client/c) // Create a mask if it doesn't exist, making the object invisible to a certain client
-
-        // debug info to make testing and bug fixing easier if we screw up implementation
-        if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].ShowMask()")
+		if(!istype(c, /client)) CRASH("Invalid client([c]) in [src].ShowMask()")
 
         // recycle the image for multiple clients
-        if(!mask)
-            mask = new/mask(src, c)
+		if(!mask)
+			mask = new/mask(src, c)
 
-        c.AddMask(mask.mask_image)
+		c.AddMask(mask.mask_image)
 
 image/mask
 
 mask
 
-    var/image/mask/mask_image  // a unique path to make synching client.images easier
+	var/image/mask/mask_image  // a unique path to make synching client.images easier
 
-    New(atom/movable/am, client/c)
+	New(atom/movable/am, client/c)
 
         // debug info to make testing and bug fixing easier if we screw up implementation
-        if(!istype(c, /client)) CRASH("Invalid client([c]) in new /mask([am], [c])")
+		if(!istype(c, /client)) CRASH("Invalid client([c]) in new /mask([am], [c])")
 
         // create a new mask image, this lets us 'cover up' or 'hide' each object individually
-        mask_image = new(icon = null, loc = am)
-        mask_image.override = 1
+		mask_image = new(icon = null, loc = am)
+		mask_image.override = 1
 
 
 client
