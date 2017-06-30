@@ -472,6 +472,7 @@
 		flick(src.icon_vend,src)
 	spawn(src.vend_delay)
 		R.get_product(get_turf(src))
+		playsound(src.loc, 'sound/machines/vending_drop.ogg', 100, 1)
 		if(prob(1))
 			sleep(3)
 			if(R.get_product(get_turf(src)))
