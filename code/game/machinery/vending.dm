@@ -11,6 +11,8 @@
 	anchored = 1
 	density = 1
 	flags = OBJ_ANCHORABLE
+	clicksound = "button"
+	clickvol = 40
 
 	var/icon_vend //Icon_state when vending
 	var/icon_deny //Icon_state when denying access
@@ -381,7 +383,7 @@
 /obj/machinery/vending/Topic(href, href_list)
 	if(stat & (BROKEN|NOPOWER))
 		return
-	if(usr.stat || usr.restrained())
+	if(..())
 		return
 
 	if(href_list["remove_coin"] && !istype(usr,/mob/living/silicon))
@@ -470,6 +472,7 @@
 		flick(src.icon_vend,src)
 	spawn(src.vend_delay)
 		R.get_product(get_turf(src))
+		playsound(src.loc, 'sound/machines/vending_drop.ogg', 100, 1)
 		if(prob(1))
 			sleep(3)
 			if(R.get_product(get_turf(src)))
