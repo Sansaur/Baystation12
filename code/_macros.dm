@@ -99,9 +99,6 @@
 
 #define qdel_null(x) if(x) { qdel(x) ; x = null }
 
-<<<<<<< HEAD
-#define ARGS_DEBUG log_debug("[__FILE__] - [__LINE__]") ; for(var/arg in args) { log_debug("\t[log_info_line(arg)]") }
-=======
 #define ARGS_DEBUG log_debug("[__FILE__] - [__LINE__]") ; for(var/arg in args) { log_debug("\t[log_info_line(arg)]") }
 
 // Helper macros to aid in optimizing lazy instantiation of lists.
@@ -129,4 +126,3 @@
 //Currently used in SDQL2 stuff
 #define send_output(target, msg, control) target << output(msg, control)
 #define send_link(target, url) target << link(url)
->>>>>>> ee6108bed3bc5706a4f745a174bc028676b8a065
