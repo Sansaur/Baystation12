@@ -1273,13 +1273,9 @@
 #include "code\modules\clothing\under\jobs\engineering.dm"
 #include "code\modules\clothing\under\jobs\medsci.dm"
 #include "code\modules\clothing\under\jobs\security.dm"
-<<<<<<< HEAD
-#include "code\modules\clothing\under\xenos\resomi.dm"
 #include "code\modules\curie\yui\gunserials.dm"
 #include "code\modules\curie\yui\mob_steps.dm"
 #include "code\modules\curie\yui\mob_steps_define.dm"
-=======
->>>>>>> ee6108bed3bc5706a4f745a174bc028676b8a065
 #include "code\modules\customitems\item_spawning.dm"
 #include "code\modules\detectivework\footprints.dm"
 #include "code\modules\detectivework\forensics.dm"
