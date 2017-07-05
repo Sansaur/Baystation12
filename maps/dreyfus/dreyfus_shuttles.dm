@@ -74,7 +74,7 @@
 	departure_message = "That Asset Protection vessel is headed back the way it came. Hope they were helpful."
 
 /obj/effect/shuttle_landmark/lavalette/start
-	name = "Espace de Patrouille"
+	name = "Espacio de Patrulla"
 	landmark_tag = "nav_lavalette_start"
 
 /obj/effect/shuttle_landmark/lavalette/internim
@@ -82,15 +82,15 @@
 	landmark_tag = "nav_lavalette_transition"
 
 /obj/effect/shuttle_landmark/lavalette/xenoarch
-	name = "Au sas de Xenoarcheologie"
+	name = "Esclusa de Xenoarqueologia"
 	landmark_tag = "nav_lavalette_xenoarch"
 
 /obj/effect/shuttle_landmark/lavalette/coupole
-	name =  "Proche de la Coupole"
+	name =  "Cerca de la Cupula"
 	landmark_tag = "nav_lavalette_coupole"
 
 /obj/effect/shuttle_landmark/lavalette/residentiel
-	name = "Pres de l'acces Residentiel"
+	name = "Acercarse al piso Residencial"
 	landmark_tag = "nav_lavalette_residen"
 
 //Cargo shuttle
@@ -161,7 +161,7 @@
 	departure_message = "Your visitors are on their way out of the system, burning delta-v like it's nothing. Good riddance."
 
 /obj/effect/shuttle_landmark/merc/start
-	name = "Base Mercenaire"
+	name = "Base Mercenaria"
 	landmark_tag = "nav_merc_start"
 	docking_controller = "dock_merc"
 
@@ -175,13 +175,13 @@
 	docking_controller = "dock2"
 
 /obj/effect/shuttle_landmark/merc/coupole
-	name = "Proche de la Coupole"
+	name = "Acercarse a la Cupula"
 	landmark_tag = "nav_merc_coupole"
 
 /obj/effect/shuttle_landmark/merc/minage
-	name = "Au sas de Minage"
+	name = "Esclusa de Mineria"
 	landmark_tag = "nav_merc_minage"
 
 /obj/effect/shuttle_landmark/merc/residentiel
-	name = "Pres de l'acces Residentiel"
+	name = "Acercarse al piso Resdidencial"
 	landmark_tag = "nav_merc_residentiel"
