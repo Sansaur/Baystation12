@@ -631,6 +631,8 @@
 			return global.ghost_darkness_images;
 		if("ghost_master")
 			return global.ghost_master;
+		if("ghost_mob_list_")
+			return global.ghost_mob_list_;
 		if("ghost_sightless_images")
 			return global.ghost_sightless_images;
 		if("ghost_traps")
@@ -739,6 +741,8 @@
 			return global.joblist;
 		if("join_motd")
 			return global.join_motd;
+		if("keyboard_sound")
+			return global.keyboard_sound;
 		if("landmarks_list")
 			return global.landmarks_list;
 		if("language_keys")
@@ -1229,18 +1233,6 @@
 			return global.sparring_attack_cache;
 		if("spawntypes")
 			return global.spawntypes;
-		if("specops_shuttle_at_station")
-			return global.specops_shuttle_at_station;
-		if("specops_shuttle_can_send")
-			return global.specops_shuttle_can_send;
-		if("specops_shuttle_moving_to_centcom")
-			return global.specops_shuttle_moving_to_centcom;
-		if("specops_shuttle_moving_to_station")
-			return global.specops_shuttle_moving_to_station;
-		if("specops_shuttle_time")
-			return global.specops_shuttle_time;
-		if("specops_shuttle_timeleft")
-			return global.specops_shuttle_timeleft;
 		if("spells")
 			return global.spells;
 		if("splatter_cache")
@@ -1319,18 +1311,6 @@
 			return global.syndicate_code_phrase;
 		if("syndicate_code_response")
 			return global.syndicate_code_response;
-		if("syndicate_elite_shuttle_at_station")
-			return global.syndicate_elite_shuttle_at_station;
-		if("syndicate_elite_shuttle_can_send")
-			return global.syndicate_elite_shuttle_can_send;
-		if("syndicate_elite_shuttle_moving_to_mothership")
-			return global.syndicate_elite_shuttle_moving_to_mothership;
-		if("syndicate_elite_shuttle_moving_to_station")
-			return global.syndicate_elite_shuttle_moving_to_station;
-		if("syndicate_elite_shuttle_time")
-			return global.syndicate_elite_shuttle_time;
-		if("syndicate_elite_shuttle_timeleft")
-			return global.syndicate_elite_shuttle_timeleft;
 		if("syndicate_name")
 			return global.syndicate_name;
 		if("tagger_locations")
@@ -2134,6 +2114,8 @@
 			global.ghost_darkness_images=newval;
 		if("ghost_master")
 			global.ghost_master=newval;
+		if("ghost_mob_list_")
+			global.ghost_mob_list_=newval;
 		if("ghost_sightless_images")
 			global.ghost_sightless_images=newval;
 		if("ghost_traps")
@@ -2242,6 +2224,8 @@
 			global.joblist=newval;
 		if("join_motd")
 			global.join_motd=newval;
+		if("keyboard_sound")
+			global.keyboard_sound=newval;
 		if("landmarks_list")
 			global.landmarks_list=newval;
 		if("language_keys")
@@ -2732,18 +2716,6 @@
 			global.sparring_attack_cache=newval;
 		if("spawntypes")
 			global.spawntypes=newval;
-		if("specops_shuttle_at_station")
-			global.specops_shuttle_at_station=newval;
-		if("specops_shuttle_can_send")
-			global.specops_shuttle_can_send=newval;
-		if("specops_shuttle_moving_to_centcom")
-			global.specops_shuttle_moving_to_centcom=newval;
-		if("specops_shuttle_moving_to_station")
-			global.specops_shuttle_moving_to_station=newval;
-		if("specops_shuttle_time")
-			global.specops_shuttle_time=newval;
-		if("specops_shuttle_timeleft")
-			global.specops_shuttle_timeleft=newval;
 		if("spells")
 			global.spells=newval;
 		if("splatter_cache")
@@ -2822,18 +2794,6 @@
 			global.syndicate_code_phrase=newval;
 		if("syndicate_code_response")
 			global.syndicate_code_response=newval;
-		if("syndicate_elite_shuttle_at_station")
-			global.syndicate_elite_shuttle_at_station=newval;
-		if("syndicate_elite_shuttle_can_send")
-			global.syndicate_elite_shuttle_can_send=newval;
-		if("syndicate_elite_shuttle_moving_to_mothership")
-			global.syndicate_elite_shuttle_moving_to_mothership=newval;
-		if("syndicate_elite_shuttle_moving_to_station")
-			global.syndicate_elite_shuttle_moving_to_station=newval;
-		if("syndicate_elite_shuttle_time")
-			global.syndicate_elite_shuttle_time=newval;
-		if("syndicate_elite_shuttle_timeleft")
-			global.syndicate_elite_shuttle_timeleft=newval;
 		if("syndicate_name")
 			global.syndicate_name=newval;
 		if("tagger_locations")
@@ -3321,6 +3281,7 @@
 	"gender_datums",
 	"ghost_darkness_images",
 	"ghost_master",
+	"ghost_mob_list_",
 	"ghost_sightless_images",
 	"ghost_traps",
 	"global_announcer",
@@ -3375,6 +3336,7 @@
 	"jobban_runonce",
 	"joblist",
 	"join_motd",
+	"keyboard_sound",
 	"landmarks_list",
 	"language_keys",
 	"last_chew",
