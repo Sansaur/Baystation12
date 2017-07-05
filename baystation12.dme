@@ -2402,6 +2402,7 @@
 #include "San_Additions\Parallax\define.dm"
 #include "San_Additions\Parallax\parallax.dm"
 #include "San_Additions\Parallax\parallax_archivos_secundarios.dm"
+#include "San_Additions\Trader_Job\controller_mods.dm"
 #include "San_Additions\Trader_Job\trade_controller.dm"
 #include "San_Additions\Trader_Job\trader.dm"
 #include "San_Additions\Trader_Job\trader_items.dm"
