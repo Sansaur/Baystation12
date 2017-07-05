@@ -747,7 +747,7 @@
 "os" = (/obj/machinery/door/airlock/research{name = "Laboratoire Anomalies"; req_access = list(7)},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4; icon_state = "intact-supply"; tag = ""},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{tag = "icon-intact-scrubbers (EAST)"; icon_state = "intact-scrubbers"; dir = 4},/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/tiled,/area/dreyfus/cargo/recherche/labo_anomalies)
 "ot" = (/obj/machinery/door/airlock/research{name = "Xenoarcheologie"; req_access = list(65)},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4; icon_state = "intact-supply"; tag = ""},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{tag = "icon-intact-scrubbers (EAST)"; icon_state = "intact-scrubbers"; dir = 4},/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/tiled,/area/dreyfus/cargo/recherche/labo_xenoarch)
 "ou" = (/obj/item/device/radio/beacon,/turf/simulated/floor/tiled,/area/dreyfus/cargo/industrie/entrepot)
-"ov" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/shuttle/lavalette/xeno)
+"ov" = (/obj/effect/landmark{name = "carpspawn"})
 "ow" = (/obj/structure/disposalpipe/segment{dir = 2; icon_state = "pipe-c"},/obj/structure/extinguisher_cabinet{pixel_x = -30},/turf/simulated/floor/tiled,/area/dreyfus/cargo/recherche/salon)
 "ox" = (/obj/machinery/radiocarbon_spectrometer,/obj/machinery/light_switch{dir = 2; name = "light switch "; pixel_x = 0; pixel_y = 22},/turf/simulated/floor/tiled/techfloor,/area/dreyfus/cargo/recherche/labo_xenoarch)
 "oy" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)

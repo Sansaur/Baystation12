@@ -335,7 +335,7 @@
 "gw" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/airless,/area/space)
 "gx" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/turf/simulated/floor/airless,/area/space)
 "gy" = (/obj/effect/landmark/map_data{height = 6},/turf/space,/area/space)
-"gz" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/shuttle/lavalette/coupole)
+"gz" = (/obj/effect/landmark{name = "carpspawn"})
 "gA" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)
 "gB" = (/obj/effect/floor_decal/chapel{tag = "icon-chapel (EAST)"; icon_state = "chapel"; dir = 4},/obj/machinery/light_switch{dir = 2; name = "light switch "; pixel_x = 0; pixel_y = 22},/turf/simulated/floor/tiled,/area/dreyfus/coupole/chapelle)
 "gC" = (/obj/structure/flora/ausbushes/leafybush,/obj/machinery/light_switch{dir = 2; name = "light switch "; pixel_x = 0; pixel_y = 22},/turf/simulated/floor/grass,/area/dreyfus/coupole/jardin)

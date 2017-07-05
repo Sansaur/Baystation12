@@ -33,12 +33,14 @@
 
 /obj/effect/shuttle_landmark/escape_pod/transit/New()
 	landmark_tag = "escape_pod_[number]_internim"
+	..()
 
 /obj/effect/shuttle_landmark/escape_pod/out
 	name = "Escaped"
 
 /obj/effect/shuttle_landmark/escape_pod/out/New()
 	landmark_tag = "escape_pod_[number]_out"
+	..()
 
 //Actually pods
 
@@ -59,7 +61,7 @@
 	warmup_time = 0
 	destinations = list(
 		"nav_lavalette_coupole",
-		"nav_lavalette_dock",
+		"nav_lavalette_xenoarch",
 		"nav_lavalette_residen",
 		"nav_lavalette_start",
 		)
@@ -81,8 +83,7 @@
 
 /obj/effect/shuttle_landmark/lavalette/xenoarch
 	name = "Au sas de Xenoarcheologie"
-	landmark_tag = "nav_lavalette_dock"
-	docking_controller = "rescue_shuttle_dock_airlock"
+	landmark_tag = "nav_lavalette_xenoarch"
 
 /obj/effect/shuttle_landmark/lavalette/coupole
 	name =  "Proche de la Coupole"
