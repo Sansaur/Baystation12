@@ -5,9 +5,6 @@
 
 	post_round_safe_areas = list (
 		/area/centcom,
-		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/dreyfus/exterieur,
 	)
 
 /area/shuttle/arrival
@@ -487,67 +484,26 @@
 /area/syndicate_mothership/ninja
 	name = "\improper Ninja Base"
 
-area/shuttle/lavalette/
+//Rescue ship
+
+area/shuttle/lavalette/start
 	name = "Corbeta La Veleta"
-
-/area/shuttle/lavalette/start
 	icon_state = "shuttlered"
 
-/area/shuttle/lavalette/transit
-	icon_state = "shuttlered"
+//Merc ship
 
-/area/shuttle/lavalette/coupole
-	icon_state = "shuttlered"
-
-/area/shuttle/lavalette/xeno
-	icon_state = "shuttlered"
-
-/area/shuttle/lavalette/residentiel
-	icon_state = "shuttlered"
-
-/area/shuttle/lavalette/transit
-	icon_state = "shuttle"
-	base_turf = /turf/unsimulated/floor/bluespace
-
-/area/shuttle/escape/transit
-	icon_state = "shuttle"
-	base_turf = /turf/space/transit/east
-
-/area/shuttle/escape/station
-	icon_state = "shuttle"
-
-area/shuttle/merc/
+area/shuttle/merc/start
 	name = "Cazador Huon"
-
-/area/shuttle/merc/start
 	icon_state = "shuttlered"
 
-/area/shuttle/merc/transit
-	icon_state = "shuttle"
-	base_turf = /turf/unsimulated/floor/bluespace
-
-/area/shuttle/merc/station
-	icon_state = "shuttlered"
-
-/area/shuttle/merc/coupole
-	icon_state = "shuttlered"
-
-/area/shuttle/merc/minage
-	icon_state = "shuttlered"
-
-/area/shuttle/merc/residentiel
-	icon_state = "shuttlered"
-
-/area/shuttle/escape_pod1
-	name = "\improper Capusla de escape nº1"
-	flags = AREA_RAD_SHIELDED
+//Pod areas
 
 /area/shuttle/escape_pod1/station
+	name = "\improper Escape Pod One"
+	flags = AREA_RAD_SHIELDED
 	icon_state = "shuttle2"
 
-/area/shuttle/escape_pod1/transit
-	icon_state = "shuttle"
-	base_turf = /turf/space/transit/east
+//Pod landing
 
 /area/dreyfus/exterieur
 	icon_state = "mining"

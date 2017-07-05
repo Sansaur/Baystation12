@@ -11,6 +11,7 @@
 
 	#include "../shared/exodus_torch/_include.dm"
 
+	#include "dreyfus_announcements.dm"
 	#include "dreyfus_areas.dm"
 	#include "dreyfus_elevator.dm"
 	#include "dreyfus_ranks.dm"

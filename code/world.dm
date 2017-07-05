@@ -736,3 +736,5 @@ proc/establish_old_db_connection()
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+#define PIXEL_SCALE 512
