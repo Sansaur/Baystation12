@@ -19,22 +19,44 @@
 	var/password
 	// Solgov Approved Merchandise 	- Regular things
 	var/list/items_availible_solgov = list(
-		/obj/item/clothing/under/schoolgirl = 10
+		/obj/item/clothing/under/schoolgirl = 10,
+		/obj/item/weapon/pack/cardemon = 5,
+		/obj/item/weapon/pack/spaceball = 5
 	)
 	// Embassy Approved Merchandise - Exotic items from the various species
 	var/list/items_availible_embassy = list(
-		/obj/item/clothing/suit/tajaran/furs = 30
+		/obj/item/clothing/suit/tajaran/furs = 30,
+		/obj/structure/plushie/ian = 20
 	)
 
 	// Sterling Manufactures - Mega luxurious shit
 	var/list/items_availible_sterling = list(
-		/obj/item/clothing/under/scratch = 55
+		/obj/item/clothing/under/scratch = 55,
+		/obj/item/clothing/under/wedding/bride_white = 55
 	)
 
 	var/list/items_possible_solgov = list(
-		/obj/item/clothing/under/confederacy = 15,
-		/obj/item/clothing/under/pt = 15,
-		/obj/item/weapon/storage/briefcase/paint_kit = 20
+		/obj/item/clothing/under/confederacy = 10,
+		/obj/item/clothing/under/pt = 10,
+		/obj/item/weapon/storage/briefcase/paint_kit = 20,
+		/obj/item/clothing/under/abaya =10,
+		/obj/item/pizzabox/meat = 3,
+		/obj/item/inflatable/wall = 5,
+		/obj/item/toy/therapy_blue = 4,
+		/obj/item/toy/water_balloon = 6,
+		/obj/item/toy/plushie/kitten = 3,
+		/obj/item/toy/balloon/nanotrasen = 1,
+		/obj/item/weapon/beach_ball = 5,
+		/obj/item/weapon/cell/high = 10,
+		/obj/item/weapon/storage/wallet/poly = 8,
+		/obj/item/weapon/storage/firstaid/regular = 5,
+		/obj/item/weapon/storage/fancy/crayons = 5,
+		/obj/item/weapon/weldingtool/hugetank = 20,
+		/obj/item/weapon/extinguisher/mini = 5,
+		/obj/item/weapon/inflatable_duck = 5,
+		/obj/item/clothing/head/philosopher_wig = 10,
+		/obj/item/clothing/head/mailman = 10,
+		/obj/item/clothing/under/rank/mailman = 20
 	)
 	var/list/items_possible_embassy = list(
 		/obj/item/clothing/under/psysuit = 20,
@@ -49,17 +71,35 @@
 		/obj/item/clothing/ears/skrell/band/ebony = 50,
 		/obj/item/clothing/suit/unathi/robe = 15,
 		/obj/item/clothing/suit/unathi/mantle = 10,
-		/obj/item/clothing/suit/rubber/unathi = 35,
-		/obj/item/clothing/mask/rubber/species/unathi = 35
+		/obj/item/clothing/suit/rubber/unathi = 25,
+		/obj/item/clothing/mask/rubber/species/unathi = 25,
+		/obj/item/clothing/suit/rubber/tajaran = 25,
+		/obj/item/clothing/mask/rubber/species/tajaran = 25,
+		/obj/item/toy/plushie/nymph = 5,
+		/obj/item/weapon/reagent_containers/food/snacks/skrellsnacks = 5,
+		/obj/item/stack/material/leather = 20
 	)
 	var/list/items_possible_sterling = list(
 		/obj/item/clothing/glasses/sunglasses/big = 40,
-		/obj/item/clothing/glasses/sunglasses = 30
+		/obj/item/clothing/glasses/sunglasses = 30,
+		/obj/item/weapon/storage/fancy/cigar = 30,
+		/obj/item/weapon/soap/deluxe = 10,
+		/obj/item/stack/material/diamond = 60,
+		/obj/item/clothing/ring/material/silver = 30,
+		/obj/item/clothing/ring/material/gold = 40,
+		/obj/item/clothing/ring/material/platinum = 50,
+		/obj/item/clothing/ring/engagement = 75
 	)
 
 	// When emagged, it'll show 'exotic' contraband
 	var/list/items_availible_emag = list(
-		/obj/item/weapon/gun/projectile/revolver/detective = 30
+		/obj/item/weapon/gun/projectile/revolver/detective = 30,
+		/obj/item/toy/plushie/spider = 1,
+		/obj/item/weapon/shield/riot = 40,
+		/obj/item/weapon/silencer = 20,
+		/obj/item/weapon/gun/projectile/pistol = 30,
+		/obj/item/weapon/gun/projectile/automatic/mini_uzi = 50,
+		/obj/item/weapon/flamethrower/full = 60
 	)
 
 	var/obj/item/weapon/cell/device/MyCell
@@ -78,7 +118,7 @@
 				MyHuman.mind.store_memory("Your trader device password is:[password]")
 				to_chat(MyHuman,"<span class='info'> Your trader device password is: <b>[password]</b>. This information has been added to your notes</span> ")
 	// Three free random investments at creation, yay
-	for(var/i=0,i<3,i++)
+	for(var/i=0,i<6,i++)
 		FreeRandomInvestment()
 
 /obj/item/device/trader_controller/update_icon()
