@@ -64,6 +64,7 @@
 	#include "../../code/modules/lobby_music/hardcorner.dm"
 	#include "../../code/modules/lobby_music/moonsoon.dm"
 	#include "../../code/modules/lobby_music/soma.dm"
+	#include "../../code/modules/lobby_music/dustsaturn.dm"
 	#include "../../code/modules/lobby_music/chopin27.dm"
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 
