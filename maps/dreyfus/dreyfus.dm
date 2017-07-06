@@ -62,7 +62,7 @@
 	#include "../../code/modules/lobby_music/endless_space.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 	#include "../../code/modules/lobby_music/hardcorner.dm"
-	#include "../../code/modules/lobby_music/moonsoon.dm"
+	#include "../../code/modules/lobby_music/altwave.dm"
 	#include "../../code/modules/lobby_music/soma.dm"
 	#include "../../code/modules/lobby_music/dustsaturn.dm"
 	#include "../../code/modules/lobby_music/chopin27.dm"
