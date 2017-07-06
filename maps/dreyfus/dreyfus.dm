@@ -39,6 +39,8 @@
 	#include "structures/wall_icons.dm"
 	#include "structures/walls.dm"
 	#include "structures/machinery.dm"
+	#include "structures/shelf.dm" //Abruti
+
 
 	#include "../shared/exodus_torch/_include.dm"
 
