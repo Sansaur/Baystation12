@@ -16,6 +16,7 @@
 						/datum/job/chef,
 						/datum/job/chaplain,
 						/datum/job/janitor,
+						/datum/job/trader,	// Adding the trader
 						/datum/job/ai,
 						/datum/job/cyborg,
 						)

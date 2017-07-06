@@ -11,6 +11,7 @@
 
 	#include "../shared/exodus_torch/_include.dm"
 
+	#include "dreyfus_announcements.dm"
 	#include "dreyfus_areas.dm"
 	#include "dreyfus_elevator.dm"
 	#include "dreyfus_ranks.dm"
@@ -57,15 +58,14 @@
 
 	// Can I ask why are we importing several objects with information for lobby music separated into various archives?
 	// Why not just a "../../code/modules/lobby_music/lobby_music.dm" with all the info in it? - Sansaur
-	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
+	#include "../../code/modules/lobby_music/martian_cowboy.dm"
 	#include "../../code/modules/lobby_music/endless_space.dm"
-	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 	#include "../../code/modules/lobby_music/hardcorner.dm"
-	#include "../../code/modules/lobby_music/spessbenzaie.dm"
-	#include "../../code/modules/lobby_music/moonsoon.dm"
-	#include "../../code/modules/lobby_music/bestfriends.dm"
+	#include "../../code/modules/lobby_music/altwave.dm"
 	#include "../../code/modules/lobby_music/soma.dm"
+	#include "../../code/modules/lobby_music/dustsaturn.dm"
+	#include "../../code/modules/lobby_music/chopin27.dm"
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 
 
