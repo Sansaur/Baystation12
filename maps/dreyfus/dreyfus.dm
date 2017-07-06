@@ -58,14 +58,11 @@
 
 	// Can I ask why are we importing several objects with information for lobby music separated into various archives?
 	// Why not just a "../../code/modules/lobby_music/lobby_music.dm" with all the info in it? - Sansaur
-	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
+	#include "../../code/modules/lobby_music/martian_cowboy.dm"
 	#include "../../code/modules/lobby_music/endless_space.dm"
-	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 	#include "../../code/modules/lobby_music/hardcorner.dm"
-	#include "../../code/modules/lobby_music/spessbenzaie.dm"
 	#include "../../code/modules/lobby_music/moonsoon.dm"
-	#include "../../code/modules/lobby_music/bestfriends.dm"
 	#include "../../code/modules/lobby_music/soma.dm"
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 
