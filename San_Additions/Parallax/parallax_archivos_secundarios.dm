@@ -1,3 +1,5 @@
+/turf/simulated/open
+	plane = OPENSPACE_PLANE		// This fixes the Parallax thingie
 
 /*
 Función original del espacio
