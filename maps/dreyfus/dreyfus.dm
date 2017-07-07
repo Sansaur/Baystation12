@@ -48,6 +48,7 @@
 	#include "structures/flooring_premades.dm"
 	#include "structures/furniture.dm"
 	#include "structures/gym.dm"
+	#include "structures/jukebox.dm"
 	#include "structures/tile_types.dm"
 	#include "structures/wall_icons.dm"
 	#include "structures/walls.dm"
