@@ -243,7 +243,7 @@
 "eI" = (/obj/effect/floor_decal/borderfloor/corner,/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled,/area/dreyfus/administration/corridor)
 "eJ" = (/obj/effect/floor_decal/borderfloor{tag = "icon-borderfloor (SOUTHEAST)"; icon_state = "borderfloor"; dir = 6},/turf/simulated/floor/tiled,/area/dreyfus/administration/corridor)
 "eK" = (/obj/effect/shuttle_landmark/merc/dock,/turf/space,/area/space)
-"eL" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock/maintenance{name = "Maintenance Administration"; req_access = list(12)},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/administration/maintenance/avant)
+"eL" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock/maintenance{name = "Mantenimiento Administracion"; req_access = list(12)},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/administration/maintenance/avant)
 "eM" = (/turf/unsimulated/mask,/area/dreyfus/administration/corridor)
 "eN" = (/obj/machinery/status_display,/turf/simulated/wall/r_wall,/area/dreyfus/administration/bureaux/openspace)
 "eO" = (/obj/effect/floor_decal/borderfloor{tag = "icon-borderfloor (EAST)"; icon_state = "borderfloor"; dir = 4},/obj/machinery/light{tag = "icon-tube1 (EAST)"; icon_state = "tube1"; dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled,/area/dreyfus/administration/corridor)
