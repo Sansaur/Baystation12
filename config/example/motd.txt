@@ -1,11 +1,12 @@
 <h1>¡Bienvenido a Cordelia!</h1>
-
--<i>Este servidor utiliza el código de Baystation <a href="http://baystation12.net/">Baystation 12's</a></i>
-<br><br>
-<strong>Página principal:</strong> <a href="http://spacestation13.es/"></a>
 <br>
-<strong>Discord:</strong> <a href="https://discord.gg/Kf5rgjK"></a>
+Este es el servidor de <strong>HRP (High Roleplay)</strong> oficial de la <a href="https://spacestation13.es">Comunidad Española</a> de Space Station 13, utilizamos una versión customizada del código de <a href="http://baystation12.net/">Baystation12.</a>
 <br>
-<strong>Foro:</strong> <a href="http://spacestation13.es/cordelia/"></a>
 <br>
-Este servidor es HRP, asegúrate de leer las reglas antes de comenzar a jugar.
+El mapa que usamos es la <strong>ESIN Dreyfus</strong> lo que cambia considerablemente el meta del juego. Si quieres leer mas acerca de esto puedes visitar nuestro <a href="https://github.com/PromethTK11/Baystation12">Github</a> o leer nuestro <a href="http://spacestation13.es/lore-de-cordelia/">Lore</a> o su <a href="">Thread</a> en el <a href="http://spacestation13.es/cordelia/">Foro</a>, también puedes pregutarle a los miembros de la comunidad acerca de esto.
+<br>
+<br>
+Si eres <strong>Nuevo en el Juego</strong> puedes consultar nuestra <a href="https://drive.google.com/file/d/0Bxz4eDYZQuKpel9ZZXdaTDR1U1E/view">Guia para Novatos</a>, y es altamente recomendado venir a nuestro <a href="https://discord.gg/Kf5rgjK">Canal de Discord</a> y preguntar sobre consejos a la hora de hacer roleplay. No dudes en entrar al canal en donde nosotros responderemos todas tus dudas. Tampoco temas a preguntarle a los <strong>Admins</strong> activos presionando <strong>F1</strong> para mandarles un mensaje directo.
+<br>
+<br>
+<strong>¡Diviertete y disfruta tu estadia!</strong>
