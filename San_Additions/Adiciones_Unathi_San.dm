@@ -85,10 +85,18 @@ RECUERDEN, SI SE HACE PR QUE CAMBIE HUMAN_MOVEMENT VA A HABER MUERTECITA
 	deal_halloss = 0
 	sparring_variant_type = /datum/unarmed_attack/light_strike
 
+	is_heavy_attack = 1
+	heavy_attack_CD = 3
+
 	// Vamos a hacer que al menos requieran tener el punto de apoyo de los pies para poder hacer la tail swipe
 	// Si le faltan ambos pies, no podrán hacer tailswipe
 	// Es el mismo condicionante que poder dar patadas
 /datum/unarmed_attack/tail_swipe/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
+	if(is_heavy_attack)
+		if(can_use_heavy_attack(user, target, zone))
+		else
+			return 0
+
 	if(!(zone in list(BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)))
 		return 0
 
@@ -141,10 +149,13 @@ RECUERDEN, SI SE HACE PR QUE CAMBIE HUMAN_MOVEMENT VA A HABER MUERTECITA
 				if(TRAJE.w_class >= 4 && TRAJE.armor["melee"] > 30)
 					return
 
-			if(prob(30))
+			if(prob(70))
 				user.visible_message("<span class='danger'>[user] struck [target] with enough force to send'em backwards!</span>")
 				// Tratamos de mover al objetivo una casilla hacia atrás.
-				if(target.Move(get_step(target, user.dir)))
+				var/localizacion = target.loc
+				target.Move(get_step(target, user.dir))
+				// Se comprueba si la nueva localizacion es diferente
+				if(target.loc != localizacion)
 					// Pues se movió, no hay otra
 					return
 				else
@@ -193,3 +204,31 @@ RECUERDEN, SI SE HACE PR QUE CAMBIE HUMAN_MOVEMENT VA A HABER MUERTECITA
 	src.AdjustParalysis(-4)
 	src.AdjustStunned(-4)
 	src.AdjustWeakened(-4)
+
+///// Nuevo Código para los "Heavy Attacks", básicamente, permite poner cooldown a los ataques pesados
+
+/mob/living/carbon/human
+	var/last_heavy_attack = 0
+
+/datum/unarmed_attack
+	var/heavy_attack_CD = 0
+	var/is_heavy_attack = 0
+
+/datum/unarmed_attack/apply_effects(var/mob/living/carbon/human/user,var/mob/living/carbon/human/target,var/armour,var/attack_damage,var/zone)
+	..()
+	user.last_heavy_attack++
+
+/datum/unarmed_attack/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
+	if(is_heavy_attack)
+		if(can_use_heavy_attack(user, target, zone))
+		else
+			return 0
+
+	return ..()
+
+/datum/unarmed_attack/proc/can_use_heavy_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
+	if(user.last_heavy_attack > heavy_attack_CD)
+		user.last_heavy_attack = 0
+		return 1
+	else
+		return 0

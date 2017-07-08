@@ -58,6 +58,9 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 			if(istype(CHECK.species, /datum/species/xenos))
 				return
 
+	// You will always be able to see self in the FoV
+	HideMask(client)
+
 	if(dir == SOUTH)
 		for(var/mob/living/VISIBLE in oview())
 			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
@@ -79,7 +82,7 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 			else
 				VISIBLE.ShowMask(client)
 
-	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST )
+	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
 		for(var/mob/living/VISIBLE in oview())
 			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
 				VISIBLE.HideMask(client)
