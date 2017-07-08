@@ -1,5 +1,11 @@
-<h1>Welcome to Space Station 13!</h1>
+<h1>¡Bienvenido a Cordelia!</h1>
 
--<i>This server is running <a href="http://baystation12.net/">Baystation 12's</a> modification of the <a href="http://ss13.eu/">/tg/station13</a> SS13 code.</i>
+-<i>Este servidor utiliza el código de Baystation <a href="http://baystation12.net/">Baystation 12's</a></i>
 <br><br>
-<strong>Bugtracker:</strong> <a href="http://baystation12.net/forums/threads/issue-tracker-report-template.110/">for posting of bugs and issues.</a>
+<strong>Página principal:</strong> <a href="http://spacestation13.es/"></a>
+<br>
+<strong>Discord:</strong> <a href="https://discord.gg/Kf5rgjK"></a>
+<br>
+<strong>Foro:</strong> <a href="http://spacestation13.es/cordelia/"></a>
+<br>
+Este servidor es HRP, asegúrate de leer las reglas antes de comenzar a jugar.
