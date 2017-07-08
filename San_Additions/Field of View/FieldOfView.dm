@@ -40,6 +40,12 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	..(ndir)
 	Tell_Me_Dir_MOBS()
 
+/atom/set_dir(new_dir)
+	..(new_dir)
+	if(istype(src, /mob/living))
+		var/mob/living/S = src
+		S.Tell_Me_Dir_MOBS()
+
 /mob/living/proc/Tell_Me_Dir_MOBS()
 	// Having a client is REQUIRED for this to work
 	if(!src.client)
@@ -66,14 +72,14 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 			else
 				VISIBLE.ShowMask(client)
 
-	if(dir == EAST)
+	if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
 		for(var/mob/living/VISIBLE in oview())
 			if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
-	if(dir == WEST)
+	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST )
 		for(var/mob/living/VISIBLE in oview())
 			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
 				VISIBLE.HideMask(client)
@@ -103,6 +109,13 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	..(ndir)
 	if(fov_test)
 		fov_test.update()
+
+/atom/set_dir(new_dir)
+	..(new_dir)
+	if(istype(src, /mob/living))
+		var/mob/living/S = src
+		if(S.fov_test)
+			S.fov_test.update()
 
 /mob/living/Login()
 	..()
@@ -283,3 +296,90 @@ mob
 
             client.ClearMasks()
 */
+
+
+// MED AND SEC HUDS
+
+//can_process_hud(var/mob/M)
+	/*
+/process_med_hud(var/mob/M, var/local_scanner, var/mob/Alt)
+	if(!M.client)
+		return
+	if(is_type_in_list(M, living_types_can_see_behind))
+		return
+	if(istype(M, /mob/living/carbon/human))
+		var/mob/living/carbon/human/CHECK = M
+		if(CHECK.species)
+			if(istype(CHECK.species, /datum/species/xenos))
+				return
+
+	if(M.dir == SOUTH)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.y <= (M.y+1) && !(VISIBLE.y < M.y - M.client.view))
+			else
+				return
+
+	if(M.dir == NORTH)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.y >= (M.y-1) && !(VISIBLE.y > M.y + M.client.view))
+			else
+				return
+
+	if(M.dir == EAST)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.x >= (M.x-1) && !(VISIBLE.x > M.x + M.client.view))
+			else
+				return
+
+	if(M.dir == WEST)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.x <= (M.x+1) && !(VISIBLE.x < M.x - M.client.view))
+			else
+				return
+
+	..()
+
+/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
+	if(!M.client)
+		return
+	if(is_type_in_list(M, living_types_can_see_behind))
+		return
+	if(istype(M, /mob/living/carbon/human))
+		var/mob/living/carbon/human/CHECK = M
+		if(CHECK.species)
+			if(istype(CHECK.species, /datum/species/xenos))
+				return
+
+	if(M.dir == SOUTH)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.y <= (M.y+1) && !(VISIBLE.y < M.y - M.client.view))
+			else
+				return
+
+	if(M.dir == NORTH)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.y >= (M.y-1) && !(VISIBLE.y > M.y + M.client.view))
+			else
+				return
+
+	if(M.dir == EAST)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.x >= (M.x-1) && !(VISIBLE.x > M.x + M.client.view))
+			else
+				return
+
+	if(M.dir == WEST)
+		for(var/mob/living/VISIBLE in oview())
+			if(VISIBLE.x <= (M.x+1) && !(VISIBLE.x < M.x - M.client.view))
+			else
+				return
+
+	..()
+	*/
+
+/mob/living/carbon/human/is_invisible_to(var/mob/viewer)
+	for(var/image/mask/MASKS in viewer.client.masks)
+		if(MASKS.loc == src)
+			return 1
+
+	return (cloaked || ..())
