@@ -23,13 +23,13 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 /mob/living/Move()
 	. = ..()
 	Tell_Me_Dir_MOBS()
-	for(var/mob/living/VISIBLE in oview())
+	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/forceMove()
 	. = ..()
 	Tell_Me_Dir_MOBS()
-	for(var/mob/living/VISIBLE in oview())
+	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/face_atom(var/atom/A)
@@ -62,28 +62,28 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	HideMask(client)
 
 	if(dir == SOUTH)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == NORTH)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.y >= (src.y-1) && !(VISIBLE.y > src.y + src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
 				VISIBLE.HideMask(client)
 			else
