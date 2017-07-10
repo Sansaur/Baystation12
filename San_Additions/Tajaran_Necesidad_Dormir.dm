@@ -27,7 +27,7 @@ Añadimos bastantes variables adicionales a la especie Tajaran
 */
 /datum/species/tajaran/handle_environment_special(var/mob/living/carbon/human/H)
 	handle_sleep_time(H) // Lo ponemos en otra Proc para que se puedan hacer más cosas en el mismo handle_enviroment_special
-
+	handle_clothing_heat(H)
 	// Un icono en la pantalla que empieza siendo null y solamente se inicializa en una fórmula usada por los Tajaran
 	// esto solo es usado por los Tajaran REPITO
 	// Por ahora - Sansaur

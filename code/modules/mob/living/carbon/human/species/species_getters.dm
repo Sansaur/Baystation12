@@ -59,21 +59,22 @@
 
 	if(!prob(5))
 		return
-
-	var/covered = 0 // Basic coverage can help.
+	/*
 	for(var/obj/item/clothing/clothes in H)
 		if(H.l_hand == clothes || H.r_hand == clothes)
 			continue
 		if((clothes.body_parts_covered & UPPER_TORSO) && (clothes.body_parts_covered & LOWER_TORSO))
 			covered = 1
 			break
-
+	*/
+	// this shouldn't only be temperature around you, but also temperature of your body
+	// If Tajarans get their body cold from some source (Maybe a chemical or a virus) they'd still feel "heat" if they wore a fucking jumpsuit
 	switch(msg_type)
 		if("cold")
-			if(!covered)
+			if(H.bodytemperature <= H.species.cold_discomfort_level)
 				to_chat(H, "<span class='danger'>[pick(cold_discomfort_strings)]</span>")
 		if("heat")
-			if(covered)
+			if(H.bodytemperature >= H.species.heat_discomfort_level)
 				to_chat(H, "<span class='danger'>[pick(heat_discomfort_strings)]</span>")
 
 /datum/species/proc/get_random_name(var/gender)
