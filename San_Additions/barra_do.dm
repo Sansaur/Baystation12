@@ -9,4 +9,5 @@ Descomentado para hacer la prueba.
 		qdel(typing_indicator)
 
 	// Jajajajaj, esto se puede usar hasta durmiendo xD lol
-	src.visible_message("<font color='#005500'><B>\[[src]\]</B> [message]</font>")
+	if(message)
+		src.visible_message("<font color='#005500'><B>\[[src]\]</B> [message]</font>")
