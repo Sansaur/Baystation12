@@ -19,6 +19,7 @@ datum/track/New(var/title_name, var/audio)
 	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 100
+	clicksound = 'sound/machines/buttonbeep.ogg'
 
 	var/playing = 0
 	var/volume = 20
@@ -29,14 +30,21 @@ datum/track/New(var/title_name, var/audio)
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
 		new/datum/track("Beyond", 'sound/ambience/ambispace.ogg'),
+		new/datum/track("Best Friends", 'sound/music/bestfriends.ogg'),
 		new/datum/track("Clouds of Fire", 'sound/music/clouds.s3m'),
 		new/datum/track("D`Bert", 'sound/music/title2.ogg'),
 		new/datum/track("D`Fort", 'sound/ambience/song_game.ogg'),
 		new/datum/track("Floating", 'sound/music/main.ogg'),
 		new/datum/track("Endless Space", 'sound/music/space.ogg'),
-		new/datum/track("Part A", 'sound/misc/TestLoop1.ogg'),
+		new/datum/track("Miami", 'sound/music/altwave.ogg'),
 		new/datum/track("Scratch", 'sound/music/title1.ogg'),
-		new/datum/track("Trai`Tor", 'sound/music/traitor.ogg'),
+		new/datum/track("Space Oddity", 'sound/music/space_oddity.ogg'),
+		new/datum/track("Space Asshole", 'sound/music/space_asshole.ogg'),
+		new/datum/track("Spaceman", 'sound/music/spessbenzaie.ogg'),
+		new/datum/track("Elevator", 'sound/music/elevatormusic.ogg'),
+		new/datum/track("Moonsoon", 'sound/music/moonsoon.ogg'),
+		new/datum/track("Nocturne", 'sound/music/Nocturne27.ogg'),
+		new/datum/track("Hardcorner", 'sound/music/hardcorner.ogg'),
 	)
 
 /obj/machinery/media/jukebox/New()

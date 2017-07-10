@@ -19,6 +19,9 @@
 	var/icon_state_closed = null
 	var/icon_state_closing = null
 
+	var/open_sound = 'sound/machines/Custom_blastdooropen.ogg'
+	var/close_sound = 'sound/machines/Custom_blastdoorclose.ogg'
+
 	closed_layer = ABOVE_WINDOW_LAYER
 	var/id = 1.0
 	dir = 1
@@ -76,8 +79,8 @@
 // Description: Opens the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_open()
 	src.operating = 1
+	playsound(src.loc, open_sound, 100, 1)
 	flick(icon_state_opening, src)
-	playsound(src.loc, 'sound/machines/Custom_blastdooropen.ogg', 65, 0)
 	src.set_density(0)
 	update_nearby_tiles()
 	src.update_icon()
@@ -91,9 +94,9 @@
 // Description: Closes the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_close()
 	src.operating = 1
+	playsound(src.loc, close_sound, 100, 1)
 	src.layer = closed_layer
 	flick(icon_state_closing, src)
-	playsound(src.loc, 'sound/machines/Custom_blastdoorclose.ogg', 65, 0)
 	src.set_density(1)
 	update_nearby_tiles()
 	src.update_icon()
@@ -202,6 +205,8 @@
 	icon_state_closed = "shutter1"
 	icon_state_closing = "shutterc1"
 	icon_state = "shutter1"
+	open_sound = 'sound/machines/shutters_open.ogg'
+	close_sound = 'sound/machines/shutters_close.ogg'
 
 /obj/machinery/door/blast/shutters/open
 	begins_closed = FALSE
