@@ -578,6 +578,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/miner(src)
 	src.modules += new /obj/item/weapon/mining_scanner(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	var/jetpack = new/obj/item/weapon/tank/jetpack/oxygen(src)
+	src.modules += jetpack
+//	R.internals = jetpack
 	src.emag = new /obj/item/weapon/pickaxe/plasmacutter(src)
 	..()
 
