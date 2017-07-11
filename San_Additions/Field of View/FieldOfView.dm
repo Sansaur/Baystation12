@@ -21,27 +21,27 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	var/image/BLACKOVERLAY
 
 /mob/living/Move()
-	..()
+	. = ..()
 	Tell_Me_Dir_MOBS()
-	for(var/mob/living/VISIBLE in oview())
+	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/forceMove()
-	..()
+	. = ..()
 	Tell_Me_Dir_MOBS()
-	for(var/mob/living/VISIBLE in oview())
+	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
 
 /mob/living/face_atom(var/atom/A)
-	..(A)
+	. = ..(A)
 	Tell_Me_Dir_MOBS()
 
 /mob/living/facedir(var/ndir)
-	..(ndir)
+	. = ..(ndir)
 	Tell_Me_Dir_MOBS()
 
 /atom/set_dir(new_dir)
-	..(new_dir)
+	. = ..(new_dir)
 	if(istype(src, /mob/living))
 		var/mob/living/S = src
 		S.Tell_Me_Dir_MOBS()
@@ -62,28 +62,28 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	HideMask(client)
 
 	if(dir == SOUTH)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == NORTH)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.y >= (src.y-1) && !(VISIBLE.y > src.y + src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
 				VISIBLE.HideMask(client)
 			else
 				VISIBLE.ShowMask(client)
 
 	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
-		for(var/mob/living/VISIBLE in oview())
+		for(var/mob/living/VISIBLE in view())
 			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
 				VISIBLE.HideMask(client)
 			else
@@ -104,17 +104,17 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 		fov_test.update()
 
 /mob/living/face_atom(var/atom/A)
-	..(A)
+	. = ..(A)
 	if(fov_test)
 		fov_test.update()
 
 /mob/living/facedir(var/ndir)
-	..(ndir)
+	. = ..(ndir)
 	if(fov_test)
 		fov_test.update()
 
 /atom/set_dir(new_dir)
-	..(new_dir)
+	. = ..(new_dir)
 	if(istype(src, /mob/living))
 		var/mob/living/S = src
 		if(S.fov_test)

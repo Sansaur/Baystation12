@@ -254,3 +254,7 @@
 	path = /obj/item/clothing/accessory/kneepads
 
 /datum/gear/accessory/flannel
+
+/datum/gear/accessory/camera
+	display_name = "Polaroid Camera"
+	path = /obj/item/device/camera
