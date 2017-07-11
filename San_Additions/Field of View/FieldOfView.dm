@@ -20,12 +20,6 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 /mob/living
 	var/image/BLACKOVERLAY
 
-/mob/living/Login()
-	. = ..()
-	Tell_Me_Dir_MOBS()
-	for(var/mob/living/VISIBLE in oview())
-		VISIBLE.Tell_Me_Dir_MOBS()
-
 /mob/living/Move()
 	..()
 	Tell_Me_Dir_MOBS()
@@ -51,48 +45,6 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	if(istype(src, /mob/living))
 		var/mob/living/S = src
 		S.Tell_Me_Dir_MOBS()
-
-/obj/mecha/Move()
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		occupant.Tell_Me_Dir_MOBS()
-		for(var/mob/living/VISIBLE in oview())
-			VISIBLE.Tell_Me_Dir_MOBS()
-
-/obj/mecha/mechturn()
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		occupant.Tell_Me_Dir_MOBS()
-		for(var/mob/living/VISIBLE in oview())
-			VISIBLE.Tell_Me_Dir_MOBS()
-
-/obj/mecha/mechstep(direction)
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		occupant.Tell_Me_Dir_MOBS()
-		for(var/mob/living/VISIBLE in oview())
-			VISIBLE.Tell_Me_Dir_MOBS()
-
-/obj/mecha/do_move(direction)
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		occupant.Tell_Me_Dir_MOBS()
-		for(var/mob/living/VISIBLE in oview())
-			VISIBLE.Tell_Me_Dir_MOBS()
-
-/datum/nano_module/camera_monitor/switch_to_camera(var/mob/user, var/obj/machinery/camera/C)
-	. = ..()
-	if(istype(user, /mob/living))
-		var/mob/living/myuser = user
-		myuser.UndoAllMasks()
-
-/mob/living/proc/UndoAllMasks()
-	for(var/mob/living/VISIBLE in world)
-		VISIBLE.HideMask(client)
 
 /mob/living/proc/Tell_Me_Dir_MOBS()
 	// Having a client is REQUIRED for this to work
@@ -160,34 +112,6 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 	..(ndir)
 	if(fov_test)
 		fov_test.update()
-
-/obj/mecha/Move()
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		if(occupant.fov_test)
-			occupant.fov_test.update()
-
-/obj/mecha/mechturn()
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		if(occupant.fov_test)
-			occupant.fov_test.update()
-
-/obj/mecha/mechstep(direction)
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		if(occupant.fov_test)
-			occupant.fov_test.update()
-
-/obj/mecha/do_move(direction)
-	. = ..()
-	if(occupant)
-		occupant.dir = dir
-		if(occupant.fov_test)
-			occupant.fov_test.update()
 
 /atom/set_dir(new_dir)
 	..(new_dir)
