@@ -19,7 +19,7 @@
 	assistant_job = "Pasajero"
 
 /datum/mil_branch/contractuel
-	name = "Contractual"
+	name = "Contratista"
 	name_short = "CTRAT"
 	email_domain = "gocourriel.uni.nt"
 
