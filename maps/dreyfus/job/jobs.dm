@@ -164,7 +164,7 @@
 	)
 
 /datum/job/hos
-	title = "Marshall"
+	title = "Marshal"
 	supervisors = "sus contratistas"
 	minimal_player_age = 19
 	economic_modifier = 10
