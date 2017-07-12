@@ -91,10 +91,10 @@
 	// Para poner el giro de Goonstation se descomenta aquí
 	// Para quitarlo, se comenta, obvs
 //	src.spin(2,0.6)
-	if(src.dir == 4)
+	/*if(src.dir == 4)
 		animate_spin(src, "R", 1.3) // Flip de Goonstation
 	else
-		animate_spin(src, "L", 1.3) // Flip de Goonstation
+		animate_spin(src, "L", 1.3) // Flip de Goonstation*/
 
 	is_jumping = 1	// Begin the jump, before each return it'll reset to 0
 	playsound(src.loc, 'sound/weapons/towelwipe.ogg', 50, 1)
