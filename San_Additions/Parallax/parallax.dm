@@ -19,9 +19,15 @@
 		update()
 
 	proc/update()
-		forceMove(get_turf(owner))
-		pixel_x = -224-owner.x
-		pixel_y = -224-owner.y
+		if(isturf(owner.loc))
+			forceMove(get_turf(owner))
+			pixel_x = -224-owner.x
+			pixel_y = -224-owner.y
+		else
+			forceMove(get_turf(owner.loc))
+			pixel_x = -224-owner.loc.x
+			pixel_y = -224-owner.loc.y
+
 
 	// Voy a dejar todos estos procs para que se pueda hacer debug en mitad de la partida - Sansaur
 	proc/redo_image()
@@ -47,8 +53,66 @@
 	if(parallax)
 		parallax.update()
 
+/obj/Move()
+	. = ..()
+	for(var/atom/A in contents)
+		if(istype(A, /mob))
+			var/mob/C = A
+			if(C.parallax)
+				C.parallax.update()
+
 /mob/Login()
 	..()
 	if(!parallax)
 		parallax = new(src)
 	src << parallax.image
+
+/mob/face_atom(var/atom/A)
+	. = ..(A)
+	if(parallax)
+		parallax.update()
+
+/mob/facedir(var/ndir)
+	. = ..(ndir)
+	if(parallax)
+		parallax.update()
+
+/mob/set_dir(new_dir)
+	. = ..(new_dir)
+	if(parallax)
+		parallax.update()
+
+/obj/mecha/Move()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		if(S.parallax)
+			S.parallax.update()
+
+/obj/mecha/do_move()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		if(S.parallax)
+			S.parallax.update()
+
+/obj/mecha/mechturn(direction)
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		if(S.parallax)
+			S.parallax.update()
+
+/obj/mecha/mechstep(direction)
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		if(S.parallax)
+			S.parallax.update()
+
+/obj/mecha/mechsteprand()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		if(S.parallax)
+			S.parallax.update()
