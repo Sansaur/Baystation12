@@ -57,7 +57,7 @@
 
 /datum/species/proc/get_environment_discomfort(var/mob/living/carbon/human/H, var/msg_type)
 
-	if(!prob(5))
+	if(!prob(25))
 		return
 	/*
 	for(var/obj/item/clothing/clothes in H)
@@ -69,6 +69,7 @@
 	*/
 	// this shouldn't only be temperature around you, but also temperature of your body
 	// If Tajarans get their body cold from some source (Maybe a chemical or a virus) they'd still feel "heat" if they wore a fucking jumpsuit
+
 	switch(msg_type)
 		if("cold")
 			if(H.bodytemperature <= H.species.cold_discomfort_level)

@@ -270,7 +270,7 @@
 		owner.bodytemperature += temp_adj
 
 	// Removing this and changing it to the get_enviroment_discomfort
-	// Basically, instead of checking it via the temperature of the gas_mixture, we check the body temperature in the
+	// Basically, instead of checking it via the temperature of the gas_mixture, we check the bodytemperature in the
 	// get_enviroment_discomfort proc.
 //	else if(breath.temperature >= species.heat_discomfort_level)
 	species.get_environment_discomfort(owner,"heat")

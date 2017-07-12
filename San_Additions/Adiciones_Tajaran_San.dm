@@ -13,8 +13,20 @@ Possibilites:
 
 */
 
+// Tajarans now have regular heat discomfort level but they get additional bodytemperature heat from clothing, as checked in their
+// handle_enviroment_special()
+// And now head discomfort is checked by the body temperature
+
 /datum/species/tajaran
 	heat_discomfort_level = 315
+
+	// Reminder that this var exists.
+	// The body will try to lower itself to this temperature
+	// Tajarans bodytemp would RISE to this temperature in their natural habitat, becuase their natural habitat is 292K while the station is 298K
+	// They'd feel a lot of cold, that'd substract heat from them, but their fur "adds it back".
+	// So, what they do in station is have their regular body temperature, but they'd easily get discomfort by wearing too much clothing
+	// Not by just wearing "something that covers their chest and balls" >:C
+	//body_temperature = 310.15
 	slowdown = -0.2
 
 	heat_level_1 = 330 //Default 330
