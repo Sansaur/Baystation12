@@ -30,6 +30,15 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 		A.client.ClearMasks()
 
 	return .
+
+/mob/Login()
+	..()
+	Tell_Me_Dir_MOBS()
+	for(var/mob/living/VISIBLE in view())
+		VISIBLE.Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
+
 /mob/living/Move()
 	. = ..()
 	Tell_Me_Dir_MOBS()
@@ -60,6 +69,13 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 
 /atom/set_dir(new_dir)
 	. = ..(new_dir)
+	for(var/atom/A in contents)
+		if(istype(A, /mob/living))
+			var/mob/living/C = A
+			C.Tell_Me_Dir_MOBS()
+			if(C.fov_test)
+				C.fov_test.update()
+
 	if(istype(src, /mob/living))
 		var/mob/living/S = src
 		S.Tell_Me_Dir_MOBS()
@@ -74,6 +90,7 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 			C.Tell_Me_Dir_MOBS()
 			if(C.fov_test)
 				C.fov_test.update()
+
 
 /obj/mecha/Move()
 	. = ..()
