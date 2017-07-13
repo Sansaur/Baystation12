@@ -23,7 +23,7 @@
 
 /datum/job/assistant
 	title = "Pasajero"
-	supervisors = "Todo el mundo"
+	supervisors = "todo el mundo"
 	minimal_player_age = 14
 	economic_modifier = 3
 	ideal_character_age = 21
@@ -42,7 +42,7 @@
 
 /datum/job/captain
 	title = "Director General"
-	supervisors = "NanoTrasen y los Accionistas"
+	supervisors = "NanoTrasen y los accionistas"
 	minimal_player_age = 41
 	economic_modifier = 15
 	ideal_character_age = 65
@@ -56,7 +56,7 @@
 
 /datum/job/hop
 	title = "Director Adjunto"
-	supervisors = "El director general"
+	supervisors = "el director general"
 	minimal_player_age = 31
 	economic_modifier = 12
 	ideal_character_age = 45
@@ -73,7 +73,7 @@
 
 /datum/job/employe
 	title = "Empleado Administrativo"
-	supervisors = "Los directores"
+	supervisors = "los directores"
 	minimal_player_age = 21
 	economic_modifier = 8
 	ideal_character_age = 30
@@ -86,7 +86,7 @@
 	alt_titles = list(
 		"Administrador",
 		"Secretario",
-		"Controlador",
+		"Manager",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/employe
 	allowed_branches = list(
@@ -98,7 +98,7 @@
 
 /datum/job/rd
 	title = "Supervisor"
-	supervisors = "El director general"
+	supervisors = "el director general"
 	minimal_player_age = 21
 	economic_modifier = 9
 	ideal_character_age = 40
@@ -127,7 +127,7 @@
 
 /datum/job/scientist
 	title = "Cientifico"
-	supervisors = "El supervisor"
+	supervisors = "el supervisor"
 	minimal_player_age = 19
 	economic_modifier = 8
 	ideal_character_age = 30
@@ -165,7 +165,7 @@
 
 /datum/job/hos
 	title = "Marshall"
-	supervisors = "Sus contratistas"
+	supervisors = "sus contratistas"
 	minimal_player_age = 19
 	economic_modifier = 10
 	ideal_character_age = 30
@@ -174,6 +174,8 @@
 	alt_titles = list(
 		"Responsable de Seguridad",
 		"Mercenario",
+		"Sheriff",
+		"Alguacil",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
@@ -182,7 +184,7 @@
 /datum/job/qm
 	selection_color = "#3d3315"
 	title = "Contramaestre"
-	supervisors = "El director general"
+	supervisors = "el director general"
 	minimal_player_age = 21
 	economic_modifier = 7
 	ideal_character_age = 30
@@ -201,7 +203,7 @@
 
 /datum/job/engineer
 	title = "Ingeniero"
-	supervisors = "El contramaestre"
+	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 5
 	ideal_character_age = 21
@@ -223,7 +225,7 @@
 /datum/job/mining
 	selection_color = "#7c6a2e"
 	title = "Minero"
-	supervisors = "El contramaestre"
+	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
@@ -243,7 +245,7 @@
 /datum/job/cargo_tech
 	selection_color = "#7c6a2e"
 	title = "Tecnico de Cargamento"
-	supervisors = "El contramaestre"
+	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
@@ -263,7 +265,7 @@
 /datum/job/ouvrier
 	selection_color = "#7c6a2e"
 	title = "Obrero"
-	supervisors = "El contramaestre"
+	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
@@ -274,7 +276,7 @@
 	department = "Supply"
 	alt_titles = list(
 		"Moldeador",
-		"Obrero polivalente",
+		"Operador",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/dreyfus/ouvrier
 	allowed_branches = list(
@@ -286,7 +288,7 @@
 
 /datum/job/chef
 	title = "Cocinero"
-	supervisors = "Los directores y sus clientes"
+	supervisors = "los directores y sus clientes"
 	minimal_player_age = 16
 	economic_modifier = 4
 	ideal_character_age = 21
@@ -302,7 +304,7 @@
 
 /datum/job/chaplain
 	title = "Capellan"
-	supervisors = "Los directores"
+	supervisors = "los directores"
 	minimal_player_age = 21
 	economic_modifier = 6
 	ideal_character_age = 30
@@ -317,14 +319,14 @@
 
 /datum/job/janitor
 	title = "Conserje"
-	supervisors = "El contramaestre"
+	supervisors = "el contramaestre"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list(
-		"Tecnico de sanitizacion",
+		"Tecnico de Sanitizacion",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/ouvrier

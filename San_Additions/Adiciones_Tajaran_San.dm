@@ -14,9 +14,5 @@ Possibilites:
 */
 
 /datum/species/tajaran
-	heat_discomfort_level = 308
+	heat_discomfort_level = 292
 	slowdown = -0.2
-
-	heat_level_1 = 292 //Default 330
-	heat_level_2 = 380 //Default 380
-	heat_level_3 = 800 //Default 800

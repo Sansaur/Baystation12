@@ -185,3 +185,42 @@
 /obj/effect/shuttle_landmark/merc/residentiel
 	name = "Acercarse al piso Resdidencial"
 	landmark_tag = "nav_merc_residentiel"
+
+//Ninja
+
+//Ninja Shuttle.
+/datum/shuttle/autodock/multi/antag/ninja
+	name = "Ninja"
+	warmup_time = 0
+	destinations = list(
+		"nav_ninja_adm",
+		"nav_ninja_eng",
+		"nav_ninja_asteroid",
+		"nav_ninja_start"
+		)
+	shuttle_area = /area/syndicate_mothership/ninja
+	current_location = "nav_ninja_start"
+	landmark_transition = "nav_ninja_transition"
+	announcer = "Direction Centrale"
+	arrival_message = "Attention, anomalous sensor reading detected entering station proximity."
+	departure_message = "Attention, anomalous sensor reading detected leaving station proximity."
+
+/obj/effect/shuttle_landmark/ninja/start
+	name = "Away Asteroid Belt"
+	landmark_tag = "nav_ninja_start"
+
+/obj/effect/shuttle_landmark/ninja/internim
+	name = "In transit"
+	landmark_tag = "nav_ninja_transition"
+
+/obj/effect/shuttle_landmark/ninja/civ
+	name = "North of Administrative Deck"
+	landmark_tag = "nav_ninja_adm"
+
+/obj/effect/shuttle_landmark/ninja/eng
+	name = "Southwest of Engineering"
+	landmark_tag = "nav_ninja_eng"
+
+/obj/effect/shuttle_landmark/ninja/asteroid
+	name = "Asteroids on Industrial Deck"
+	landmark_tag = "nav_ninja_asteroid"

@@ -19,32 +19,109 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 
 /mob/living
 	var/image/BLACKOVERLAY
+/*
+	ALL THE PROCS THAT CAUSE THE FOV AND OVERLAY TO UPDATE!!!
+*/
+
+/datum/nano_module/camera_monitor/switch_to_camera(var/mob/user, var/obj/machinery/camera/C)
+	. = ..()
+	if(istype(user, /mob/living))
+		var/mob/living/A = user
+		A.client.ClearMasks()
+
+	return .
+
+/mob/Login()
+	..()
+	Tell_Me_Dir_MOBS()
+	for(var/mob/living/VISIBLE in view())
+		VISIBLE.Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
 
 /mob/living/Move()
 	. = ..()
 	Tell_Me_Dir_MOBS()
 	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
 
 /mob/living/forceMove()
 	. = ..()
 	Tell_Me_Dir_MOBS()
 	for(var/mob/living/VISIBLE in view())
 		VISIBLE.Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
 
 /mob/living/face_atom(var/atom/A)
 	. = ..(A)
 	Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
 
 /mob/living/facedir(var/ndir)
 	. = ..(ndir)
 	Tell_Me_Dir_MOBS()
+	if(fov_test)
+		fov_test.update()
 
 /atom/set_dir(new_dir)
 	. = ..(new_dir)
+	for(var/atom/A in contents)
+		if(istype(A, /mob/living))
+			var/mob/living/C = A
+			C.Tell_Me_Dir_MOBS()
+			if(C.fov_test)
+				C.fov_test.update()
+
 	if(istype(src, /mob/living))
 		var/mob/living/S = src
 		S.Tell_Me_Dir_MOBS()
+		if(S.fov_test)
+			S.fov_test.update()
+
+/obj/Move()
+	. = ..()
+	for(var/atom/A in contents)
+		if(istype(A, /mob/living))
+			var/mob/living/C = A
+			C.Tell_Me_Dir_MOBS()
+			if(C.fov_test)
+				C.fov_test.update()
+
+
+/obj/mecha/Move()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		S.set_dir(dir)
+
+/obj/mecha/do_move()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		S.set_dir(dir)
+
+/obj/mecha/mechturn(direction)
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		S.set_dir(dir)
+
+/obj/mecha/mechstep(direction)
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		S.set_dir(dir)
+
+/obj/mecha/mechsteprand()
+	. = ..()
+	if(occupant)
+		var/mob/living/S = occupant
+		S.set_dir(dir)
+
 
 /mob/living/proc/Tell_Me_Dir_MOBS()
 	// Having a client is REQUIRED for this to work
@@ -57,68 +134,70 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 		if(CHECK.species)
 			if(istype(CHECK.species, /datum/species/xenos))
 				return
+	// If our eye is on a camera, it removes all masks, always
+	if(istype(client.eye, /obj/machinery/camera))
+		client.ClearMasks()
+		return
 
 	// You will always be able to see self in the FoV
 	HideMask(client)
 
-	if(dir == SOUTH)
-		for(var/mob/living/VISIBLE in view())
-			if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
-				VISIBLE.HideMask(client)
-			else
-				VISIBLE.ShowMask(client)
-
-	if(dir == NORTH)
-		for(var/mob/living/VISIBLE in view())
-			if(VISIBLE.y >= (src.y-1) && !(VISIBLE.y > src.y + src.client.view))
-				VISIBLE.HideMask(client)
-			else
-				VISIBLE.ShowMask(client)
-
-	if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
-		for(var/mob/living/VISIBLE in view())
-			if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
-				VISIBLE.HideMask(client)
-			else
-				VISIBLE.ShowMask(client)
-
-	if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
-		for(var/mob/living/VISIBLE in view())
-			if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
-				VISIBLE.HideMask(client)
-			else
-				VISIBLE.ShowMask(client)
+	// Very important "if im inside something" check
+	if(isobj(src.loc))
+		var/obj/T = src.loc
+		if(dir == SOUTH)
+			for(var/mob/living/VISIBLE in view(T))
+				if(VISIBLE.y <= (T.y+1) && !(VISIBLE.y < T.y - src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == NORTH)
+			for(var/mob/living/VISIBLE in view(T))
+				if(VISIBLE.y >= (T.y-1) && !(VISIBLE.y > T.y + src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
+			for(var/mob/living/VISIBLE in view(T))
+				if(VISIBLE.x >= (T.x-1) && !(VISIBLE.x > T.x + src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
+			for(var/mob/living/VISIBLE in view(T))
+				if(VISIBLE.x <= (T.x+1) && !(VISIBLE.x < T.x - src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+	else
+		if(dir == SOUTH)
+			for(var/mob/living/VISIBLE in view())
+				if(VISIBLE.y <= (src.y+1) && !(VISIBLE.y < src.y - src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == NORTH)
+			for(var/mob/living/VISIBLE in view())
+				if(VISIBLE.y >= (src.y-1) && !(VISIBLE.y > src.y + src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == EAST || dir == NORTHEAST ||  dir == SOUTHEAST)
+			for(var/mob/living/VISIBLE in view())
+				if(VISIBLE.x >= (src.x-1) && !(VISIBLE.x > src.x + src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
+		if(dir == WEST || dir == NORTHWEST || dir == SOUTHWEST)
+			for(var/mob/living/VISIBLE in view())
+				if(VISIBLE.x <= (src.x+1) && !(VISIBLE.x < src.x - src.client.view))
+					VISIBLE.HideMask(client)
+				else
+					VISIBLE.ShowMask(client)
 
 
 /mob/living
 	var/obj/fov_test/fov_test
-
-/mob/living/Move()
-	. = ..()
-	if(fov_test)
-		fov_test.update()
-
-/mob/living/forceMove()
-	. = ..()
-	if(fov_test)
-		fov_test.update()
-
-/mob/living/face_atom(var/atom/A)
-	. = ..(A)
-	if(fov_test)
-		fov_test.update()
-
-/mob/living/facedir(var/ndir)
-	. = ..(ndir)
-	if(fov_test)
-		fov_test.update()
-
-/atom/set_dir(new_dir)
-	. = ..(new_dir)
-	if(istype(src, /mob/living))
-		var/mob/living/S = src
-		if(S.fov_test)
-			S.fov_test.update()
 
 /mob/living/Login()
 	..()
@@ -154,22 +233,22 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 		update()
 
 	proc/update()
-		forceMove(get_turf(owner))
-		pixel_x = -224
-		pixel_y = -224
-		dir = owner.dir
+		if(isturf(owner.loc))
+			forceMove(get_turf(owner))
+			pixel_x = -224
+			pixel_y = -224
+			dir = owner.dir
+		else
+			forceMove(get_turf(owner.loc))
+			pixel_x = -224
+			pixel_y = -224
+			dir = owner.loc.dir
 
 		// Este es el correcto.
 	proc/debug_2()
 		image = image('Testing.dmi', src, "overlay2")
 		owner << image
 		// Este es el correcto.
-
-
-
-
-
-
 
 	/*
 /mob/living/handle_vision()
