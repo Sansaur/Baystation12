@@ -31,7 +31,7 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 
 	return .
 
-/mob/Login()
+/mob/living/Login()
 	..()
 	Tell_Me_Dir_MOBS()
 	for(var/mob/living/VISIBLE in view())
