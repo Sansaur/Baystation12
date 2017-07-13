@@ -70,10 +70,16 @@
 	// this shouldn't only be temperature around you, but also temperature of your body
 	// If Tajarans get their body cold from some source (Maybe a chemical or a virus) they'd still feel "heat" if they wore a fucking jumpsuit
 
+	// WE'LL DO SOMETHING WITH MyTurf In the future
+//	var/turf/simulated/MyTurf
+//	if(isturf(H.loc))
+//		MyTurf = H.loc
+
 	switch(msg_type)
 		if("cold")
 			if(H.bodytemperature <= H.species.cold_discomfort_level)
 				to_chat(H, "<span class='danger'>[pick(cold_discomfort_strings)]</span>")
+
 		if("heat")
 			if(H.bodytemperature >= H.species.heat_discomfort_level)
 				to_chat(H, "<span class='danger'>[pick(heat_discomfort_strings)]</span>")

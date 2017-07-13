@@ -1,6 +1,9 @@
 /*
 	This can be added to any species
 	but it is meant to be used for Tajara and Vulpkanin
+
+	These 2 procs increase body temperature based on clothing UP TO (species.heat_level_1 - 5)
+
 */
 
 /datum/species/proc/handle_clothing_heat(var/mob/living/carbon/human/H)
@@ -21,15 +24,15 @@
 	// Also, some clothing that doesn't give too much heat but should... like the Hastur, for example
 	// Recommended to go 6 for "single part heat" and lower for just "additive heat"
 	var/list/clothing_additional_heat = list(
-										/obj/item/clothing/suit/hastur = 6,
-										/obj/item/clothing/suit/rubber = 6,
-										/obj/item/clothing/suit/radiation = 6,
-										/obj/item/clothing/suit/chickensuit = 6,
-										/obj/item/clothing/suit/bomb_suit = 6,
-										/obj/item/clothing/suit/bio_suit = 6,
-										/obj/item/clothing/suit/imperium_monk = 6,
-										/obj/item/clothing/suit/monkeysuit = 6,
-										/obj/item/clothing/suit/space = 6
+										/obj/item/clothing/suit/hastur = 4,
+										/obj/item/clothing/suit/rubber = 4,
+										/obj/item/clothing/suit/radiation = 4,
+										/obj/item/clothing/suit/chickensuit = 4,
+										/obj/item/clothing/suit/bomb_suit = 4,
+										/obj/item/clothing/suit/bio_suit = 4,
+										/obj/item/clothing/suit/imperium_monk = 4,
+										/obj/item/clothing/suit/monkeysuit = 4,
+										/obj/item/clothing/suit/space = 4
 										)
 	// The clothing that actually GIVES heat will give it based off it's armor stats and w_class
 	// We will check one by one since unders and suits should give more heat than other heat sources
@@ -78,13 +81,19 @@
 		if(is_type_in_list(Checking, clothing_additional_heat))
 			adding_heat += clothing_additional_heat[Checking.type]
 
-	if(adding_heat > 9)
-		adding_heat = 9	// A limit to how much heat you can get from clothing, I'm not checking absolutely everything, but I'm pretty sure you cannot get +8K from clothing alone
+
+	if(adding_heat > 12)
+		adding_heat = 12	// A limit to how much heat you can get from clothing, I'm not checking absolutely everything, but I'm pretty sure you cannot get +12K from clothing alone
 		// Also to avoid getting burns from clothing temperature
+
+	// YOU CANNOT START BURNING FROM CLOTHING ALONE
+	message_admins("[H.bodytemperature]")
 	var/target_temperature = H.species.body_temperature + adding_heat
 	if(H.bodytemperature < target_temperature)
-		H.bodytemperature += adding_heat
-
+		if((H.bodytemperature+adding_heat) >= H.species.heat_level_1)
+			H.bodytemperature = H.species.heat_level_1 - 5
+		else
+			H.bodytemperature += adding_heat
 
 /proc/get_clothing_heat(var/obj/item/clothing/C)
 	var/heat = C.w_class / 2

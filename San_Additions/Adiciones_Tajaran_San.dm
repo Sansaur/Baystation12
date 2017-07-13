@@ -18,7 +18,7 @@ Possibilites:
 // And now head discomfort is checked by the body temperature
 
 /datum/species/tajaran
-	heat_discomfort_level = 315
+	heat_discomfort_level = 314
 
 	// Reminder that this var exists.
 	// The body will try to lower itself to this temperature

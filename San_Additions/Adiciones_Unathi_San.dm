@@ -22,6 +22,11 @@
 /datum/species/unathi
 	clothing_slowdown_resistance = 2		// Los unathi se ralentizan la mitad por la ropa
 	item_slowdown_resistance = 2			// Los unathi se ralentizan la mitad por los objetos también.
+	heat_discomfort_level = 306
+	body_temperature = 301
+
+/datum/species/unathi/handle_environment_special(var/mob/living/carbon/human/H)
+	handle_clothing_heat(H)
 
 /*
 
