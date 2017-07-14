@@ -24,15 +24,15 @@
 	// Also, some clothing that doesn't give too much heat but should... like the Hastur, for example
 	// Recommended to go 6 for "single part heat" and lower for just "additive heat"
 	var/list/clothing_additional_heat = list(
-										/obj/item/clothing/suit/hastur = 4,
-										/obj/item/clothing/suit/rubber = 4,
-										/obj/item/clothing/suit/radiation = 4,
-										/obj/item/clothing/suit/chickensuit = 4,
-										/obj/item/clothing/suit/bomb_suit = 4,
-										/obj/item/clothing/suit/bio_suit = 4,
-										/obj/item/clothing/suit/imperium_monk = 4,
-										/obj/item/clothing/suit/monkeysuit = 4,
-										/obj/item/clothing/suit/space = 4
+										/obj/item/clothing/suit/hastur = 5,
+										/obj/item/clothing/suit/rubber = 5,
+										/obj/item/clothing/suit/radiation = 5,
+										/obj/item/clothing/suit/chickensuit = 5,
+										/obj/item/clothing/suit/bomb_suit = 5,
+										/obj/item/clothing/suit/bio_suit = 5,
+										/obj/item/clothing/suit/imperium_monk = 5,
+										/obj/item/clothing/suit/monkeysuit = 5,
+										/obj/item/clothing/suit/space = 5
 										)
 	// The clothing that actually GIVES heat will give it based off it's armor stats and w_class
 	// We will check one by one since unders and suits should give more heat than other heat sources
@@ -82,9 +82,9 @@
 			adding_heat += clothing_additional_heat[Checking.type]
 
 
-	if(adding_heat > 12)
-		adding_heat = 12	// A limit to how much heat you can get from clothing, I'm not checking absolutely everything, but I'm pretty sure you cannot get +12K from clothing alone
-		// Also to avoid getting burns from clothing temperature
+//	if(adding_heat > 12)
+//		adding_heat = 12	// A limit to how much heat you can get from clothing, I'm not checking absolutely everything, but I'm pretty sure you cannot get +12K from clothing alone
+//		// Also to avoid getting burns from clothing temperature
 
 	// YOU CANNOT START BURNING FROM CLOTHING ALONE
 	message_admins("[H.bodytemperature]")
