@@ -4,7 +4,7 @@
 "ad" = (/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/iachambre)
 "ae" = (/obj/machinery/status_display,/turf/simulated/wall/r_wall,/area/dreyfus/fauxpont/iachambre)
 "af" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iachambre)
-"ag" = (/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/obj/machinery/power/smes/buildable{charge = 2e+006; input_attempt = 1; input_level = 100000; output_attempt = 1; output_level = 200000; RCon_tag = "Sous-station - IA"},/obj/machinery/light/small{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/obj/machinery/camera/network/synthetique{c_tag = "Chambre IA Avant"},/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iachambre)
+"ag" = (/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/obj/machinery/power/smes/buildable{charge = 2e+006; input_attempt = 1; input_level = 100000; output_attempt = 1; output_level = 200000; RCon_tag = "Sub-Estacion - IA"},/obj/machinery/light/small{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/obj/machinery/camera/network/synthetique{c_tag = "Chambre IA Avant"},/turf/simulated/floor/tiled/techfloor,/area/dreyfus/fauxpont/iachambre)
 "ah" = (/obj/structure/table/steel_reinforced,/obj/machinery/power/terminal{tag = "icon-term (WEST)"; icon_state = "term"; dir = 8},/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/techfloor/grid,/area/dreyfus/fauxpont/iachambre)
 "ai" = (/obj/machinery/porta_turret,/turf/simulated/floor/bluegrid,/area/dreyfus/fauxpont/iachambre)
 "aj" = (/obj/machinery/alarm{pixel_y = 24},/turf/simulated/floor/bluegrid,/area/dreyfus/fauxpont/iachambre)
