@@ -894,18 +894,31 @@ proc/generate_image(var/tx as num, var/ty as num, var/tz as num, var/range as nu
 		atoms.Add(T)
 		for(var/atom/A in T)
 			if(istype(A, /atom/movable/lighting_overlay) && lighting) //Special case for lighting
-				atoms.Add(A)
-				continue
+				if(A.icon_state)
+					atoms.Add(A)
+					continue
 			if(A.invisibility) continue
 			atoms.Add(A)
 	//Lines below actually render all colected data
-	atoms = sort_atoms_by_layer(atoms)
 	var/icon/cap = icon('icons/effects/96x96.dmi', "")
 	cap.Scale(range*32, range*32)
 	cap.Blend("#000", ICON_OVERLAY)
+	// ADDING THIS
+	// This hasn't worked, we'll have to be on the lookout for some other shit to do
+	// Meanwhile, space is black, let's say it's part of using the flash on a camera
+
+//	cap.Blend(user.parallax.image, ICON_UNDERLAY)
+//	atoms.Add(user.parallax.image)
 	for(var/atom/A in atoms)
 		if(A)
-			var/icon/img = getFlatIcon(A)
+			var/icon/img
+			if(istype(A, /obj/item/weapon/photo))
+				var/obj/item/weapon/photo/MYPHOTO = A
+				img = new(MYPHOTO.icon, MYPHOTO.icon_state)
+			if(istype(A, /turf/space))
+				continue
+			else
+				img = getFlatIcon(A)
 			if(istype(img, /icon))
 				if(istype(A, /mob/living) && A:lying)
 					img.BecomeLying()

@@ -246,6 +246,8 @@ var/global/photo_count = 0
 	var/x_c = target.x - (size-1)/2
 	var/y_c = target.y - (size-1)/2
 	var/z_c	= target.z
+	// If we add ", 0" at the end of this proc, it will ignore the lighting overlays and it'll create a perfectly lighted photo
+	// That IS a fix, but it's not what we want, since people can go through maint, taking perfectly illuminated pictures and not having to use a flashlight (, 0, 0)
 	var/icon/photoimage = generate_image(x_c, y_c, z_c, size, CAPTURE_MODE_REGULAR, user)
 
 	var/obj/item/weapon/photo/p = new()

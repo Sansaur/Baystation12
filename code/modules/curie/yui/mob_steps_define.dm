@@ -23,7 +23,8 @@ var/itemStepsList[] = list(
 	/obj/effect/decal/cleanable/tomato_smudge = MUD_FOOTSTEP_SOUNDS,
 	/obj/effect/decal/cleanable/pie_smudge 	= MUD_FOOTSTEP_SOUNDS,
 	/obj/effect/decal/cleanable/vomit 		= MUD_FOOTSTEP_SOUNDS,
-	/obj/structure/grille 					= FENCE_FOOTSTEP_SOUNDS
+	/obj/structure/grille 					= FENCE_FOOTSTEP_SOUNDS,
+	/obj/structure/catwalk 					= FENCE_FOOTSTEP_SOUNDS,
 )
 
 

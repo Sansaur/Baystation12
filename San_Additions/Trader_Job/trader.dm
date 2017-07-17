@@ -27,7 +27,7 @@
 	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain
 	shoes = /obj/item/clothing/shoes/dress
-	l_hand = /obj/item/weapon/storage/briefcase/deployable_briefcase	//Here goes the pad briefcase
-	r_hand = /obj/item/device/trader_controller	//Here goes the pad briefcase
+	r_hand = /obj/item/weapon/storage/briefcase/deployable_briefcase	//Here goes the pad briefcase
+	r_pocket = /obj/item/device/trader_controller						//Here goes the briefcase controller
 	id_type = /obj/item/weapon/card/id
 	pda_type = /obj/item/device/pda
