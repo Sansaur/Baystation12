@@ -19,11 +19,17 @@
 		update()
 
 	proc/update()
+		if(!owner)
+			return
+
 		if(isturf(owner.loc))
 			forceMove(get_turf(owner))
 			pixel_x = -224-owner.x
 			pixel_y = -224-owner.y
 		else
+			if(!owner.loc)
+				return
+
 			forceMove(get_turf(owner.loc))
 			pixel_x = -224-owner.loc.x
 			pixel_y = -224-owner.loc.y

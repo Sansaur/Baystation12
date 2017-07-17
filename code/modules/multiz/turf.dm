@@ -59,7 +59,14 @@
 
 /turf/simulated/open/update_icon()
 	if(below)
-		underlays = list(image(icon = below.icon, icon_state = below.icon_state))
+		if(istype(below, /turf/space))
+			// If it's space we'll do something special with the icon
+			ChangeTurf(/turf/space)
+			//icon_state = "white"
+			//plane = SPACE_PLANE
+			return
+		else
+			underlays = list(image(icon = below.icon, icon_state = below.icon_state))
 
 	var/list/noverlays = list()
 	if(!istype(below,/turf/space))

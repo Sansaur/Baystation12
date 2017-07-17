@@ -45,12 +45,12 @@
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
-	allowed_roles = list("Supervisor", "Cientifico")
+	allowed_roles = list("Supervisor", "Cientifico", "Medico")
 
 /datum/gear/eyes/medical/prescription
 	display_name = "Medical HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/health/prescription
-	allowed_roles = list("Supervisor", "Cientifico")
+	allowed_roles = list("Supervisor", "Cientifico", "Medico")
 
 /datum/gear/eyes/meson
 	display_name = "Meson Goggles"
