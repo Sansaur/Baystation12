@@ -138,7 +138,11 @@
 
 		dat += "<hr>"
 
-	user << browse(dat, "window=autolathe")
+	var/datum/browser/BROWSER = new(user, "autolathe", 0, 440, 560)
+	BROWSER.add_content(dat)
+	BROWSER.open()
+
+//	user << browse(dat, "window=autolathe")
 	onclose(user, "autolathe")
 
 /obj/machinery/autolathe/attackby(var/obj/item/O as obj, var/mob/user as mob)
