@@ -233,12 +233,16 @@ var/global/list/living_types_can_see_behind = list(	/mob/living/silicon,
 		update()
 
 	proc/update()
+		if(!owner)
+			return
 		if(isturf(owner.loc))
 			forceMove(get_turf(owner))
 			pixel_x = -224
 			pixel_y = -224
 			dir = owner.dir
 		else
+			if(!owner.loc)
+				return
 			forceMove(get_turf(owner.loc))
 			pixel_x = -224
 			pixel_y = -224
