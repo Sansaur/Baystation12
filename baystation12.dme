@@ -2433,6 +2433,12 @@
 #include "San_Additions\barra_do.dm"
 #include "San_Additions\catwalk.dm"
 #include "San_Additions\cure_steps.dm"
+<<<<<<< HEAD
+=======
+#include "San_Additions\FrontFlip.dm"
+#include "San_Additions\Tajaran_Necesidad_Dormir.dm"
+#include "San_Additions\BodyMarkings\bodymarkings.dm"
+>>>>>>> 301977a276... Avance 1
 #include "San_Additions\Field of View\FieldOfView.dm"
 #include "San_Additions\objectives_dreyfus\debugging.dm"
 #include "San_Additions\objectives_dreyfus\objectives.dm"
