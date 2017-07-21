@@ -54,13 +54,17 @@
 	density = 1
 	anchored = 0
 	var/obj/item/weapon/storage/briefcase/deployable_briefcase/stored_briefcase
-
+	var/busy = 0
 /obj/structure/deployed_briefcase/attack_hand(mob/user as mob)
+	if(busy)
+		return
+
 	to_chat(user, "You press the 'compact' button on the [src]")
 	Compact()
 
 
 /obj/structure/deployed_briefcase/proc/Compact()
+	busy = 1
 	flick("depl_brief_compacting",src)
 	playsound(src.loc, 'sound/machines/windowdoor.ogg', 50, 1)
 	sleep(10)
