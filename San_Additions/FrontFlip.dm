@@ -115,11 +115,12 @@
 			src.pixel_y = storey
 			return
 		else
-			// Y no voy a poner a los robots porque está divertido que haya algo que los trolee xd
-
 			for(var/mob/Bloqueando in Casilla)
 				if(istype(Bloqueando, /mob/living/carbon/human))
 					var/mob/living/carbon/human/Bloqueador = Bloqueando
+					// Nosotros mismos no nos podemos bloquear
+					if(Bloqueador == src)
+						continue
 					if(Bloqueador.a_intent != I_HELP)	// Si pasa por un humano que no le quiera dejar pasar (Siguiendo las normas de Bumps en movimiento) le bloqueará
 						//playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 						if(istype(Bloqueador.get_active_hand(), /obj/item/weapon/shield))
