@@ -83,9 +83,13 @@
 	. += "<b>Choose occupation chances</b><br>Unavailable occupations are crossed out.<br>"
 	if(using_map.flags & MAP_HAS_BRANCH)
 
-		player_branch = mil_branches.get_branch(pref.char_branch)
+		if(pref.char_branch == "None")
+			var/MyRank = mil_branches.spawn_branches[1]
+			pref.char_branch = MyRank
 
+		player_branch = mil_branches.get_branch(pref.char_branch)
 		. += "Branch of Service: <a href='?src=\ref[src];char_branch=1'>[pref.char_branch]</a>	"
+
 	if(using_map.flags & MAP_HAS_RANK)
 		player_rank = mil_branches.get_rank(pref.char_branch, pref.char_rank)
 
