@@ -87,7 +87,7 @@ var/global/datum/dreyfus_objectives/DreyfusQuotas = new()
 	var/addingthis = rand(1000,2000)
 	station_account.money += addingthis
 	var/datum/transaction/T = new("Oficial de NanoTrasen","Adicion a la cuenta de la estacion",addingthis,"Biesel GalaxyNet Terminal #277")
-	T.date = "2nd April, 2540"
+	T.date = "2nd April, [game_year]"
 	T.time = "[duration2stationtime(TimeOfGame)]"
 	//add the account
 	station_account.transaction_log.Add(T)
