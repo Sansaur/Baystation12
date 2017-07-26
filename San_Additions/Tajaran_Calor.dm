@@ -37,11 +37,12 @@
 	// The clothing that actually GIVES heat will give it based off it's armor stats and w_class
 	// We will check one by one since unders and suits should give more heat than other heat sources
 	var/adding_heat = 0
-
+	var/quadruple_uniform_heat = 1
 	// Uniforms
 	var/obj/item/clothing/Checking = H.w_uniform
 	if(Checking && !is_type_in_list(Checking, clothing_gives_no_heat) && (Checking.body_parts_covered & UPPER_TORSO) && (Checking.body_parts_covered & LOWER_TORSO))	// Can only get heat from unders if they cover the chest and groin
 		adding_heat += get_clothing_heat(Checking)
+		quadruple_uniform_heat = 4
 		if(is_type_in_list(Checking, clothing_additional_heat))
 			adding_heat += clothing_additional_heat[Checking.type]
 
@@ -51,9 +52,8 @@
 		adding_heat += get_clothing_heat(Checking)
 		if(is_type_in_list(Checking, clothing_additional_heat))
 			adding_heat += clothing_additional_heat[Checking.type]
-		// If we're wearing a uniform under the suit, the heat is doubled
-		if(H.w_uniform)
-			adding_heat += adding_heat
+		// If we're wearing a uniform under the suit and the uniform covers the chest, the heat is quadrupled
+		adding_heat += adding_heat * quadruple_uniform_heat
 
 
 
@@ -87,7 +87,6 @@
 //		// Also to avoid getting burns from clothing temperature
 
 	// YOU CANNOT START BURNING FROM CLOTHING ALONE
-	message_admins("[H.bodytemperature]")
 	var/target_temperature = H.species.body_temperature + adding_heat
 	if(H.bodytemperature < target_temperature)
 		if((H.bodytemperature+adding_heat) >= H.species.heat_level_1)
