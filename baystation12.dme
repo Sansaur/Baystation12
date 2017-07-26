@@ -2437,6 +2437,7 @@
 =======
 #include "San_Additions\FrontFlip.dm"
 #include "San_Additions\Tajaran_Necesidad_Dormir.dm"
+#include "San_Additions\BodyMarkings\body_markings_mod.dm"
 #include "San_Additions\BodyMarkings\bodymarkings.dm"
 >>>>>>> 301977a276... Avance 1
 #include "San_Additions\Field of View\FieldOfView.dm"

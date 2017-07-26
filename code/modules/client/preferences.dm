@@ -19,7 +19,6 @@ datum/preferences
 
 	//character preferences
 	var/species_preview                 //Used for the species selection window.
-	var/list/body_markings = list() // "name" = "#rgbcolor"
 
 		//Mob preview
 	var/icon/preview_icon = null
@@ -178,6 +177,7 @@ datum/preferences
 	ShowChoices(usr)
 	return 1
 
+	// WE need to leave the body marking things here
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()

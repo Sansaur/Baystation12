@@ -590,20 +590,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/list/usable_markings = pref.body_markings.Copy() ^ body_marking_styles_list.Copy()
 		for(var/M in usable_markings)
 			var/datum/sprite_accessory/S = usable_markings[M]
+			if(S.ckey_allowed)
+				if(!(usr.ckey in S.ckey_allowed))
+					usable_markings -= M
 			if(!S.species_allowed.len)
 				continue
 			else if(!(pref.species in S.species_allowed))
 				usable_markings -= M
-			else if(istype(S, /datum/sprite_accessory/marking))
-				var/datum/sprite_accessory/marking/MYMARKING = S
-				if(MYMARKING.ckey_allowed)
-					var/CkeyCorrect = 0
-					for(var/MyCkey in MYMARKING.ckey_allowed)
-						if(usr.ckey == MyCkey)
-							CkeyCorrect = 1
-							break
-					if(!CkeyCorrect)
-						usable_markings -= M
 
 
 		var/new_marking = input(user, "Choose a body marking:", "Character Preference")  as null|anything in usable_markings
