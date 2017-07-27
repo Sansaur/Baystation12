@@ -1,4 +1,4 @@
-#if !defined(USING_MAP_DATUM)
+#if !defined(using_map_DATUM)
 
 	#include "dreyfus-01.dmm" // - Sotano - IA y Cyborgs
 	#include "dreyfus-02.dmm" // - Ingeniería - Motor. Soporte vital.
@@ -71,7 +71,7 @@
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 
 
-	#define USING_MAP_DATUM /datum/map/dreyfus
+	#define using_map_DATUM /datum/map/dreyfus
 
 #elif !defined(MAP_OVERRIDE)
 
