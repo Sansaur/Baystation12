@@ -2400,6 +2400,8 @@
 #include "San_Additions\cure_steps.dm"
 #include "San_Additions\FrontFlip.dm"
 #include "San_Additions\Tajaran_Necesidad_Dormir.dm"
+#include "San_Additions\FactoryUpdate\factorylathe.dm"
+#include "San_Additions\FactoryUpdate\factorylathe_wires.dm"
 #include "San_Additions\Field of View\FieldOfView.dm"
 #include "San_Additions\objectives_dreyfus\debugging.dm"
 #include "San_Additions\objectives_dreyfus\objectives.dm"
