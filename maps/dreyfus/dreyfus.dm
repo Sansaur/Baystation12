@@ -1,14 +1,5 @@
 #if !defined(using_map_DATUM)
 
-	#include "dreyfus-01.dmm" // - Sotano - IA y Cyborgs
-	#include "dreyfus-02.dmm" // - Ingeniería - Motor. Soporte vital.
-	#include "dreyfus-03.dmm" // - Cargo - Cargo, Minería, I+D, Robotica
-	#include "dreyfus-04.dmm" // - Residencial - Medbay, cafetería, gimnasio y otras cosas
-	#include "dreyfus-05.dmm" // - Oficinas - Zona administrativa y seguridad
-	#include "dreyfus-06.dmm" // - Cupula - Jardines y recepcion de invitados
-	#include "dreyfus-07.dmm"
-	#include "dreyfus-08.dmm"
-
 	#include "../shared/exodus_torch/_include.dm"
 
 	#include "dreyfus_announcements.dm"
@@ -53,6 +44,14 @@
 	#include "structures/walls.dm"
 	#include "structures/machinery.dm"
 
+	#include "dreyfus-01.dmm" // - Sotano - IA y Cyborgs
+	#include "dreyfus-02.dmm" // - Ingeniería - Motor. Soporte vital.
+	#include "dreyfus-03.dmm" // - Cargo - Cargo, Minería, I+D, Robotica
+	#include "dreyfus-04.dmm" // - Residencial - Medbay, cafetería, gimnasio y otras cosas
+	#include "dreyfus-05.dmm" // - Oficinas - Zona administrativa y seguridad
+	#include "dreyfus-06.dmm" // - Cupula - Jardines y recepcion de invitados
+	#include "dreyfus-07.dmm"
+	#include "dreyfus-08.dmm"
 
 	#include "../shared/exodus_torch/_include.dm"
 
