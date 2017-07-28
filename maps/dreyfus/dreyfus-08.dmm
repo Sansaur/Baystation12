@@ -338,7 +338,7 @@
 "gz" = (/turf/simulated/floor/shuttle/blue,/area/supply/dock)
 "gA" = (/obj/machinery/light{tag = "icon-tube1 (NORTH)"; icon_state = "tube1"; dir = 1},/turf/simulated/floor/shuttle/blue,/area/supply/dock)
 "gB" = (/obj/structure/shuttle/engine/heater{tag = "icon-heater (EAST)"; icon_state = "heater"; dir = 4},/obj/structure/window/phoronreinforced{dir = 1},/obj/structure/window/phoronreinforced{dir = 8},/turf/simulated/floor/reinforced/airless,/area/supply/dock)
-"gC" = (/obj/structure/shuttle/engine/propulsion{tag = "icon-propulsion (EAST)"; icon_state = "propulsion"; dir = 4},/turf/simulated/floor/reinforced/airless,/area/supply/dock)
+"gC" = (/obj/structure/shuttle/engine/propulsion{tag = "icon-propulsion (EAST)"; icon_state = "propulsion"; dir = 4},/turf/space,/area/supply/dock)
 "gD" = (/obj/structure/sign/warning/airlock,/turf/unsimulated/wall,/area/centcom/control)
 "gE" = (/obj/effect/floor_decal/borderfloor{tag = "icon-borderfloor (NORTH)"; icon_state = "borderfloor"; dir = 1},/obj/effect/floor_decal/corner/blue/border{tag = "icon-bordercolor (NORTH)"; icon_state = "bordercolor"; dir = 1},/obj/structure/table/rack,/obj/item/weapon/extinguisher,/obj/item/weapon/extinguisher,/obj/item/weapon/extinguisher,/obj/item/weapon/extinguisher,/turf/simulated/floor/tiled,/area/shuttle/escape/centcom)
 "gF" = (/obj/effect/floor_decal/borderfloor{tag = "icon-borderfloor (NORTH)"; icon_state = "borderfloor"; dir = 1},/obj/effect/floor_decal/corner/blue/border{tag = "icon-bordercolor (NORTH)"; icon_state = "bordercolor"; dir = 1},/obj/machinery/vending/cola,/turf/simulated/floor/tiled,/area/shuttle/escape/centcom)
