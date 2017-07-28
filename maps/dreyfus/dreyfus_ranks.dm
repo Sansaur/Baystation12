@@ -11,6 +11,17 @@
 		/datum/mil_branch/administration
 	)
 
+	species_to_branch_whitelist = list(
+		/datum/species/vox     = list()
+	)
+
+	species_to_branch_blacklist = list(
+		/datum/species/machine = list(/datum/mil_branch/administration),
+		/datum/species/diona   = list(/datum/mil_branch/administration),
+		/datum/species/tajaran   = list(/datum/mil_branch/administration),
+		/datum/species/unathi   = list(/datum/mil_branch/administration)
+	)
+
 /datum/mil_branch/ouvrier
 	name = "Obrero"
 	name_short = "OBR"

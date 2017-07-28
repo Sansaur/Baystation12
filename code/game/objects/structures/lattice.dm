@@ -10,26 +10,27 @@
 	layer = LATTICE_LAYER
 	//	flags = CONDUCT
 
-/obj/structure/lattice/initialize()
-	..()
+/obj/structure/lattice/Initialize()
+	. = ..()
 ///// Z-Level Stuff
 	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open)))
 ///// Z-Level Stuff
-		qdel(src)
-	for(var/obj/structure/lattice/LAT in src.loc)
+		return INITIALIZE_HINT_QDEL
+	for(var/obj/structure/lattice/LAT in loc)
 		if(LAT != src)
+			crash_with("Found multiple lattices at '[log_info_line(loc)]'")
 			qdel(LAT)
 	icon = 'icons/obj/smoothlattice.dmi'
 	icon_state = "latticeblank"
 	updateOverlays()
-	for (var/dir in cardinal)
+	for (var/dir in GLOB.cardinal)
 		var/obj/structure/lattice/L
 		if(locate(/obj/structure/lattice, get_step(src, dir)))
 			L = locate(/obj/structure/lattice, get_step(src, dir))
 			L.updateOverlays()
 
 /obj/structure/lattice/Destroy()
-	for (var/dir in cardinal)
+	for (var/dir in GLOB.cardinal)
 		var/obj/structure/lattice/L
 		if(locate(/obj/structure/lattice, get_step(src, dir)))
 			L = locate(/obj/structure/lattice, get_step(src, dir))
@@ -84,10 +85,8 @@
 
 		var/dir_sum = 0
 
-		var/turf/T
-		for (var/direction in cardinal)
-			T = get_step(src, direction)
-			if(locate(/obj/structure/lattice, T) || locate(/obj/structure/catwalk, T))
+		for (var/direction in GLOB.cardinal)
+			if(locate(/obj/structure/lattice, get_step(src, direction)) || locate(/obj/structure/catwalk, get_step(src, direction)))
 				dir_sum += direction
 			else
 				if(!(istype(get_step(src, direction), /turf/space)))

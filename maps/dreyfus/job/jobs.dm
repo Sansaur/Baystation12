@@ -1,4 +1,8 @@
 /datum/map/dreyfus
+	species_to_job_whitelist = list(
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg)
+	)
+
 	allowed_jobs = list(
 						/datum/job/assistant,
 						/datum/job/captain,
