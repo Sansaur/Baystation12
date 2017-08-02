@@ -1,4 +1,8 @@
 /datum/map/dreyfus
+	species_to_job_whitelist = list(
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg)
+	)
+
 	allowed_jobs = list(
 						/datum/job/assistant,
 						/datum/job/captain,
@@ -8,6 +12,7 @@
 						/datum/job/scientist,
 						/datum/job/doctor,
 						/datum/job/hos,
+						/datum/job/officer,
 						/datum/job/qm,
 						/datum/job/engineer,
 						/datum/job/cargo_tech,
@@ -176,6 +181,22 @@
 		"Mercenario",
 		"Sheriff",
 		"Alguacil",
+		)
+	allowed_branches = list(
+		/datum/mil_branch/contractuel
+	)
+
+/datum/job/officer
+	title = "Vigilante"
+	supervisors = "el marshall"
+	minimal_player_age = 19
+	economic_modifier = 10
+	ideal_character_age = 30
+	total_positions = 2
+	spawn_positions = 2
+	alt_titles = list(
+		"Ayudante de Seguridad",
+		"Deputy",
 		)
 	allowed_branches = list(
 		/datum/mil_branch/contractuel
