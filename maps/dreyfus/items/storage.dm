@@ -1,27 +1,27 @@
 /obj/item/weapon/storage/toolbox
-	name = "Caja de herramientas"
-	desc = "Peligro. Muy robusta."
+	name = "Toolbox"
+	desc = "Danger. Very robust."
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
 /obj/item/weapon/storage
-	name = "almacenamiento"
+	name = "storage"
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
 /obj/item/weapon/storage/box/lights
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
 /obj/structure/closet/crate
-	name = "caja"
+	name = "crate"
 	desc = "A rectangular steel crate."
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
 /obj/structure/closet/crate/large
-	name = "caja grande"
+	name = "large crate"
 	desc = "A hefty metal crate."
 	icon = 'maps/dreyfus/icons/storage.dmi'
 
 /obj/structure/largecrate
-	name = "caja grande"
+	name = "large crate"
 	desc = "A hefty wooden crate."
 	icon = 'maps/dreyfus/icons/storage.dmi'
 	icon_state = "densecrate"

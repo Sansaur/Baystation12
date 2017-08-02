@@ -30,10 +30,10 @@
 
 	map_admin_faxes = list("Buzon de Entrada de Industrias NanoTrasen")
 
-	shuttle_docked_message = "La lanzadera ha llegado al puerto %Dock_name% y se encuentra amarrada a la estacion. Salida programada en: %ETD%"
+	shuttle_docked_message = "La lanzadera de transferencia de personal ha llegado al puerto %Dock_name% y se encuentra amarrada a la estacion. Salida programada en: %ETD%"
 	shuttle_leaving_dock = "La lanzadera ha despegado. Llegada estimada en: %ETA%."
-	shuttle_called_message = "La lanzadera ha sido llamada y se aproxima al puerto %Dock_name% . Llegara aproximadamente en: %ETA%"
-	shuttle_recall_message = "Se ha anulado la llegada de la lanzadera."
+	shuttle_called_message = "La lanzadera de transferencia de personal ha sido llamada y se aproxima al puerto %Dock_name% . Llegara aproximadamente en: %ETA%"
+	shuttle_recall_message = "Se ha cancelado la llegada de la lanzadera."
 	emergency_shuttle_docked_message = "La lanzadera de evacuacion se ha amarrado a la estacion. Tiempo restante para la evacuacion: %ETD%."
 	emergency_shuttle_leaving_dock = "La lanzadera de evacuacion ha abandonado la estacion. Llegada aproximada a: %ETA%."
 	emergency_shuttle_called_message = "Se ha llamado a la lanzadera de evacuacion. Llegada aproximada en: %ETA%"

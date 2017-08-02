@@ -91,11 +91,12 @@
 	// Para poner el giro de Goonstation se descomenta aquí
 	// Para quitarlo, se comenta, obvs
 //	src.spin(2,0.6)
+	/*
 	if(src.dir == 4)
 		animate_spin(src, "R", 1.3) // Flip de Goonstation
 	else
 		animate_spin(src, "L", 1.3) // Flip de Goonstation
-
+	*/
 	is_jumping = 1	// Begin the jump, before each return it'll reset to 0
 	playsound(src.loc, 'sound/weapons/towelwipe.ogg', 50, 1)
 	var/storey = src.pixel_y
@@ -114,11 +115,12 @@
 			src.pixel_y = storey
 			return
 		else
-			// Y no voy a poner a los robots porque está divertido que haya algo que los trolee xd
-
 			for(var/mob/Bloqueando in Casilla)
 				if(istype(Bloqueando, /mob/living/carbon/human))
 					var/mob/living/carbon/human/Bloqueador = Bloqueando
+					// Nosotros mismos no nos podemos bloquear
+					if(Bloqueador == src)
+						continue
 					if(Bloqueador.a_intent != I_HELP)	// Si pasa por un humano que no le quiera dejar pasar (Siguiendo las normas de Bumps en movimiento) le bloqueará
 						//playsound(src.loc, 'sound/weapons/genhit2.ogg', 50, 1)
 						if(istype(Bloqueador.get_active_hand(), /obj/item/weapon/shield))

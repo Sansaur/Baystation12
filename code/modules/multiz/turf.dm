@@ -25,16 +25,16 @@
 	..()
 	update()
 
-/turf/simulated/open/initialize()
-	..()
+/turf/simulated/open/Initialize()
+	. = ..()
 	update()
 
 /turf/simulated/open/proc/update()
 	below = GetBelow(src)
-	turf_changed_event.register(below, src, /turf/simulated/open/update_icon)
+	GLOB.turf_changed_event.register(below, src, /turf/simulated/open/update_icon)
 	var/turf/simulated/T = get_step(src,NORTH)
 	if(T)
-		turf_changed_event.register(T, src, /turf/simulated/open/update_icon)
+		GLOB.turf_changed_event.register(T, src, /turf/simulated/open/update_icon)
 	levelupdate()
 	for(var/atom/movable/A in src)
 		A.fall()
@@ -45,6 +45,8 @@
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
 	..()
+	if(locate(/obj/structure/catwalk) in src)
+		return
 	mover.fall()
 
 // Called when thrown object lands on this turf.
@@ -59,7 +61,14 @@
 
 /turf/simulated/open/update_icon()
 	if(below)
-		underlays = list(image(icon = below.icon, icon_state = below.icon_state))
+		if(istype(below, /turf/space))
+			// If it's space we'll do something special with the icon
+			ChangeTurf(/turf/space)
+			//icon_state = "white"
+			//plane = SPACE_PLANE
+			return
+		else
+			underlays = list(image(icon = below.icon, icon_state = below.icon_state))
 
 	var/list/noverlays = list()
 	if(!istype(below,/turf/space))
