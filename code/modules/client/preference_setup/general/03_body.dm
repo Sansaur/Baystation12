@@ -335,12 +335,9 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.age = max(min(pref.age, mob_species.max_age), mob_species.min_age)
 
 			reset_limbs() // Safety for species with incompatible manufacturers; easier than trying to do it case by case.
-<<<<<<< HEAD
 
 			prune_occupation_prefs()
-=======
 			pref.body_markings.Cut()
->>>>>>> 301977a276... Avance 1
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["hair_color"])

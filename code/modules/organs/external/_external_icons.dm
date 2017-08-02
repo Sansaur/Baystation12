@@ -89,9 +89,7 @@ var/list/limb_icon_cache = list()
 		icon_cache_key += "_model_[model]"
 	dir = EAST
 	icon = mob_icon
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 	//Body markings, does not include head, duplicated (sadly) above.
 	for(var/M in markings)
 		var/datum/sprite_accessory/marking/mark_style = markings[M]["datum"]
@@ -112,10 +110,6 @@ var/list/limb_icon_cache = list()
 		mob_icon.Blend(mark_s, ICON_OVERLAY) //So when it's on your body, it has icons
 		icon_cache_key += "[M][markings[M]["color"]]"
 	return mob_icon
->>>>>>> 301977a276... Avance 1
-=======
-
->>>>>>> 4ca08b773b... Adding bodymarkings as a mod file (mostly)
 
 /obj/item/organ/external/proc/get_icon()
 	update_icon()
