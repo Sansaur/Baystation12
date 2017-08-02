@@ -16,10 +16,6 @@
 	verbs -= /obj/structure/table/verb/do_flip
 	verbs -= /obj/structure/table/proc/do_put
 
-/obj/structure/table/shelf/initialize()
-	auto_align()
-	..()
-
 /obj/structure/table/shelf/update_connections()
 	return
 
