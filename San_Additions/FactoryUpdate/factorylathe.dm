@@ -81,7 +81,7 @@
 /obj/machinery/factorylathe/proc/explode()
 	explosion(loc, 1, 1, 2, 3)
 	// Saca sharpnel
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		var/turf/T = get_step(src, direction)
 		if(!(T.density) && prob(50))
 			new /obj/item/weapon/material/shard/shrapnel (T)
